@@ -1,53 +1,28 @@
-# FINAL QA & PUBLISHING — THE AISLE EFFECT
+# The Aisle Effect — technical and source notes
 
-## Deliverable
+**Published website:** https://muidadnan.github.io/NewNew4final-FIANL/
 
-Four-part Australian supermarket story with 14 **distinct** chart specifications: 13 Vega-Lite and 1 Vega treemap. `index.html`, `style.css`, `scripts/main.js`, `charts/01.json` through `charts/14.json`, and all local CSV data are included at the correct relative paths.
+## Project structure
 
-## Source validation (28 October 2026)
+The root contains `index.html`, `style.css`, `scripts/main.js`, fourteen human-readable `charts/NN.json` files and source/derived CSV tables in `data/`. GitHub Pages serves the one-page site directly from `main`.
 
-- Woolworths: ScrapeHero page last updated **5 October 2026**, 1,142 stores; state figures match the project's CSV. https://www.scrapehero.com/location-reports/Woolworths%20Supermarkets-Australia/
-- Coles: ScrapeHero page last updated **28 September 2026**, 878 stores; the site points to the correct current URL, `Coles%20Supermarkets-Australia` (not the older double-encoded URL). https://www.scrapehero.com/location-reports/Coles%20Supermarkets-Australia/
-- ABS: March 2026 estimated state populations used for the per-capita rates.
-- ACCC interim report (2024), Figure 1.1: **32.5%** Woolworths + **24.8%** Coles = **57.3%** national take-home food and grocery sales in FY2022–23. The report separately estimates approximately **67%** of *supermarket retail sales* in FY2023. These are different denominators; the page now makes that distinction explicit.
-- ABS *Retail Trade, Australia*: June 2025 was the final release. The displayed June 2020–June 2025 series measures nominal, seasonally adjusted *food-retailing turnover*, not grocery basket prices or inflation-adjusted consumption.
+## Visualisation design
 
-## Chart validity
+The first chapter distinguishes absolute outlet counts from population-adjusted rates with a choropleth, ranking slopegraph, circle cartogram and equal-area tile map. The second chapter compares the retailers with grouped bars, connected dots, a population scatterplot, a genuine retailer-first hierarchical treemap and parallel coordinates. The third chapter explains historical national grocery-sales shares with a waffle chart and two comparison charts. The fourth chapter uses a line chart and heatmap for ABS food-retailing turnover.
 
-- 01: valid choropleth using population-normalised state values.
-- 02: valid geographic proportional-symbol map using circle **area** for store total.
-- 03: explicitly described as a manually arranged **schematic** circle cartogram, with tiny-state labels outside circles; not claimed to use an algorithmic Dorling solver.
-- 04: optional schematic equal-tile map (not one of the three primary maps).
-- 05–06: grouped bar and paired/connected dots for counts and per-capita two-brand differences.
-- 07: population scatter with a **straight two-point pooled-rate reference** of 7.235968 stores per 100,000, not a regression and not a zigzag joining sampled state points.
-- 08: actual hierarchy `All stores → retailer → state` with Vega `stratify`/`treemap`; leaf areas encode 2,020 stores in total.
-- 09: four-variable parallel-coordinates plot, with dropdown-selected red focus and muted context lines. Axes are separately min–max normalised; raw units appear in tooltips.
-- 10: 100-cell waffle uses 57 whole squares to represent **rounded** 57.3%, with the exact figure stated separately.
-- 11: bump chart follows ranks over three distinct historical periods; not a continuous annual history.
-- 12: diverging bars show **percentage-point** differences, not relative growth rates.
-- 13: line chart shows monthly nominal retail turnover without misleading area fill.
-- 14: year-month heatmap uses **one sequential blue colour family**. Small negative values are shown to one decimal rather than rounding to `-0`.
+## Data definitions
 
-## Testing completed
+- Woolworths: 1,142 recorded supermarket locations in the 2026 state snapshots.
+- Coles: 878 recorded supermarket locations in the same eight jurisdictions.
+- Combined: 2,020 recorded two-chain locations.
+- Population-adjusted rate: two-chain outlets divided by ABS March 2026 population, multiplied by 100,000.
+- ACCC FY2022–23 national take-home food and grocery sales: Woolworths 32.5% plus Coles 24.8% equals 57.3%. This is distinct from the ACCC's approximately 67% estimate using a narrower supermarket-retail-sales denominator.
+- ABS monthly food-retailing turnover is seasonally adjusted and expressed in current-price AUD millions; it includes more than supermarkets and does not measure real quantities purchased.
 
-- All 14 JSON files parse; all CSV references, CSS and local JS files exist.
-- Browser-independent source arithmetic: 1,142 + 878 = 2,020; state totals and per-capita rates reconcile; ACCC shares cross-check to the report.
-- Static HTML checks: 14 chart slots, 14 interpretation notes, 14 method/caveat sections, 4 chapter explanations and visible source links.
-- `node --check` validates the JavaScript syntax.
-- Chromium **layout-only** check, with illustrative placeholder SVGs rather than live Vega charts: widths **1440, 1366, 960, 760, 390, 360** had no overall horizontal scroll.
+## Technical choices
 
-### What the tests cannot certify
+The charts use Vega or Vega-Lite and SVG rendering. Data sources are named alongside the graphics and listed with URLs in `data/SOURCES.md`. A local CSV hierarchy supports the nested treemap; the circle cartogram and equal-area tile positions are explicitly schematic. Hover tooltips and limited selections supplement, rather than replace, the written narrative. The site footer records authorship, date and ChatGPT assistance.
 
-This execution environment blocks local HTTP and external CDN access, so **the real Vega/Vega-Lite chart rendering, map GeoJSON download, tooltip interactions, and full live GitHub Pages performance have not been visually tested**. Treat those as required final human checks, not as passed items. The downloaded ZIP is the complete website, but it is **not automatically uploaded** to the user's repository.
+## Reproducibility boundaries
 
-## Upload (keep these paths exactly)
-
-1. Extract the ZIP onto your computer. Upload the **contents**, not the ZIP itself, to the root of your GitHub repository. **Replace** old same-named files.
-2. The root must contain `index.html`, `style.css`, `scripts/`, `charts/`, and `data/`. Check `charts/14.json` exists.
-3. In your repository: **Settings → Pages → Deploy from a branch → main → /(root)**. The repository must be public and GitHub Pages enabled for public assessment.
-4. Open the published URL in an **incognito/private browser window**. Check that each numbered chart renders (especially maps 01/02, treemap 08, dropdown 09 and heatmap 14), tooltips and selectors work, and both desktop and mobile layouts are readable.
-5. Provide the GitHub Pages URL and a full-page screenshot in the university submission template. Complete your own **hand-drawn A4 sketch**; the rubric expressly does not accept a digitally produced sketch. Confirm author/student ID and describe AI assistance truthfully.
-
-## Important caveat
-
-Only the teaching staff can decide how the advanced idioms and sketch are marked, and only the student can complete the interview and publish the website. The design is targeted at the rubric, **not a guaranteed grade**.
+The source JSON and CSV files are publicly available in the repository. Geographic maps use an external Australian state-boundary GeoJSON; the chart libraries are served from a public CDN. These are runtime dependencies, and the source files alone do not constitute an independent live-browser test.
