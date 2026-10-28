@@ -7,9 +7,9 @@
 ### Chapter 01 · Where are the two chains?
 
 1. **Choropleth (01):** Shade each state by stores per 100,000 residents. Tasmania has 8.44 versus NSW's 6.99. This is a relative, state-level measure, **not** journey time or actual supermarket access.
-2. **Proportional-symbol map (02):** Size circles by total Woolworths and Coles stores. NSW has 606 locations; Victoria has 515; Queensland has 454. These totals are strongly influenced by population.
+2. **Slopegraph (02):** Compare the ranking of eight jurisdictions by total store count (left) against stores per 100,000 residents (right). NSW falls from 1st to 6th while Tasmania rises to 1st per resident. All lines and dots use the same teal colour; lines represent ranking shifts, not time.
 3. **Circle cartogram (03):** Replace state land areas with circles whose **areas** represent store totals. WA looks smaller than its real geographic area would imply, shifting attention from land to locations. The arrangement is manually schematic, not a dynamic Dorling algorithm.
-4. **Tile map (04):** Give every state equal map space and encode the Woolworths fraction of these two chains as colour. It is an approximate diagram, not a scale map.
+4. **Equal-area tile-grid map (04):** Give each of the six states and two mainland territories equal map space. Colour and directly labelled percentages encode Woolworths' share of the two-chain outlet total. The eight tiles are schematic, not to geographic scale.
 
 **Transition:** Now that we know totals and relative presence differ, which chain accounts for the sites?
 
@@ -44,13 +44,13 @@
 
 **07, population scatter:** “The x-axis measures population; the y-axis measures combined stores. The dashed diagonal is the national population-weighted benchmark, not a fitted trend. Each state gets a same-size point; direct labels have small leader lines so the clustered territories remain readable.”
 
-**09, parallel coordinates:** “This combines four measures with different units. I separately normalised each to its minimum and maximum across the eight states, so only relative positions can be compared. The user selects a red focus line; other state profiles stay in grey. Tooltips show the actual values.”
+**09, parallel coordinates:** “This combines four measures with different units. I separately normalised each to its minimum and maximum across the eight states, so only relative positions can be compared. A selected state is highlighted; other state profiles stay in grey. Tooltips show the actual values.”
 
 ## Why NOT reproduce the four inspiration charts?
 
 - The **local choropleth** in the healthcare example is useful inspiration for annotations and explaining suppressed/missing data, but your source counts only eight state-level totals. Claiming postcode/suburb patterns would require additional genuine local store data.
 - The **ridgeline** makes sense for a *distribution* (many measured observations per group). Eight state totals do **not** contain enough within-state observations to estimate genuine distributions. Inventing distributions to fit that visual style would violate the assignment's data-integrity requirement.
-- The **paired maps** are a good *layout principle*: your choropleth and proportional-symbol maps already form a natural paired comparison of per-person rates versus totals.
+- The **paired maps** are a good *layout principle*: the choropleth and circle cartogram form a comparison of per-person rates versus total outlets, while the slopegraph makes the rank reversal explicit.
 - The **dining cluster and dot map** use location-level observations and geographic grids. Your dataset is aggregated to states and territories. To use those maps meaningfully you would need trustworthy coordinates of individual stores and appropriate boundaries—not the current one-anchor-per-state values.
 
 Adapt the storytelling techniques and visual hierarchy; do not copy anyone else's submitted graphics.
