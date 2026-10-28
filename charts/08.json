@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "Eight state/territory groups, each split into exactly two retailer rectangles (Woolworths and Coles). No unexplained extra data tiles. Each jurisdiction header and each retailer leaf is labelled. Exact values are repeated in an accessible HTML key below.",
+  "description": "Original retailer-first treemap restored. The two chain groups contain all eight state/territory tiles each. Every tile is labelled with its jurisdiction abbreviation, including small NT and ACT rectangles.",
   "background": null,
-  "width": 850,
-  "height": 440,
+  "width": 900,
+  "height": 365,
   "padding": 4,
   "autosize": {
     "type": "fit",
@@ -14,228 +14,155 @@
       "name": "source",
       "values": [
         {
-          "id": "Australia",
+          "id": "All stores",
           "parent": null,
-          "code": "AU",
-          "state": "Australia",
           "brand": "",
-          "brand_short": "",
+          "state": "",
+          "code": "",
           "stores": 0
         },
         {
-          "id": "WA",
-          "parent": "Australia",
-          "code": "WA",
-          "state": "Western Australia",
-          "brand": "",
-          "brand_short": "",
-          "stores": 0
-        },
-        {
-          "id": "WA-W",
-          "parent": "WA",
-          "code": "WA",
-          "state": "Western Australia",
+          "id": "Woolworths",
+          "parent": "All stores",
           "brand": "Woolworths",
-          "brand_short": "W",
+          "state": "",
+          "code": "",
+          "stores": 0
+        },
+        {
+          "id": "Woolworths · WA",
+          "parent": "Woolworths",
+          "brand": "Woolworths",
+          "state": "Western Australia",
+          "code": "WA",
           "stores": 117
         },
         {
-          "id": "WA-C",
-          "parent": "WA",
-          "code": "WA",
-          "state": "Western Australia",
-          "brand": "Coles",
-          "brand_short": "C",
-          "stores": 104
-        },
-        {
-          "id": "NT",
-          "parent": "Australia",
-          "code": "NT",
-          "state": "Northern Territory",
-          "brand": "",
-          "brand_short": "",
-          "stores": 0
-        },
-        {
-          "id": "NT-W",
-          "parent": "NT",
-          "code": "NT",
-          "state": "Northern Territory",
+          "id": "Woolworths · NT",
+          "parent": "Woolworths",
           "brand": "Woolworths",
-          "brand_short": "W",
+          "state": "Northern Territory",
+          "code": "NT",
           "stores": 12
         },
         {
-          "id": "NT-C",
-          "parent": "NT",
-          "code": "NT",
-          "state": "Northern Territory",
-          "brand": "Coles",
-          "brand_short": "C",
-          "stores": 8
-        },
-        {
-          "id": "SA",
-          "parent": "Australia",
-          "code": "SA",
-          "state": "South Australia",
-          "brand": "",
-          "brand_short": "",
-          "stores": 0
-        },
-        {
-          "id": "SA-W",
-          "parent": "SA",
-          "code": "SA",
-          "state": "South Australia",
+          "id": "Woolworths · SA",
+          "parent": "Woolworths",
           "brand": "Woolworths",
-          "brand_short": "W",
+          "state": "South Australia",
+          "code": "SA",
           "stores": 69
         },
         {
-          "id": "SA-C",
-          "parent": "SA",
-          "code": "SA",
-          "state": "South Australia",
-          "brand": "Coles",
-          "brand_short": "C",
-          "stores": 53
-        },
-        {
-          "id": "QLD",
-          "parent": "Australia",
-          "code": "QLD",
-          "state": "Queensland",
-          "brand": "",
-          "brand_short": "",
-          "stores": 0
-        },
-        {
-          "id": "QLD-W",
-          "parent": "QLD",
-          "code": "QLD",
-          "state": "Queensland",
+          "id": "Woolworths · QLD",
+          "parent": "Woolworths",
           "brand": "Woolworths",
-          "brand_short": "W",
+          "state": "Queensland",
+          "code": "QLD",
           "stores": 264
         },
         {
-          "id": "QLD-C",
-          "parent": "QLD",
-          "code": "QLD",
-          "state": "Queensland",
-          "brand": "Coles",
-          "brand_short": "C",
-          "stores": 190
-        },
-        {
-          "id": "NSW",
-          "parent": "Australia",
-          "code": "NSW",
-          "state": "New South Wales",
-          "brand": "",
-          "brand_short": "",
-          "stores": 0
-        },
-        {
-          "id": "NSW-W",
-          "parent": "NSW",
-          "code": "NSW",
-          "state": "New South Wales",
+          "id": "Woolworths · NSW",
+          "parent": "Woolworths",
           "brand": "Woolworths",
-          "brand_short": "W",
+          "state": "New South Wales",
+          "code": "NSW",
           "stores": 348
         },
         {
-          "id": "NSW-C",
-          "parent": "NSW",
-          "code": "NSW",
-          "state": "New South Wales",
-          "brand": "Coles",
-          "brand_short": "C",
-          "stores": 258
-        },
-        {
-          "id": "ACT",
-          "parent": "Australia",
-          "code": "ACT",
-          "state": "Australian Capital Territory",
-          "brand": "",
-          "brand_short": "",
-          "stores": 0
-        },
-        {
-          "id": "ACT-W",
-          "parent": "ACT",
-          "code": "ACT",
-          "state": "Australian Capital Territory",
+          "id": "Woolworths · ACT",
+          "parent": "Woolworths",
           "brand": "Woolworths",
-          "brand_short": "W",
+          "state": "Australian Capital Territory",
+          "code": "ACT",
           "stores": 20
         },
         {
-          "id": "ACT-C",
-          "parent": "ACT",
-          "code": "ACT",
-          "state": "Australian Capital Territory",
-          "brand": "Coles",
-          "brand_short": "C",
-          "stores": 13
-        },
-        {
-          "id": "VIC",
-          "parent": "Australia",
-          "code": "VIC",
-          "state": "Victoria",
-          "brand": "",
-          "brand_short": "",
-          "stores": 0
-        },
-        {
-          "id": "VIC-W",
-          "parent": "VIC",
-          "code": "VIC",
-          "state": "Victoria",
+          "id": "Woolworths · VIC",
+          "parent": "Woolworths",
           "brand": "Woolworths",
-          "brand_short": "W",
+          "state": "Victoria",
+          "code": "VIC",
           "stores": 280
         },
         {
-          "id": "VIC-C",
-          "parent": "VIC",
-          "code": "VIC",
-          "state": "Victoria",
-          "brand": "Coles",
-          "brand_short": "C",
-          "stores": 235
-        },
-        {
-          "id": "TAS",
-          "parent": "Australia",
-          "code": "TAS",
-          "state": "Tasmania",
-          "brand": "",
-          "brand_short": "",
-          "stores": 0
-        },
-        {
-          "id": "TAS-W",
-          "parent": "TAS",
-          "code": "TAS",
-          "state": "Tasmania",
+          "id": "Woolworths · TAS",
+          "parent": "Woolworths",
           "brand": "Woolworths",
-          "brand_short": "W",
+          "state": "Tasmania",
+          "code": "TAS",
           "stores": 32
         },
         {
-          "id": "TAS-C",
-          "parent": "TAS",
-          "code": "TAS",
-          "state": "Tasmania",
+          "id": "Coles",
+          "parent": "All stores",
           "brand": "Coles",
-          "brand_short": "C",
+          "state": "",
+          "code": "",
+          "stores": 0
+        },
+        {
+          "id": "Coles · WA",
+          "parent": "Coles",
+          "brand": "Coles",
+          "state": "Western Australia",
+          "code": "WA",
+          "stores": 104
+        },
+        {
+          "id": "Coles · NT",
+          "parent": "Coles",
+          "brand": "Coles",
+          "state": "Northern Territory",
+          "code": "NT",
+          "stores": 8
+        },
+        {
+          "id": "Coles · SA",
+          "parent": "Coles",
+          "brand": "Coles",
+          "state": "South Australia",
+          "code": "SA",
+          "stores": 53
+        },
+        {
+          "id": "Coles · QLD",
+          "parent": "Coles",
+          "brand": "Coles",
+          "state": "Queensland",
+          "code": "QLD",
+          "stores": 190
+        },
+        {
+          "id": "Coles · NSW",
+          "parent": "Coles",
+          "brand": "Coles",
+          "state": "New South Wales",
+          "code": "NSW",
+          "stores": 258
+        },
+        {
+          "id": "Coles · ACT",
+          "parent": "Coles",
+          "brand": "Coles",
+          "state": "Australian Capital Territory",
+          "code": "ACT",
+          "stores": 13
+        },
+        {
+          "id": "Coles · VIC",
+          "parent": "Coles",
+          "brand": "Coles",
+          "state": "Victoria",
+          "code": "VIC",
+          "stores": 235
+        },
+        {
+          "id": "Coles · TAS",
+          "parent": "Coles",
+          "brand": "Coles",
+          "state": "Tasmania",
+          "code": "TAS",
           "stores": 17
         }
       ]
@@ -266,9 +193,9 @@
               "signal": "height"
             }
           ],
-          "paddingInner": 2,
+          "paddingInner": 3,
           "paddingOuter": 2,
-          "paddingTop": 18
+          "paddingTop": 25
         }
       ]
     },
@@ -291,16 +218,6 @@
           "expr": "datum.depth == 1"
         }
       ]
-    },
-    {
-      "name": "root",
-      "source": "tree",
-      "transform": [
-        {
-          "type": "filter",
-          "expr": "datum.depth == 0"
-        }
-      ]
     }
   ],
   "scales": [
@@ -320,7 +237,7 @@
   "marks": [
     {
       "type": "rect",
-      "name": "retailer-tiles",
+      "name": "leaf-tiles",
       "from": {
         "data": "leaves"
       },
@@ -339,21 +256,21 @@
             "field": "y1"
           },
           "fill": {
-            "signal": "scale('brand',datum.data.brand)"
+            "signal": "scale('brand', datum.data ? datum.data.brand : datum.brand)"
           },
           "stroke": {
             "value": "#fffefa"
           },
           "strokeWidth": {
-            "value": 1.2
+            "value": 1
           },
           "tooltip": {
-            "signal": "datum.data.state + ' · ' + datum.data.brand + ': ' + format(datum.data.stores, ',') + ' outlets'"
+            "signal": "(datum.data ? datum.data.brand : datum.brand) + \" · \" + (datum.data ? datum.data.state : datum.state) + \": \" + format(datum.data ? datum.data.stores : datum.stores, \",\") + \" stores\""
           }
         },
         "hover": {
           "fillOpacity": {
-            "value": 0.78
+            "value": 0.75
           }
         },
         "update": {
@@ -365,7 +282,7 @@
     },
     {
       "type": "text",
-      "name": "retailer-labels",
+      "name": "leaf-labels",
       "from": {
         "data": "leaves"
       },
@@ -384,7 +301,7 @@
             "value": "middle"
           },
           "text": {
-            "signal": "datum.data.brand_short"
+            "signal": "datum.data ? datum.data.code : datum.code"
           },
           "font": {
             "value": "DM Sans"
@@ -393,20 +310,20 @@
             "value": "bold"
           },
           "fontSize": {
-            "signal": "max(9,min(14,(datum.x1-datum.x0)/2.2))"
+            "signal": "(datum.x1-datum.x0) < 28 || (datum.y1-datum.y0) < 25 ? 9 : 12"
           },
           "fill": {
             "value": "#ffffff"
           },
           "tooltip": {
-            "signal": "datum.data.state + ' · ' + datum.data.brand + ': ' + datum.data.stores + ' outlets'"
+            "signal": "(datum.data ? datum.data.brand : datum.brand) + ' · ' + (datum.data ? datum.data.state : datum.state) + ': ' + format(datum.data ? datum.data.stores : datum.stores, ',') + ' outlets'"
           }
         }
       }
     },
     {
       "type": "text",
-      "name": "retailer-values",
+      "name": "leaf-values",
       "from": {
         "data": "leaves"
       },
@@ -425,7 +342,7 @@
             "value": "middle"
           },
           "text": {
-            "signal": "format(datum.data.stores, ',')"
+            "signal": "format(datum.data ? datum.data.stores : datum.stores, ',')"
           },
           "font": {
             "value": "DM Sans"
@@ -434,17 +351,17 @@
             "value": 11
           },
           "fill": {
-            "value": "#ffffff"
+            "value": "#e7f3f0"
           },
           "opacity": {
-            "signal": "(datum.x1-datum.x0)>40 && (datum.y1-datum.y0)>48 ? 1 : 0"
+            "signal": "(datum.x1-datum.x0)>44 && (datum.y1-datum.y0)>50 ? 1 : 0"
           }
         }
       }
     },
     {
       "type": "rect",
-      "name": "state-headers",
+      "name": "group-headers",
       "from": {
         "data": "groups"
       },
@@ -460,33 +377,36 @@
             "field": "y0"
           },
           "height": {
-            "value": 18
+            "value": 23
           },
           "fill": {
             "value": "#183b3d"
+          },
+          "stroke": {
+            "value": "#fffefa"
+          },
+          "strokeWidth": {
+            "value": 1
           }
         }
       }
     },
     {
       "type": "text",
-      "name": "state-labels",
+      "name": "group-labels",
       "from": {
         "data": "groups"
       },
       "encode": {
         "enter": {
           "x": {
-            "signal": "(datum.x0+datum.x1)/2"
+            "signal": "datum.x0 + 9"
           },
           "y": {
-            "signal": "datum.y0 + 13"
-          },
-          "align": {
-            "value": "center"
+            "signal": "datum.y0 + 16"
           },
           "text": {
-            "signal": "datum.data.code"
+            "signal": "(datum.data ? datum.data.brand : datum.brand) + \" · \" + format(datum.value, \",\") + \" outlets\""
           },
           "font": {
             "value": "DM Sans"
@@ -495,71 +415,10 @@
             "value": "bold"
           },
           "fontSize": {
-            "signal": "max(9,min(13,(datum.x1-datum.x0)/3))"
+            "value": 13
           },
           "fill": {
             "value": "#ffffff"
-          },
-          "tooltip": {
-            "signal": "datum.data.state + ' · ' + format(datum.value,',') + ' outlets total'"
-          }
-        }
-      }
-    },
-    {
-      "type": "rect",
-      "name": "total-header",
-      "from": {
-        "data": "root"
-      },
-      "encode": {
-        "enter": {
-          "x": {
-            "field": "x0"
-          },
-          "x2": {
-            "field": "x1"
-          },
-          "y": {
-            "field": "y0"
-          },
-          "height": {
-            "value": 18
-          },
-          "fill": {
-            "value": "#e9f0e8"
-          }
-        }
-      }
-    },
-    {
-      "type": "text",
-      "name": "total-label",
-      "from": {
-        "data": "root"
-      },
-      "encode": {
-        "enter": {
-          "x": {
-            "signal": "datum.x0+8"
-          },
-          "y": {
-            "signal": "datum.y0+13"
-          },
-          "text": {
-            "value": "AUSTRALIA · 2,020 RECORDED TWO-CHAIN OUTLETS"
-          },
-          "font": {
-            "value": "DM Sans"
-          },
-          "fontSize": {
-            "value": 11
-          },
-          "fontWeight": {
-            "value": "bold"
-          },
-          "fill": {
-            "value": "#173d3b"
           }
         }
       }
