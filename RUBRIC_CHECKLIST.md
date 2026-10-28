@@ -1,13 +1,11 @@
-# Current checklist
+# The Aisle Effect — project overview
 
-See `RUBRIC_AUDIT.md` for the updated, chart-by-chart assessment and verified arithmetic.
+**Website:** https://muidadnan.github.io/NewNew4final-FIANL/
 
-**Remaining user actions:** verify all 14 Vega/Vega-Lite charts on a live public site; confirm external map geometry and fonts load; draw and scan the required A4 sketch yourself; publish the files in the correct public GitHub Pages repository; insert the URL, sketch and full-page screenshot in the official Moodle submission template; and prepare for the studio interview.
+The project is an Australian supermarket data story with fourteen Vega/Vega-Lite visualisations in four chapters: geographic footprints, two-chain comparisons, historical grocery sales shares and nominal food-retailing turnover.
 
-The website code has been revised, but **deployment and submission have not been performed**. The official due date was 25 October 2026, so check the applicable late-submission/extension policy.
+**Core coverage:** six Australian states and two mainland territories; three different principal map idioms plus a schematic equal-area tile map; multiple non-basic idioms; public source attribution; concise annotations; interactive tooltips; responsive single-page layout; authorship/date; and an explicit AI-use acknowledgement.
 
-- [x] Enhanced interpretation on all 14 visualisations (finding, why, source, method, limitations).
-- [x] Additional six-item reader glossary and distinct chapter analyses.
-- [x] Checked map 01–04 proportional size, colour meaning and cartogram overlap; see CHART_INVENTORY.md.
-- [x] Data/JSON static validation and four-width placeholder layout test.
-- [ ] Manually check all 14 real Vega charts on GitHub Pages in an online browser.
+**Submission components:** the official Word template contains Part A (visualisation URL), Part B (domain, who, why, what and how), Part C (student hand-drawn sketch PDF URL and image) and Part D (full-size website screenshot).
+
+**Data boundaries:** state-level ScrapeHero outlet snapshots for Woolworths and Coles are not a census of all grocery stores. Historical ACCC grocery-sales shares and ABS food-retailing turnover are distinct from store counts. See `data/SOURCES.md` for precise periods, definitions and source URLs.
