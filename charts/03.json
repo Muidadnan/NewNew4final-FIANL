@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Standalone schematic circle cartogram of states and territories sized by counts of Coles and Woolworths locations. All eight records are inlined from data/dorling_cartogram.csv to avoid deployment-path issues. Positions are illustrative and not calculated by Dorling optimization.",
+  "description": "Self-contained schematic circle cartogram of Coles and Woolworths store counts. All eight state/territory abbreviations and their counts are printed inside proportional circles. Circle area is proportional to store count; positions are illustrative, not a dynamically calculated Dorling cartogram.",
   "background": null,
   "config": {
     "view": {
@@ -26,146 +26,122 @@
       {
         "state": "Western Australia",
         "code": "WA",
-        "x": 76.0,
-        "y": 181.0,
+        "x": 76,
+        "y": 181,
         "stores": 221,
         "woolworths": 117,
         "coles": 104,
         "wool_share": 52.9,
         "per100k": 7.14,
-        "plotY": 259.0,
-        "textY": 269.0,
-        "countY": 248.0,
-        "labelColor": "#153B3C",
-        "externalX": 76.0,
-        "externalPlotY": 259.0,
-        "externalText": ""
+        "plotY": 259,
+        "textY": 269,
+        "countY": 248,
+        "labelColor": "#153B3C"
       },
       {
         "state": "Northern Territory",
         "code": "NT",
-        "x": 170.0,
-        "y": 91.0,
+        "x": 170,
+        "y": 91,
         "stores": 20,
         "woolworths": 12,
         "coles": 8,
-        "wool_share": 60.0,
+        "wool_share": 60,
         "per100k": 7.44,
-        "plotY": 349.0,
-        "textY": 359.0,
-        "countY": 338.0,
-        "labelColor": "#ffffff",
-        "externalX": 225,
-        "externalPlotY": 361.0,
-        "externalText": "NT · 20"
+        "plotY": 349,
+        "textY": 354,
+        "countY": 343.8,
+        "labelColor": "#ffffff"
       },
       {
         "state": "South Australia",
         "code": "SA",
-        "x": 205.0,
-        "y": 218.0,
+        "x": 205,
+        "y": 218,
         "stores": 122,
         "woolworths": 69,
         "coles": 53,
         "wool_share": 56.6,
         "per100k": 6.36,
-        "plotY": 222.0,
-        "textY": 232.0,
-        "countY": 211.0,
-        "labelColor": "#153B3C",
-        "externalX": 205.0,
-        "externalPlotY": 222.0,
-        "externalText": ""
+        "plotY": 222,
+        "textY": 232,
+        "countY": 211,
+        "labelColor": "#153B3C"
       },
       {
         "state": "Queensland",
         "code": "QLD",
-        "x": 328.0,
-        "y": 112.0,
+        "x": 328,
+        "y": 112,
         "stores": 454,
         "woolworths": 264,
         "coles": 190,
         "wool_share": 58.1,
         "per100k": 7.91,
-        "plotY": 328.0,
-        "textY": 338.0,
-        "countY": 317.0,
-        "labelColor": "#ffffff",
-        "externalX": 328.0,
-        "externalPlotY": 328.0,
-        "externalText": ""
+        "plotY": 328,
+        "textY": 338,
+        "countY": 317,
+        "labelColor": "#ffffff"
       },
       {
         "state": "New South Wales",
         "code": "NSW",
-        "x": 383.0,
-        "y": 241.0,
+        "x": 383,
+        "y": 241,
         "stores": 606,
         "woolworths": 348,
         "coles": 258,
         "wool_share": 57.4,
         "per100k": 6.99,
-        "plotY": 199.0,
-        "textY": 209.0,
-        "countY": 188.0,
-        "labelColor": "#153B3C",
-        "externalX": 383.0,
-        "externalPlotY": 199.0,
-        "externalText": ""
+        "plotY": 199,
+        "textY": 209,
+        "countY": 188,
+        "labelColor": "#153B3C"
       },
       {
         "state": "Australian Capital Territory",
         "code": "ACT",
-        "x": 461.0,
-        "y": 309.0,
+        "x": 461,
+        "y": 309,
         "stores": 33,
         "woolworths": 20,
         "coles": 13,
         "wool_share": 60.6,
         "per100k": 6.74,
-        "plotY": 131.0,
-        "textY": 141.0,
-        "countY": 120.0,
-        "labelColor": "#ffffff",
-        "externalX": 437,
-        "externalPlotY": 160.0,
-        "externalText": "ACT · 33"
+        "plotY": 131,
+        "textY": 136,
+        "countY": 125.8,
+        "labelColor": "#ffffff"
       },
       {
         "state": "Victoria",
         "code": "VIC",
-        "x": 281.0,
-        "y": 308.0,
+        "x": 265,
+        "y": 308,
         "stores": 515,
         "woolworths": 280,
         "coles": 235,
         "wool_share": 54.4,
         "per100k": 7.2,
-        "plotY": 132.0,
-        "textY": 142.0,
-        "countY": 121.0,
-        "labelColor": "#153B3C",
-        "externalX": 281.0,
-        "externalPlotY": 132.0,
-        "externalText": ""
+        "plotY": 132,
+        "textY": 142,
+        "countY": 121,
+        "labelColor": "#153B3C"
       },
       {
         "state": "Tasmania",
         "code": "TAS",
-        "x": 351.0,
-        "y": 392.0,
+        "x": 351,
+        "y": 392,
         "stores": 49,
         "woolworths": 32,
         "coles": 17,
         "wool_share": 65.3,
         "per100k": 8.44,
-        "plotY": 48.0,
-        "textY": 58.0,
-        "countY": 37.0,
-        "labelColor": "#ffffff",
-        "externalX": 408,
-        "externalPlotY": 44.0,
-        "externalText": "TAS · 49"
+        "plotY": 48,
+        "textY": 53,
+        "countY": 42.8,
+        "labelColor": "#ffffff"
       }
     ]
   },
@@ -216,7 +192,7 @@
             ],
             "range": [
               0,
-              9300
+              11500
             ]
           },
           "legend": {
@@ -396,21 +372,21 @@
     {
       "transform": [
         {
-          "filter": "datum.stores < 75"
+          "filter": "datum.code === 'NT'"
         }
       ],
       "mark": {
         "type": "text",
         "font": "DM Sans",
         "fontWeight": "bold",
-        "fontSize": 12,
+        "fontSize": 9,
         "baseline": "middle",
         "align": "center",
-        "color": "#183e3d"
+        "limit": 40
       },
       "encoding": {
         "x": {
-          "field": "externalX",
+          "field": "x",
           "type": "quantitative",
           "scale": {
             "domain": [
@@ -423,7 +399,7 @@
           "axis": null
         },
         "y": {
-          "field": "externalPlotY",
+          "field": "textY",
           "type": "quantitative",
           "scale": {
             "domain": [
@@ -436,8 +412,287 @@
           "axis": null
         },
         "text": {
-          "field": "externalText",
+          "field": "code",
           "type": "nominal"
+        },
+        "color": {
+          "field": "labelColor",
+          "type": "nominal",
+          "scale": null,
+          "legend": null
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.code === 'NT'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontWeight": "bold",
+        "fontSize": 8,
+        "baseline": "middle",
+        "align": "center",
+        "limit": 40
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              500
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "countY",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              440
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "stores",
+          "type": "quantitative",
+          "format": ",.0f"
+        },
+        "color": {
+          "field": "labelColor",
+          "type": "nominal",
+          "scale": null,
+          "legend": null
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.code === 'ACT'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontWeight": "bold",
+        "fontSize": 9,
+        "baseline": "middle",
+        "align": "center",
+        "limit": 40
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              500
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "textY",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              440
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "code",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "labelColor",
+          "type": "nominal",
+          "scale": null,
+          "legend": null
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.code === 'ACT'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontWeight": "bold",
+        "fontSize": 8,
+        "baseline": "middle",
+        "align": "center",
+        "limit": 40
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              500
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "countY",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              440
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "stores",
+          "type": "quantitative",
+          "format": ",.0f"
+        },
+        "color": {
+          "field": "labelColor",
+          "type": "nominal",
+          "scale": null,
+          "legend": null
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.code === 'TAS'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontWeight": "bold",
+        "fontSize": 10,
+        "baseline": "middle",
+        "align": "center",
+        "limit": 40
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              500
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "textY",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              440
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "code",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "labelColor",
+          "type": "nominal",
+          "scale": null,
+          "legend": null
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.code === 'TAS'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontWeight": "bold",
+        "fontSize": 9,
+        "baseline": "middle",
+        "align": "center",
+        "limit": 40
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              500
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "countY",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              440
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "stores",
+          "type": "quantitative",
+          "format": ",.0f"
+        },
+        "color": {
+          "field": "labelColor",
+          "type": "nominal",
+          "scale": null,
+          "legend": null
         }
       }
     }
