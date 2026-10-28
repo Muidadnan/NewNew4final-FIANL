@@ -307,7 +307,7 @@
       <article class="vis-card one-third">
  <div class="card-top"><span class="number">04 / MAP</span><span class="idiom">EQUAL-AREA TILE MAP</span></div>
  <h3>Which chain has the larger footprint in each place?</h3>
- <p class="deck">Each tile stands for one jurisdiction or territory, regardless of its size or population. The colour and percentage show Woolworths' share of the two chains' combined outlets.</p>
+ <p class="deck">Each tile stands for one state or territory, regardless of its size or population. The colour and percentage show Woolworths' share of the two chains' combined outlets.</p>
  <div aria-label="Chart 04: Which chain has the larger footprint in each place?" class="vis tilesvis" id="vis04" role="group"></div>
  
  <div class="card-bottom"><b>HOW TO READ THE TILES</b><span>Eight labelled tiles = six states + ACT + NT. Darker teal means a higher Woolworths proportion. Tiles are equal-sized and only roughly arranged geographically.</span></div>
@@ -614,18 +614,18 @@
       </article>
       <article class="vis-card">
  <div class="card-top"><span class="number">08 / STRUCTURE</span><span class="idiom">HIERARCHICAL TREEMAP</span></div>
- <h3>How do the two chains divide across the country?</h3>
- <p class="deck">There are eight jurisdiction groups, one for each of the six states and two mainland territories. Each group contains exactly two coloured rectangles: Woolworths (W) and Coles (C). Their areas show outlet counts.</p>
+ <h3>How are each chain's stores spread across Australia?</h3>
+ <p class="deck">The two large groups are Woolworths and Coles. Within each group, eight labelled rectangles represent the six states and two mainland territories. Larger rectangles mean more recorded stores.</p>
  <div aria-label="Chart 08: How do the two chains divide across the country?" class="vis treemapvis" id="vis08" role="group"></div>
  <div class="treemap-key" aria-label="Exact retailer counts by state and territory"><div class="treemap-key-heading">EXACT COUNTS · W = WOOLWORTHS · C = COLES</div><div class="treemap-key-item"><b>NSW</b><span>W 348 &nbsp;·&nbsp; C 258</span></div><div class="treemap-key-item"><b>VIC</b><span>W 280 &nbsp;·&nbsp; C 235</span></div><div class="treemap-key-item"><b>QLD</b><span>W 264 &nbsp;·&nbsp; C 190</span></div><div class="treemap-key-item"><b>WA</b><span>W 117 &nbsp;·&nbsp; C 104</span></div><div class="treemap-key-item"><b>SA</b><span>W 69 &nbsp;·&nbsp; C 53</span></div><div class="treemap-key-item"><b>TAS</b><span>W 32 &nbsp;·&nbsp; C 17</span></div><div class="treemap-key-item"><b>ACT</b><span>W 20 &nbsp;·&nbsp; C 13</span></div><div class="treemap-key-item"><b>NT</b><span>W 12 &nbsp;·&nbsp; C 8</span></div></div>
- <div class="card-bottom"><b>NO MYSTERY RECTANGLES</b><span>Dark headers name each jurisdiction. Teal = Woolworths (W); coral = Coles (C). Every retailer tile is labelled, and the exact values appear in the key below.</span></div>
+ <div class="card-bottom"><b>READ THE RECTANGLES</b><span>Teal represents Woolworths; coral represents Coles. Every rectangle is labelled with a state or territory abbreviation. The exact numbers are listed above.</span></div>
  <div aria-label="Explanation of chart 8" class="evidence-note">
  <span class="evidence-kicker">THE FINDING · THE LARGEST PARTS OF EACH CHAIN</span>
  <p class="evidence-findings">NSW and Victoria contribute the largest outlet totals for both retailers. Across all eight jurisdictions, the snapshot records 1,142 Woolworths and 878 Coles stores.</p>
- <p class="evidence-why"><strong>Why it matters:</strong> The nested rectangles reveal two things at once: the total footprint of each jurisdiction and how that footprint divides between the two retailers.</p>
+ <p class="evidence-why"><strong>Why it matters:</strong> Within each retailer, the rectangles show how its stores are distributed across Australia. The larger Woolworths group also shows its higher overall store count.</p>
  <div class="evidence-source"><span><strong>DATA:</strong> ScrapeHero 2026 location snapshots; totals checked against jurisdiction-level source data.</span></div>
  </div>
- <details class="method-dropdown"><summary>Methods and limitations</summary><p>Vega builds a real three-level hierarchy: Australia → eight jurisdictions → Woolworths and Coles. Rectangle area encodes outlet count. The eight dark header bands label jurisdictions, not additional store categories; the 16 coloured leaf rectangles represent the eight jurisdictions multiplied by two retailers. Exact counts are listed in the key and in hover details.</p></details>
+ <details class="method-dropdown"><summary>Methods and limitations</summary><p>The original Vega treemap hierarchy is restored: all stores → two retailers → eight jurisdictions per retailer. The 16 rectangles are the actual state/territory store counts. The dark group headers identify the two retailers. Every jurisdiction rectangle is labelled, including the small ACT and NT tiles.</p></details>
  </article>
       <article class="vis-card feature-parallel">
        <div class="card-top">
