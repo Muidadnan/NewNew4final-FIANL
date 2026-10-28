@@ -10,8 +10,8 @@
       "titleFont": "DM Sans",
       "labelFontSize": 11,
       "titleFontSize": 11,
-      "labelColor": "#45615c",
-      "titleColor": "#183d3c",
+      "labelColor": "#000000",
+      "titleColor": "#000000",
       "gridColor": "#e3eae5",
       "tickColor": "#cedbd2",
       "domain": false,
@@ -23,8 +23,9 @@
       "titleFont": "DM Sans",
       "labelFontSize": 10,
       "titleFontSize": 11,
-      "labelColor": "#45615c",
-      "orient": "bottom"
+      "labelColor": "#000000",
+      "orient": "bottom",
+      "titleColor": "#000000"
     },
     "title": {
       "font": "Fraunces",
@@ -172,10 +173,10 @@
         "dx": 6,
         "dy": 0,
         "font": "DM Sans",
-        "fontSize": 12,
+        "fontSize": 14,
         "fontWeight": "bold",
-        "fill": "#173d3b",
-        "stroke": "#ffffff",
+        "fill": "#000000",
+        "stroke": null,
         "strokeWidth": 3
       },
       "encoding": {
