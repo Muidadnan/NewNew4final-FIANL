@@ -1,4 +1,4 @@
-/* FIT3179 DV2 — original visualisation specifications, AI-assisted; JSON and data statically checked; verify live browser rendering. */
+/* FIT3179 DV2 — Vega/Vega-Lite chart embedding; AI assistance is acknowledged in the website footer. */
 const BASE = new URL('../', document.currentScript.src);
 const CHARTS = Array.from({length:14}, (_,i)=>i+1);
 const label = n => String(n).padStart(2,'0');
