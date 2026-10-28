@@ -101,7 +101,7 @@
       {
         "field": "state",
         "type": "nominal",
-        "title": "State"
+        "title": "State or territory"
       },
       {
         "field": "total",
