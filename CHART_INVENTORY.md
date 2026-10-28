@@ -1,33 +1,26 @@
-# Chart inventory and encoding checks
+# Chart inventory — visual idioms and data meaning
 
-| # | Chart | Idiom | Rubric grouping |
-|---|---|---|---|
-| 01 | State density | Choropleth map | advanced |
-| 02 | Total outlet counts | Proportional symbol map | advanced |
-| 03 | Circle state cartogram | manually arranged circle cartogram (not auto-Dorling) | advanced |
-| 04 | Two-chain leader tiles | Equal-size tile map | advanced supplementary |
-| 05 | Store counts by state | Grouped bar | basic |
-| 06 | Per-capita retailer gap | Connected dot | treat as basic unless tutor confirms otherwise |
-| 07 | Population vs store count, national benchmark with direct labels | Scatter | basic |
-| 08 | Retailer → state breakdown | Hierarchical treemap | advanced |
-| 09 | State profiles across four measures, dropdown focus line | Parallel coordinates | advanced |
-| 10 | Two chains out of 100 | Waffle | advanced |
-| 11 | Historical market ranks | Bump | advanced |
-| 12 | Market-share changes | Diverging bar | basic |
-| 13 | National food turnover | Line | basic |
-| 14 | Year-on-year monthly turnover | Sequential heatmap | advanced |
+| # | Visualisation | Idiom | Main comparison |
+| --- | --- | --- | --- |
+| 01 | Outlets per resident across Australia | Choropleth map | Geographic rates |
+| 02 | Total rank versus population-adjusted rank | Slopegraph | Ranking shifts |
+| 03 | States sized by combined stores | Schematic circle cartogram | Absolute store totals without land-area dominance |
+| 04 | Which chain leads in each jurisdiction? | Equal-area tile-grid map | Woolworths share of the two-chain store count |
+| 05 | Woolworths and Coles outlet totals | Grouped bar chart | Retailer counts |
+| 06 | Retailer outlets per resident | Connected dot chart | Per-capita brand comparison |
+| 07 | Population versus total outlets | Scatterplot with benchmark | Population and absolute totals |
+| 08 | How each chain's stores are distributed | Retailer-first hierarchical treemap | Retailer and jurisdiction hierarchy |
+| 09 | State profiles across four measures | Parallel coordinates | Relative position across indicators |
+| 10 | Two chains' 57.3% historic share | 100-cell waffle | Part-to-whole proportion |
+| 11 | Historic grocery-sales-share rankings | Bump chart | Rank changes over periods |
+| 12 | Changes in historic sales share | Diverging bars | Percentage-point shifts |
+| 13 | Monthly food-retailing turnover | Line chart | Nominal spending trend |
+| 14 | Year-on-year monthly turnover changes | Sequential heatmap | Month-by-year change |
 
-**Count:** 14 separate chart specifications. Defensible advanced groupings: choropleth, proportional-symbol, Dorling-style cartogram, hierarchical treemap, parallel coordinates, waffle, bump chart, heatmap; plus the supplementary tile map. Connected dot may count as basic if the tutor considers it a dot plot. The different map idioms are all considered advanced by the official DV2 rubric, although individual suitability/counting remains the marker's decision.
+**Three map idioms:** a conventional geographic choropleth (01), a circle cartogram (03) and an equal-area tile-grid map (04). Chart 02 is a slopegraph, not a proportional-symbol map. Charts 03 and 04 are schematic; only Chart 01 uses real state boundaries.
 
-**Data periods:** 2026 store snapshots, historical ACCC market shares through FY2022–23, ABS food turnover ending June 2025. These are not a unified same-year dataset.
+**Advanced visual idioms:** the three map views, slopegraph, nested treemap, parallel coordinates, waffle, bump chart and heatmap supplement the basic bars, dots, scatterplot and line chart. The official rubric and marker determine the final classification of each idiom.
 
-## Chart 01–04 validity
+**Data periods:** ScrapeHero 2026 retailer outlet snapshots; ABS March 2026 population; ACCC historic national take-home food and grocery sales shares to FY2022–23; ABS food-retailing turnover to June 2025. The measures have different denominators and periods and are never combined into a fictitious same-year dataset.
 
-1. **Choropleth (valid):** Real state GeoJSON polygons; sequential colour by stores per 100,000; no unnormalised counts in fill.
-2. **Proportional symbols (valid):** Approximate one-symbol-per-state location, with **area** ∝ store count; map polygons retained.
-3. **Circle cartogram (schematic, valid with caveat):** Polygons replaced, non-overlapping circle size ∝ count; positions prearranged. Do not call it an automatically computed Dorling layout.
-4. **Tile-grid map (valid schematic):** Equal-sized state tiles with approximate geographic arrangement, colour ∝ Woolworths percentage. Supplementary to primary three maps.
-
-Refer to the chart cards for plain-English "why this idiom", marks, channels, sources and limitations.
-
-**Readability pass:** The population scatter now uses equal-size points with leader-line direct labels, and a full-width layout. The circle cartogram labels ACT/NT separately. The four-dimensional profile chart now foregrounds one chosen state while preserving seven grey comparison lines and displaying axis-specific min/max ranges. The homepage now explicitly says the state maps cover two chains, not all supermarkets.
+**Encoding:** choropleth colour means outlets per 100,000; cartogram circle area means combined store count; equal tile colour and labels mean Woolworths' share of Woolworths plus Coles outlets; slopegraph vertical position means rank (1 = highest). All eight jurisdictions comprise six states plus ACT and NT.
