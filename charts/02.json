@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Slopegraph: rank changes between combined store totals and population-normalised store counts across Australia's six states and two mainland territories. NSW and Tasmania are highlighted; all eight jurisdictions are labelled.",
   "background": null,
   "config": {
     "view": {
@@ -34,99 +35,427 @@
     "font": "DM Sans",
     "background": null
   },
-  "width": 470,
+  "width": 410,
   "height": 340,
-  "projection": {
-    "type": "equalEarth"
+  "padding": {
+    "left": 42,
+    "right": 43,
+    "top": 16,
+    "bottom": 28
   },
-  "layer": [
+  "data": {
+    "url": "data/states.csv"
+  },
+  "transform": [
     {
-      "data": {
-        "url": "https://raw.githubusercontent.com/tonywr71/GeoJson-Data/master/australian-states.json",
-        "format": {
-          "type": "json",
-          "property": "features"
+      "window": [
+        {
+          "op": "rank",
+          "as": "rankTotal"
         }
-      },
-      "mark": {
-        "type": "geoshape",
-        "fill": "#e8efeb",
-        "stroke": "#ffffff",
-        "strokeWidth": 1.2
-      }
+      ],
+      "sort": [
+        {
+          "field": "total",
+          "order": "descending"
+        }
+      ]
     },
     {
-      "data": {
-        "url": "data/states.csv",
-        "format": {
-          "type": "csv"
+      "window": [
+        {
+          "op": "rank",
+          "as": "rankRate"
         }
-      },
+      ],
+      "sort": [
+        {
+          "field": "per100k",
+          "order": "descending"
+        }
+      ]
+    },
+    {
+      "fold": [
+        "rankTotal",
+        "rankRate"
+      ],
+      "as": [
+        "metric",
+        "rank"
+      ]
+    },
+    {
+      "calculate": "datum.metric === 'rankTotal' ? 'Total stores' : 'Per 100k residents'",
+      "as": "view"
+    }
+  ],
+  "layer": [
+    {
       "mark": {
-        "type": "circle",
-        "opacity": 0.82,
-        "stroke": "#ffffff",
-        "strokeWidth": 1.5
+        "type": "line",
+        "strokeWidth": 2.3,
+        "opacity": 0.78
       },
       "encoding": {
-        "longitude": {
-          "field": "lon",
-          "type": "quantitative"
-        },
-        "latitude": {
-          "field": "lat",
-          "type": "quantitative"
-        },
-        "size": {
-          "field": "total",
-          "type": "quantitative",
-          "title": "Number of stores",
-          "scale": {
-            "type": "linear",
-            "domain": [
-              0,
-              650
-            ],
-            "range": [
-              35,
-              3200
-            ]
-          },
-          "legend": {
-            "title": "Recorded stores · circle area",
-            "values": [
-              20,
-              150,
-              350,
-              600
-            ],
-            "symbolFillColor": "#12756c",
-            "symbolStrokeColor": "#ffffff",
-            "symbolStrokeWidth": 1,
-            "symbolOpacity": 0.9
+        "x": {
+          "field": "view",
+          "type": "ordinal",
+          "sort": [
+            "Total stores",
+            "Per 100k residents"
+          ],
+          "axis": {
+            "title": null,
+            "labelAngle": 0,
+            "labelFontSize": 13,
+            "labelPadding": 12
           }
         },
+        "y": {
+          "field": "rank",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              8.6,
+              0.4
+            ],
+            "nice": false
+          },
+          "axis": {
+            "title": "Rank (1 = highest)",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "grid": true
+          }
+        },
+        "detail": {
+          "field": "code",
+          "type": "nominal"
+        },
         "color": {
-          "value": "#12756c"
+          "condition": [
+            {
+              "test": "datum.code === 'TAS'",
+              "value": "#d45039"
+            },
+            {
+              "test": "datum.code === 'NSW'",
+              "value": "#12756c"
+            }
+          ],
+          "value": "#7d9993"
         },
         "tooltip": [
           {
             "field": "state",
-            "type": "nominal"
+            "type": "nominal",
+            "title": "State or territory"
           },
           {
             "field": "total",
             "type": "quantitative",
-            "title": "Coles + Woolworths"
+            "title": "Combined stores"
           },
           {
-            "field": "code",
+            "field": "per100k",
+            "type": "quantitative",
+            "format": ".2f",
+            "title": "Stores / 100k"
+          },
+          {
+            "field": "rankTotal",
+            "type": "quantitative",
+            "title": "Total-store rank"
+          },
+          {
+            "field": "rankRate",
+            "type": "quantitative",
+            "title": "Per-capita rank"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 90,
+        "stroke": "#fffefa",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "view",
+          "type": "ordinal",
+          "sort": [
+            "Total stores",
+            "Per 100k residents"
+          ],
+          "axis": {
+            "title": null,
+            "labelAngle": 0,
+            "labelFontSize": 13,
+            "labelPadding": 12
+          }
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              8.6,
+              0.4
+            ],
+            "nice": false
+          },
+          "axis": {
+            "title": "Rank (1 = highest)",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "grid": true
+          }
+        },
+        "color": {
+          "condition": [
+            {
+              "test": "datum.code === 'TAS'",
+              "value": "#d45039"
+            },
+            {
+              "test": "datum.code === 'NSW'",
+              "value": "#12756c"
+            }
+          ],
+          "value": "#7d9993"
+        },
+        "tooltip": [
+          {
+            "field": "state",
             "type": "nominal",
-            "title": "State code"
+            "title": "State or territory"
+          },
+          {
+            "field": "total",
+            "type": "quantitative",
+            "title": "Combined stores"
+          },
+          {
+            "field": "per100k",
+            "type": "quantitative",
+            "format": ".2f",
+            "title": "Stores / 100k"
+          },
+          {
+            "field": "rankTotal",
+            "type": "quantitative",
+            "title": "Total-store rank"
+          },
+          {
+            "field": "rankRate",
+            "type": "quantitative",
+            "title": "Per-capita rank"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.metric === 'rankTotal'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -12,
+        "font": "DM Sans",
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {
+          "field": "view",
+          "type": "ordinal",
+          "sort": [
+            "Total stores",
+            "Per 100k residents"
+          ],
+          "axis": {
+            "title": null,
+            "labelAngle": 0,
+            "labelFontSize": 13,
+            "labelPadding": 12
+          }
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              8.6,
+              0.4
+            ],
+            "nice": false
+          },
+          "axis": {
+            "title": "Rank (1 = highest)",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "grid": true
+          }
+        },
+        "text": {
+          "field": "code",
+          "type": "nominal"
+        },
+        "color": {
+          "value": "#173d3b"
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State or territory"
+          },
+          {
+            "field": "total",
+            "type": "quantitative",
+            "title": "Combined stores"
+          },
+          {
+            "field": "per100k",
+            "type": "quantitative",
+            "format": ".2f",
+            "title": "Stores / 100k"
+          },
+          {
+            "field": "rankTotal",
+            "type": "quantitative",
+            "title": "Total-store rank"
+          },
+          {
+            "field": "rankRate",
+            "type": "quantitative",
+            "title": "Per-capita rank"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.metric === 'rankRate'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 12,
+        "font": "DM Sans",
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {
+          "field": "view",
+          "type": "ordinal",
+          "sort": [
+            "Total stores",
+            "Per 100k residents"
+          ],
+          "axis": {
+            "title": null,
+            "labelAngle": 0,
+            "labelFontSize": 13,
+            "labelPadding": 12
+          }
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              8.6,
+              0.4
+            ],
+            "nice": false
+          },
+          "axis": {
+            "title": "Rank (1 = highest)",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "grid": true
+          }
+        },
+        "text": {
+          "field": "code",
+          "type": "nominal"
+        },
+        "color": {
+          "value": "#173d3b"
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State or territory"
+          },
+          {
+            "field": "total",
+            "type": "quantitative",
+            "title": "Combined stores"
+          },
+          {
+            "field": "per100k",
+            "type": "quantitative",
+            "format": ".2f",
+            "title": "Stores / 100k"
+          },
+          {
+            "field": "rankTotal",
+            "type": "quantitative",
+            "title": "Total-store rank"
+          },
+          {
+            "field": "rankRate",
+            "type": "quantitative",
+            "title": "Per-capita rank"
           }
         ]
       }
     }
-  ],
-  "description": "Valid proportional-symbol map: area represents combined Woolworths and Coles count; one anchored circle per state, not exact store locations."
+  ]
 }
