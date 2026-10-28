@@ -4,7 +4,7 @@
 
 The project is an Australian supermarket data story with fourteen Vega/Vega-Lite visualisations in four chapters: geographic footprints, two-chain comparisons, historical grocery sales shares and nominal food-retailing turnover.
 
-**Core coverage:** six Australian states and two mainland territories; three distinct map idioms (choropleth, schematic circle cartogram and equal-area tile map); multiple non-basic idioms; public source attribution; concise annotations; interactive tooltips; responsive single-page layout; authorship/date; and an explicit AI-use acknowledgement.
+**Core coverage:** six Australian states and two mainland territories; four map views (choropleth, proportional-symbol map, schematic circle cartogram and equal-area tile map); multiple non-basic idioms; public source attribution; concise annotations; interactive tooltips; responsive single-page layout; authorship/date; and an explicit AI-use acknowledgement.
 
 **Submission components:** the official Word template contains Part A (visualisation URL), Part B (domain, who, why, what and how), Part C (student hand-drawn sketch PDF URL and image) and Part D (full-size website screenshot).
 
