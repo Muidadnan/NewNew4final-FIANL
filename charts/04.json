@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Eight tiles only, one for each of six Australian states and ACT/NT. Every abbreviation and percentage is centered INSIDE its tile using explicit numeric center coordinates rather than band-edge offsets.",
   "background": null,
   "config": {
     "view": {
@@ -35,35 +36,85 @@
     "background": null
   },
   "width": 420,
-  "height": 290,
+  "height": 285,
   "data": {
     "url": "data/tiles.csv"
   },
+  "transform": [
+    {
+      "calculate": "datum.col + 0.04",
+      "as": "x0"
+    },
+    {
+      "calculate": "datum.col + 0.96",
+      "as": "x1"
+    },
+    {
+      "calculate": "datum.row + 0.04",
+      "as": "y0"
+    },
+    {
+      "calculate": "datum.row + 0.96",
+      "as": "y1"
+    },
+    {
+      "calculate": "datum.col + 0.5",
+      "as": "xc"
+    },
+    {
+      "calculate": "datum.row + 0.5",
+      "as": "yc"
+    },
+    {
+      "calculate": "format(datum.wool_share, '.1f') + '%'",
+      "as": "shareLabel"
+    }
+  ],
   "layer": [
     {
       "mark": {
         "type": "rect",
-        "cornerRadius": 7,
-        "stroke": "#ffffff",
+        "cornerRadius": 6,
+        "stroke": "#fffefa",
         "strokeWidth": 2
       },
       "encoding": {
         "x": {
-          "field": "col",
-          "type": "ordinal",
-          "axis": null,
-          "sort": "ascending"
+          "field": "x0",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              4
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
         },
         "y": {
-          "field": "row",
-          "type": "ordinal",
-          "axis": null,
-          "sort": "ascending"
+          "field": "y0",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              3,
+              0
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
+        },
+        "x2": {
+          "field": "x1"
+        },
+        "y2": {
+          "field": "y1"
         },
         "color": {
           "field": "wool_share",
           "type": "quantitative",
-          "title": "Woolworths share (%)",
+          "title": "Woolworths share of two chains (%)",
           "scale": {
             "domain": [
               50,
@@ -76,9 +127,9 @@
             "clamp": true
           },
           "legend": {
-            "title": "Woolworths / two-chain stores (%)",
             "orient": "bottom",
             "gradientLength": 175,
+            "title": "Woolworths share (%)",
             "format": ".0f"
           }
         },
@@ -108,28 +159,43 @@
     {
       "mark": {
         "type": "text",
-        "fontSize": 17,
-        "fontWeight": "bold"
+        "font": "DM Sans",
+        "fontWeight": "bold",
+        "fontSize": 15,
+        "align": "center",
+        "baseline": "middle",
+        "dy": -11
       },
       "encoding": {
         "x": {
-          "field": "col",
-          "type": "ordinal",
-          "axis": null,
-          "sort": "ascending"
+          "field": "xc",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              4
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
         },
         "y": {
-          "field": "row",
-          "type": "ordinal",
-          "axis": null,
-          "sort": "ascending"
+          "field": "yc",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              3,
+              0
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
         },
         "text": {
           "field": "code",
           "type": "nominal"
-        },
-        "yOffset": {
-          "value": -13
         },
         "color": {
           "condition": {
@@ -137,31 +203,66 @@
             "value": "#ffffff"
           },
           "value": "#153d3c"
-        }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State or territory"
+          },
+          {
+            "field": "woolworths",
+            "type": "quantitative"
+          },
+          {
+            "field": "coles",
+            "type": "quantitative"
+          },
+          {
+            "field": "wool_share",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Woolworths % of two"
+          }
+        ]
       }
     },
     {
       "mark": {
         "type": "text",
         "font": "DM Sans",
+        "fontWeight": "bold",
         "fontSize": 11,
-        "fontWeight": "bold"
+        "align": "center",
+        "baseline": "middle",
+        "dy": 12
       },
       "encoding": {
         "x": {
-          "field": "col",
-          "type": "ordinal",
-          "sort": "ascending",
+          "field": "xc",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              4
+            ],
+            "nice": false,
+            "zero": false
+          },
           "axis": null
         },
         "y": {
-          "field": "row",
-          "type": "ordinal",
-          "sort": "ascending",
+          "field": "yc",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              3,
+              0
+            ],
+            "nice": false,
+            "zero": false
+          },
           "axis": null
-        },
-        "yOffset": {
-          "value": 15
         },
         "text": {
           "field": "shareLabel",
@@ -172,16 +273,30 @@
             "test": "datum.wool_share >= 58",
             "value": "#ffffff"
           },
-          "value": "#163c3d"
-        }
+          "value": "#153d3c"
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State or territory"
+          },
+          {
+            "field": "woolworths",
+            "type": "quantitative"
+          },
+          {
+            "field": "coles",
+            "type": "quantitative"
+          },
+          {
+            "field": "wool_share",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Woolworths % of two"
+          }
+        ]
       }
-    }
-  ],
-  "description": "Schematic tile-grid map: exactly one equal-sized labelled tile for each of Australia's six states and two mainland territories. Tile colour is Woolworths percentage of the combined two-chain outlet total; layout is approximate and not to scale.",
-  "transform": [
-    {
-      "calculate": "format(datum.wool_share, '.1f') + '%'",
-      "as": "shareLabel"
     }
   ]
 }
