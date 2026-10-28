@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Slopegraph comparing rankings of combined supermarket outlet totals and outlets per 100,000 residents across Australia's six states and two mainland territories. Every line and dot uses the same teal colour, with state or territory codes labelled at both ends.",
+  "description": "Slopegraph of the eight jurisdictions ranked by combined Woolworths and Coles outlet totals versus outlets per 100,000 residents. Numeric CSV parsing prevents lexicographic ranking; all lines and points use one teal colour.",
   "background": null,
   "config": {
     "view": {
@@ -44,7 +44,19 @@
     "bottom": 28
   },
   "data": {
-    "url": "data/states.csv"
+    "url": "data/states.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "total": "number",
+        "per100k": "number",
+        "woolworths": "number",
+        "coles": "number",
+        "population": "number",
+        "wool_share": "number",
+        "coles_share": "number"
+      }
+    }
   },
   "transform": [
     {
