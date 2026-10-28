@@ -1,301 +1,411 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Eight tiles only, one for each of six Australian states and ACT/NT. Every abbreviation and percentage is centered INSIDE its tile using explicit numeric center coordinates rather than band-edge offsets.",
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "One equal-sized tile for each of Australia's six states and two mainland territories. All eight labels and percentages are drawn at fixed pixel centres inside their tiles. Colours show Woolworths' percentage of Woolworths + Coles outlet counts.",
   "background": null,
-  "config": {
-    "view": {
-      "stroke": null
-    },
-    "axis": {
-      "labelFont": "DM Sans",
-      "titleFont": "DM Sans",
-      "labelFontSize": 11,
-      "titleFontSize": 11,
-      "labelColor": "#45615c",
-      "titleColor": "#183d3c",
-      "gridColor": "#e3eae5",
-      "tickColor": "#cedbd2",
-      "domain": false,
-      "labelPadding": 6,
-      "titlePadding": 10
-    },
-    "legend": {
-      "labelFont": "DM Sans",
-      "titleFont": "DM Sans",
-      "labelFontSize": 10,
-      "titleFontSize": 11,
-      "labelColor": "#45615c",
-      "orient": "bottom"
-    },
-    "title": {
-      "font": "Fraunces",
-      "fontSize": 16,
-      "color": "#163f42"
-    },
-    "font": "DM Sans",
-    "background": null
+  "width": 500,
+  "height": 325,
+  "padding": 0,
+  "autosize": {
+    "type": "none"
   },
-  "width": 420,
-  "height": 285,
-  "data": {
-    "url": "data/tiles.csv"
-  },
-  "transform": [
+  "data": [
     {
-      "calculate": "datum.col + 0.04",
-      "as": "x0"
+      "name": "tiles",
+      "values": [
+        {
+          "state": "Western Australia",
+          "code": "WA",
+          "col": 0,
+          "row": 1,
+          "wool_share": 52.9,
+          "total": 221,
+          "woolworths": 117,
+          "coles": 104
+        },
+        {
+          "state": "Northern Territory",
+          "code": "NT",
+          "col": 1,
+          "row": 0,
+          "wool_share": 60,
+          "total": 20,
+          "woolworths": 12,
+          "coles": 8
+        },
+        {
+          "state": "South Australia",
+          "code": "SA",
+          "col": 1,
+          "row": 1,
+          "wool_share": 56.6,
+          "total": 122,
+          "woolworths": 69,
+          "coles": 53
+        },
+        {
+          "state": "Queensland",
+          "code": "QLD",
+          "col": 2,
+          "row": 0,
+          "wool_share": 58.1,
+          "total": 454,
+          "woolworths": 264,
+          "coles": 190
+        },
+        {
+          "state": "New South Wales",
+          "code": "NSW",
+          "col": 2,
+          "row": 1,
+          "wool_share": 57.4,
+          "total": 606,
+          "woolworths": 348,
+          "coles": 258
+        },
+        {
+          "state": "Australian Capital Territory",
+          "code": "ACT",
+          "col": 3,
+          "row": 1,
+          "wool_share": 60.6,
+          "total": 33,
+          "woolworths": 20,
+          "coles": 13
+        },
+        {
+          "state": "Victoria",
+          "code": "VIC",
+          "col": 2,
+          "row": 2,
+          "wool_share": 54.4,
+          "total": 515,
+          "woolworths": 280,
+          "coles": 235
+        },
+        {
+          "state": "Tasmania",
+          "code": "TAS",
+          "col": 3,
+          "row": 2,
+          "wool_share": 65.3,
+          "total": 49,
+          "woolworths": 32,
+          "coles": 17
+        }
+      ]
     },
     {
-      "calculate": "datum.col + 0.96",
-      "as": "x1"
-    },
-    {
-      "calculate": "datum.row + 0.04",
-      "as": "y0"
-    },
-    {
-      "calculate": "datum.row + 0.96",
-      "as": "y1"
-    },
-    {
-      "calculate": "datum.col + 0.5",
-      "as": "xc"
-    },
-    {
-      "calculate": "datum.row + 0.5",
-      "as": "yc"
-    },
-    {
-      "calculate": "format(datum.wool_share, '.1f') + '%'",
-      "as": "shareLabel"
+      "name": "legendStops",
+      "values": [
+        {
+          "share": 50,
+          "index": 0
+        },
+        {
+          "share": 51,
+          "index": 1
+        },
+        {
+          "share": 52,
+          "index": 2
+        },
+        {
+          "share": 53,
+          "index": 3
+        },
+        {
+          "share": 54,
+          "index": 4
+        },
+        {
+          "share": 55,
+          "index": 5
+        },
+        {
+          "share": 56,
+          "index": 6
+        },
+        {
+          "share": 57,
+          "index": 7
+        },
+        {
+          "share": 58,
+          "index": 8
+        },
+        {
+          "share": 59,
+          "index": 9
+        },
+        {
+          "share": 60,
+          "index": 10
+        },
+        {
+          "share": 61,
+          "index": 11
+        },
+        {
+          "share": 62,
+          "index": 12
+        },
+        {
+          "share": 63,
+          "index": 13
+        },
+        {
+          "share": 64,
+          "index": 14
+        },
+        {
+          "share": 65,
+          "index": 15
+        }
+      ]
     }
   ],
-  "layer": [
+  "scales": [
     {
-      "mark": {
-        "type": "rect",
-        "cornerRadius": 6,
-        "stroke": "#fffefa",
-        "strokeWidth": 2
+      "name": "share",
+      "type": "linear",
+      "domain": [
+        50,
+        66
+      ],
+      "range": [
+        "#d3e7df",
+        "#176a70"
+      ],
+      "clamp": true
+    }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "name": "equal-area-tiles",
+      "from": {
+        "data": "tiles"
       },
-      "encoding": {
-        "x": {
-          "field": "x0",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              4
-            ],
-            "nice": false,
-            "zero": false
+      "encode": {
+        "enter": {
+          "x": {
+            "signal": "datum.col * 122 + 10"
           },
-          "axis": null
-        },
-        "y": {
-          "field": "y0",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              3,
-              0
-            ],
-            "nice": false,
-            "zero": false
+          "y": {
+            "signal": "datum.row * 90 + 10"
           },
-          "axis": null
-        },
-        "x2": {
-          "field": "x1"
-        },
-        "y2": {
-          "field": "y1"
-        },
-        "color": {
-          "field": "wool_share",
-          "type": "quantitative",
-          "title": "Woolworths share of two chains (%)",
-          "scale": {
-            "domain": [
-              50,
-              66
-            ],
-            "range": [
-              "#d3e7df",
-              "#176a70"
-            ],
-            "clamp": true
+          "width": {
+            "value": 116
           },
-          "legend": {
-            "orient": "bottom",
-            "gradientLength": 175,
-            "title": "Woolworths share (%)",
-            "format": ".0f"
+          "height": {
+            "value": 84
+          },
+          "cornerRadius": {
+            "value": 7
+          },
+          "fill": {
+            "scale": "share",
+            "field": "wool_share"
+          },
+          "stroke": {
+            "value": "#ffffff"
+          },
+          "strokeWidth": {
+            "value": 2
+          },
+          "tooltip": {
+            "signal": "datum.state + ': Woolworths ' + datum.woolworths + ', Coles ' + datum.coles + ' · Woolworths share ' + format(datum.wool_share,'.1f') + '%'"
           }
-        },
-        "tooltip": [
-          {
-            "field": "state",
-            "type": "nominal",
-            "title": "State or territory"
-          },
-          {
-            "field": "woolworths",
-            "type": "quantitative"
-          },
-          {
-            "field": "coles",
-            "type": "quantitative"
-          },
-          {
-            "field": "wool_share",
-            "type": "quantitative",
-            "format": ".1f",
-            "title": "Woolworths % of two"
-          }
-        ]
+        }
       }
     },
     {
-      "mark": {
-        "type": "text",
-        "font": "DM Sans",
-        "fontWeight": "bold",
-        "fontSize": 15,
-        "align": "center",
-        "baseline": "middle",
-        "dy": -11
+      "type": "text",
+      "name": "tile-abbreviations",
+      "from": {
+        "data": "tiles"
       },
-      "encoding": {
-        "x": {
-          "field": "xc",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              4
-            ],
-            "nice": false,
-            "zero": false
+      "encode": {
+        "enter": {
+          "x": {
+            "signal": "datum.col * 122 + 68"
           },
-          "axis": null
-        },
-        "y": {
-          "field": "yc",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              3,
-              0
-            ],
-            "nice": false,
-            "zero": false
+          "y": {
+            "signal": "datum.row * 90 + 43"
           },
-          "axis": null
-        },
-        "text": {
-          "field": "code",
-          "type": "nominal"
-        },
-        "color": {
-          "condition": {
-            "test": "datum.wool_share >= 58",
-            "value": "#ffffff"
+          "text": {
+            "field": "code"
           },
-          "value": "#153d3c"
-        },
-        "tooltip": [
-          {
-            "field": "state",
-            "type": "nominal",
-            "title": "State or territory"
+          "font": {
+            "value": "DM Sans"
           },
-          {
-            "field": "woolworths",
-            "type": "quantitative"
+          "fontSize": {
+            "value": 17
           },
-          {
-            "field": "coles",
-            "type": "quantitative"
+          "fontWeight": {
+            "value": "bold"
           },
-          {
-            "field": "wool_share",
-            "type": "quantitative",
-            "format": ".1f",
-            "title": "Woolworths % of two"
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "fill": {
+            "signal": "datum.wool_share >= 63 ? '#ffffff' : '#123b3d'"
+          },
+          "tooltip": {
+            "signal": "datum.state + ': Woolworths ' + datum.woolworths + ', Coles ' + datum.coles + ' · Woolworths share ' + format(datum.wool_share,'.1f') + '%'"
           }
-        ]
+        }
       }
     },
     {
-      "mark": {
-        "type": "text",
-        "font": "DM Sans",
-        "fontWeight": "bold",
-        "fontSize": 11,
-        "align": "center",
-        "baseline": "middle",
-        "dy": 12
+      "type": "text",
+      "name": "tile-percentages",
+      "from": {
+        "data": "tiles"
       },
-      "encoding": {
-        "x": {
-          "field": "xc",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              4
-            ],
-            "nice": false,
-            "zero": false
+      "encode": {
+        "enter": {
+          "x": {
+            "signal": "datum.col * 122 + 68"
           },
-          "axis": null
-        },
-        "y": {
-          "field": "yc",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              3,
-              0
-            ],
-            "nice": false,
-            "zero": false
+          "y": {
+            "signal": "datum.row * 90 + 65"
           },
-          "axis": null
-        },
-        "text": {
-          "field": "shareLabel",
-          "type": "nominal"
-        },
-        "color": {
-          "condition": {
-            "test": "datum.wool_share >= 58",
-            "value": "#ffffff"
+          "text": {
+            "signal": "format(datum.wool_share, '.1f') + '%'"
           },
-          "value": "#153d3c"
-        },
-        "tooltip": [
-          {
-            "field": "state",
-            "type": "nominal",
-            "title": "State or territory"
+          "font": {
+            "value": "DM Sans"
           },
-          {
-            "field": "woolworths",
-            "type": "quantitative"
+          "fontSize": {
+            "value": 13
           },
-          {
-            "field": "coles",
-            "type": "quantitative"
+          "fontWeight": {
+            "value": "bold"
           },
-          {
-            "field": "wool_share",
-            "type": "quantitative",
-            "format": ".1f",
-            "title": "Woolworths % of two"
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "fill": {
+            "signal": "datum.wool_share >= 63 ? '#ffffff' : '#123b3d'"
+          },
+          "tooltip": {
+            "signal": "datum.state + ': Woolworths ' + datum.woolworths + ', Coles ' + datum.coles + ' · Woolworths share ' + format(datum.wool_share,'.1f') + '%'"
           }
-        ]
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 10
+          },
+          "y": {
+            "value": 287
+          },
+          "text": {
+            "value": "Woolworths share of the two chains (%)"
+          },
+          "font": {
+            "value": "DM Sans"
+          },
+          "fontSize": {
+            "value": 12
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "#183d3c"
+          }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "from": {
+        "data": "legendStops"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "signal": "10 + datum.index * 12"
+          },
+          "y": {
+            "value": 294
+          },
+          "width": {
+            "value": 12
+          },
+          "height": {
+            "value": 12
+          },
+          "fill": {
+            "scale": "share",
+            "field": "share"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 10
+          },
+          "y": {
+            "value": 322
+          },
+          "text": {
+            "value": "50%"
+          },
+          "font": {
+            "value": "DM Sans"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fill": {
+            "value": "#45615c"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 202
+          },
+          "y": {
+            "value": 322
+          },
+          "align": {
+            "value": "right"
+          },
+          "text": {
+            "value": "66%"
+          },
+          "font": {
+            "value": "DM Sans"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fill": {
+            "value": "#45615c"
+          }
+        }
       }
     }
   ]
