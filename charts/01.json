@@ -39,82 +39,165 @@
   "projection": {
     "type": "equalEarth"
   },
-  "data": {
-    "url": "https://raw.githubusercontent.com/tonywr71/GeoJson-Data/master/australian-states.json",
-    "format": {
-      "type": "json",
-      "property": "features"
-    }
-  },
-  "transform": [
+  "description": "Choropleth of eight Australian jurisdictions by Woolworths and Coles outlets per 100,000 residents. The small ACT polygon has a readable off-map label and pointer; state and territory boundaries are not distorted.",
+  "layer": [
     {
-      "calculate": "datum.properties.STATE_NAME",
-      "as": "state"
-    },
-    {
-      "lookup": "state",
-      "from": {
-        "data": {
-          "url": "data/states.csv",
-          "format": {
-            "type": "csv"
+      "data": {
+        "url": "https://raw.githubusercontent.com/tonywr71/GeoJson-Data/master/australian-states.json",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "datum.properties.STATE_NAME",
+          "as": "state"
+        },
+        {
+          "lookup": "state",
+          "from": {
+            "data": {
+              "url": "data/states.csv",
+              "format": {
+                "type": "csv"
+              }
+            },
+            "key": "state",
+            "fields": [
+              "total",
+              "per100k",
+              "wool_share",
+              "woolworths",
+              "coles"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#ffffff",
+        "strokeWidth": 1.4
+      },
+      "encoding": {
+        "color": {
+          "field": "per100k",
+          "type": "quantitative",
+          "title": "Stores per 100k people",
+          "scale": {
+            "domain": [
+              6,
+              8.5
+            ],
+            "range": [
+              "#e6f5ea",
+              "#12646b"
+            ],
+            "clamp": true
+          },
+          "legend": {
+            "format": ".1f",
+            "title": "Two-chain stores / 100,000"
           }
         },
-        "key": "state",
-        "fields": [
-          "total",
-          "per100k",
-          "wool_share",
-          "woolworths",
-          "coles"
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State or territory"
+          },
+          {
+            "field": "total",
+            "type": "quantitative",
+            "title": "Combined stores"
+          },
+          {
+            "field": "per100k",
+            "type": "quantitative",
+            "title": "Stores / 100k",
+            "format": ".2f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "longitude": 149.13,
+            "latitude": -35.47,
+            "longitude2": 151.5,
+            "latitude2": -37.3
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "stroke": "#164a4b",
+        "strokeWidth": 1.8
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "longitude2": {
+          "field": "longitude2"
+        },
+        "latitude2": {
+          "field": "latitude2"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "longitude": 151.5,
+            "latitude": -37.3,
+            "label": "ACT  ·  6.74"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 6,
+        "dy": 0,
+        "font": "DM Sans",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "fill": "#173d3b",
+        "stroke": "#ffffff",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        },
+        "tooltip": [
+          {
+            "value": "Australian Capital Territory"
+          },
+          {
+            "value": "6.74 stores per 100,000 residents"
+          }
         ]
       }
     }
-  ],
-  "mark": {
-    "type": "geoshape",
-    "stroke": "#ffffff",
-    "strokeWidth": 1.4
-  },
-  "encoding": {
-    "color": {
-      "field": "per100k",
-      "type": "quantitative",
-      "title": "Stores per 100k people",
-      "scale": {
-        "domain": [
-          6,
-          8.5
-        ],
-        "range": [
-          "#e6f5ea",
-          "#12646b"
-        ],
-        "clamp": true
-      },
-      "legend": {
-        "format": ".1f",
-        "title": "Two-chain stores / 100,000"
-      }
-    },
-    "tooltip": [
-      {
-        "field": "state",
-        "type": "nominal",
-        "title": "State or territory"
-      },
-      {
-        "field": "total",
-        "type": "quantitative",
-        "title": "Combined stores"
-      },
-      {
-        "field": "per100k",
-        "type": "quantitative",
-        "title": "Stores / 100k",
-        "format": ".2f"
-      }
-    ]
-  },
-  "description": "Valid choropleth: state polygons coloured by ScrapeHero outlets per 100,000 residents. Population-normalised, not local accessibility."
+  ]
 }
