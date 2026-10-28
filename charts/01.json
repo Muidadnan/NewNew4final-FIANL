@@ -159,7 +159,9 @@
           {
             "longitude": 151.5,
             "latitude": -37.3,
-            "label": "ACT  ·  6.74"
+            "label": "ACT  ·  6.74",
+            "state": "Australian Capital Territory",
+            "rate": 6.74
           }
         ]
       },
@@ -191,10 +193,15 @@
         },
         "tooltip": [
           {
-            "value": "Australian Capital Territory"
+            "field": "state",
+            "type": "nominal",
+            "title": "Jurisdiction"
           },
           {
-            "value": "6.74 stores per 100,000 residents"
+            "field": "rate",
+            "type": "quantitative",
+            "title": "Stores per 100k",
+            "format": ".2f"
           }
         ]
       }
