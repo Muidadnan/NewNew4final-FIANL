@@ -3,7 +3,7 @@
 | # | Visualisation | Idiom | Main comparison |
 | --- | --- | --- | --- |
 | 01 | Outlets per resident across Australia | Choropleth map | Geographic rates |
-| 02 | Total rank versus population-adjusted rank | Slopegraph | Ranking shifts |
+| 02 | Combined outlet totals on actual geography | Proportional-symbol map | Circle area encodes outlet totals; ACT, NT and TAS use outside callouts |
 | 03 | States sized by combined stores | Schematic circle cartogram | Absolute store totals without land-area dominance |
 | 04 | Which chain leads in each jurisdiction? | Equal-area tile-grid map | Woolworths share of the two-chain store count |
 | 05 | Woolworths and Coles outlet totals | Grouped bar chart | Retailer counts |
@@ -17,10 +17,10 @@
 | 13 | Monthly food-retailing turnover | Line chart | Nominal spending trend |
 | 14 | Year-on-year monthly turnover changes | Sequential heatmap | Month-by-year change |
 
-**Three map idioms:** a conventional geographic choropleth (01), a circle cartogram (03) and an equal-area tile-grid map (04). Chart 02 is a slopegraph, not a proportional-symbol map. Charts 03 and 04 are schematic; only Chart 01 uses real state boundaries.
+**Four map views:** a geographic choropleth (01), a proportional-symbol map (02), a schematic circle cartogram (03) and an equal-area tile-grid map (04). Charts 01 and 02 preserve geographic outlines; Charts 03 and 04 are schematic.
 
-**Advanced visual idioms:** the three map views, slopegraph, nested treemap, parallel coordinates, waffle, bump chart and heatmap supplement the basic bars, dots, scatterplot and line chart. The official rubric and marker determine the final classification of each idiom.
+**Advanced visual idioms:** the four map views, nested treemap, parallel coordinates, waffle, bump chart and heatmap supplement the basic bars, dots, scatterplot and line chart. The official rubric and marker determine the final classification of each idiom.
 
 **Data periods:** ScrapeHero 2026 retailer outlet snapshots; ABS March 2026 population; ACCC historic national take-home food and grocery sales shares to FY2022–23; ABS food-retailing turnover to June 2025. The measures have different denominators and periods and are never combined into a fictitious same-year dataset.
 
-**Encoding:** choropleth colour means outlets per 100,000; cartogram circle area means combined store count; equal tile colour and labels mean Woolworths' share of Woolworths plus Coles outlets; slopegraph vertical position means rank (1 = highest). All eight jurisdictions comprise six states plus ACT and NT.
+**Encoding:** choropleth colour means outlets per 100,000; cartogram circle area means combined store count; equal tile colour and labels mean Woolworths' share of Woolworths plus Coles outlets; proportional-symbol circle area means combined outlet count. All eight jurisdictions comprise six states plus ACT and NT.
