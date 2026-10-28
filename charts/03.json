@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Schematic circle cartogram of Woolworths and Coles store counts in eight states and territories. Each circle has a centred two-line abbreviation and store-count label; circle area encodes stores and colour encodes Woolworths share. Positions are illustrative.",
+  "description": "Schematic proportional-circle cartogram: all eight labels and store counts are clearly centred inside proportional circles, including NT and ACT. Circle area represents combined Coles and Woolworths store counts; circle colour represents Woolworths store share. Positions are approximate.",
   "background": null,
   "config": {
     "view": {
@@ -27,121 +27,89 @@
         "state": "Western Australia",
         "code": "WA",
         "x": 76,
-        "y": 181,
         "stores": 221,
         "woolworths": 117,
         "coles": 104,
         "wool_share": 52.9,
         "per100k": 7.14,
-        "plotY": 259,
-        "textY": 269,
-        "countY": 248,
-        "labelColor": "#153B3C"
+        "plotY": 259
       },
       {
         "state": "Northern Territory",
         "code": "NT",
         "x": 170,
-        "y": 91,
         "stores": 20,
         "woolworths": 12,
         "coles": 8,
         "wool_share": 60,
         "per100k": 7.44,
-        "plotY": 349,
-        "textY": 354,
-        "countY": 343.8,
-        "labelColor": "#ffffff"
+        "plotY": 349
       },
       {
         "state": "South Australia",
         "code": "SA",
-        "x": 205,
-        "y": 218,
+        "x": 199.3,
         "stores": 122,
         "woolworths": 69,
         "coles": 53,
         "wool_share": 56.6,
         "per100k": 6.36,
-        "plotY": 222,
-        "textY": 232,
-        "countY": 211,
-        "labelColor": "#153B3C"
+        "plotY": 235.7
       },
       {
         "state": "Queensland",
         "code": "QLD",
-        "x": 328,
-        "y": 112,
+        "x": 296.3,
         "stores": 454,
         "woolworths": 264,
         "coles": 190,
         "wool_share": 58.1,
         "per100k": 7.91,
-        "plotY": 328,
-        "textY": 338,
-        "countY": 317,
-        "labelColor": "#ffffff"
+        "plotY": 346.8
       },
       {
         "state": "New South Wales",
         "code": "NSW",
-        "x": 383,
-        "y": 241,
+        "x": 405.6,
         "stores": 606,
         "woolworths": 348,
         "coles": 258,
         "wool_share": 57.4,
         "per100k": 6.99,
-        "plotY": 199,
-        "textY": 209,
-        "countY": 188,
-        "labelColor": "#153B3C"
+        "plotY": 201.3
       },
       {
         "state": "Australian Capital Territory",
         "code": "ACT",
-        "x": 461,
-        "y": 309,
+        "x": 472.6,
         "stores": 33,
         "woolworths": 20,
         "coles": 13,
         "wool_share": 60.6,
         "per100k": 6.74,
-        "plotY": 131,
-        "textY": 136,
-        "countY": 125.8,
-        "labelColor": "#ffffff"
+        "plotY": 97.5
       },
       {
         "state": "Victoria",
         "code": "VIC",
-        "x": 265,
-        "y": 308,
+        "x": 252.8,
         "stores": 515,
         "woolworths": 280,
         "coles": 235,
         "wool_share": 54.4,
         "per100k": 7.2,
-        "plotY": 132,
-        "textY": 142,
-        "countY": 121,
-        "labelColor": "#153B3C"
+        "plotY": 107.3
       },
       {
         "state": "Tasmania",
         "code": "TAS",
-        "x": 351,
-        "y": 392,
+        "x": 351.1,
         "stores": 49,
         "woolworths": 32,
         "coles": 17,
         "wool_share": 65.3,
         "per100k": 8.44,
-        "plotY": 48,
-        "textY": 53,
-        "countY": 42.8,
-        "labelColor": "#ffffff"
+        "plotY": 48
       }
     ]
   },
@@ -191,16 +159,15 @@
               606
             ],
             "range": [
-              100,
-              13000
+              0,
+              24000
             ]
           },
           "legend": {
             "title": "Stores (circle area)",
             "values": [
-              50,
+              20,
               200,
-              450,
               600
             ],
             "direction": "horizontal",
@@ -266,9 +233,91 @@
     {
       "transform": [
         {
-          "calculate": "datum.code + '\\n' + format(datum.stores, ',.0f')",
-          "as": "label"
+          "filter": "datum.stores >= 75"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontWeight": "bold",
+        "fontSize": 14,
+        "baseline": "middle",
+        "align": "center",
+        "dy": -8
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              500
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
         },
+        "y": {
+          "field": "plotY",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              440
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "code",
+          "type": "nominal"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.wool_share >= 57.8",
+            "value": "#FFFFFF"
+          },
+          "value": "#153B3C"
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State / territory"
+          },
+          {
+            "field": "stores",
+            "type": "quantitative",
+            "title": "Combined stores",
+            "format": ",.0f"
+          },
+          {
+            "field": "woolworths",
+            "type": "quantitative",
+            "title": "Woolworths stores",
+            "format": ",.0f"
+          },
+          {
+            "field": "coles",
+            "type": "quantitative",
+            "title": "Coles stores",
+            "format": ",.0f"
+          },
+          {
+            "field": "wool_share",
+            "type": "quantitative",
+            "title": "Woolworths share",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
         {
           "filter": "datum.stores >= 75"
         }
@@ -278,9 +327,9 @@
         "font": "DM Sans",
         "fontWeight": "bold",
         "fontSize": 12,
-        "lineHeight": 14,
         "baseline": "middle",
-        "align": "center"
+        "align": "center",
+        "dy": 8
       },
       "encoding": {
         "x": {
@@ -310,8 +359,9 @@
           "axis": null
         },
         "text": {
-          "field": "label",
-          "type": "nominal"
+          "field": "stores",
+          "type": "quantitative",
+          "format": ",.0f"
         },
         "color": {
           "condition": {
@@ -319,15 +369,42 @@
             "value": "#FFFFFF"
           },
           "value": "#153B3C"
-        }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State / territory"
+          },
+          {
+            "field": "stores",
+            "type": "quantitative",
+            "title": "Combined stores",
+            "format": ",.0f"
+          },
+          {
+            "field": "woolworths",
+            "type": "quantitative",
+            "title": "Woolworths stores",
+            "format": ",.0f"
+          },
+          {
+            "field": "coles",
+            "type": "quantitative",
+            "title": "Coles stores",
+            "format": ",.0f"
+          },
+          {
+            "field": "wool_share",
+            "type": "quantitative",
+            "title": "Woolworths share",
+            "format": ".1f"
+          }
+        ]
       }
     },
     {
       "transform": [
-        {
-          "calculate": "datum.code + '\\n' + format(datum.stores, ',.0f')",
-          "as": "label"
-        },
         {
           "filter": "datum.stores < 75"
         }
@@ -336,10 +413,10 @@
         "type": "text",
         "font": "DM Sans",
         "fontWeight": "bold",
-        "fontSize": 8.5,
-        "lineHeight": 9,
+        "fontSize": 12,
         "baseline": "middle",
-        "align": "center"
+        "align": "center",
+        "dy": -6
       },
       "encoding": {
         "x": {
@@ -369,7 +446,7 @@
           "axis": null
         },
         "text": {
-          "field": "label",
+          "field": "code",
           "type": "nominal"
         },
         "color": {
@@ -378,7 +455,125 @@
             "value": "#FFFFFF"
           },
           "value": "#153B3C"
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State / territory"
+          },
+          {
+            "field": "stores",
+            "type": "quantitative",
+            "title": "Combined stores",
+            "format": ",.0f"
+          },
+          {
+            "field": "woolworths",
+            "type": "quantitative",
+            "title": "Woolworths stores",
+            "format": ",.0f"
+          },
+          {
+            "field": "coles",
+            "type": "quantitative",
+            "title": "Coles stores",
+            "format": ",.0f"
+          },
+          {
+            "field": "wool_share",
+            "type": "quantitative",
+            "title": "Woolworths share",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.stores < 75"
         }
+      ],
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontWeight": "bold",
+        "fontSize": 10.5,
+        "baseline": "middle",
+        "align": "center",
+        "dy": 6
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              500
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "plotY",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              440
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "stores",
+          "type": "quantitative",
+          "format": ",.0f"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.wool_share >= 57.8",
+            "value": "#FFFFFF"
+          },
+          "value": "#153B3C"
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State / territory"
+          },
+          {
+            "field": "stores",
+            "type": "quantitative",
+            "title": "Combined stores",
+            "format": ",.0f"
+          },
+          {
+            "field": "woolworths",
+            "type": "quantitative",
+            "title": "Woolworths stores",
+            "format": ",.0f"
+          },
+          {
+            "field": "coles",
+            "type": "quantitative",
+            "title": "Coles stores",
+            "format": ",.0f"
+          },
+          {
+            "field": "wool_share",
+            "type": "quantitative",
+            "title": "Woolworths share",
+            "format": ".1f"
+          }
+        ]
       }
     }
   ]
