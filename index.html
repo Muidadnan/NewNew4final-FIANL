@@ -240,7 +240,7 @@
         </em>
        </h2>
        <p>
-        Location totals tell one story; locations per resident tell another. Three maps and a ranking comparison reveal the Woolworths and Coles presence across six states and two mainland territories&mdash;not every supermarket in Australia.
+        Location totals tell one story; locations per resident tell another. Four complementary maps reveal the Woolworths and Coles presence across six states and two mainland territories&mdash;not every supermarket in Australia.
        </p>
       </div>
       <div class="chapter-badge">
@@ -255,7 +255,7 @@
        THE DESIGN QUESTION: ABSOLUTE OR RELATIVE?
       </div>
       <p>
-       NSW has more outlets overall, but Tasmania has more per resident. Both facts can be true. First, compare stores per resident on a real map. Next, see how the ranking changes when population is taken into account. Finally, compare absolute outlet totals using circles and the two-chain split using equal-area tiles.
+       NSW has more outlets overall, but Tasmania has more per resident. Both facts can be true. First, compare stores per resident on a choropleth. Next, place circles sized by total outlets on real geography. Then replace land area with a circle cartogram to expose the difference between geography and magnitude. Finally, use equal-sized tiles to compare the two chains' relative shares.
       </p>
      </div>
      <div class="grid two">
@@ -275,19 +275,18 @@
  <details class="method-dropdown"><summary>Methods and limitations</summary><p>A choropleth uses geographic polygons and a sequential teal scale to encode the combined outlets-per-100,000 rate. Eight jurisdictions are represented: six states and the ACT and NT. The rate is not a measure of distance to the nearest shop or access to other grocery chains.</p></details>
  </article>
       <article class="vis-card">
- <div class="card-top"><span class="number">02 / RANKS</span><span class="idiom">SLOPEGRAPH</span></div>
- <h3>Which places rise when we account for population?</h3>
- <p class="deck">Each line tracks one state or territory between two rankings: total store count on the left, and stores per 100,000 residents on the right. Rank 1 means highest.</p>
- <div aria-label="Chart 02: Which places rise when we account for population?" class="vis slopevis" id="vis02" role="group"></div>
- 
- <div class="card-bottom"><b>FOLLOW THE LINES</b><span>Trace a labelled line from left to right. Rising means a higher rank after adjusting for population; falling means a lower rank.</span></div>
+ <div class="card-top"><span class="number">02 / MAP</span><span class="idiom">PROPORTIONAL-SYMBOL MAP</span></div>
+ <h3>Where are the largest store footprints located?</h3>
+ <p class="deck">Each circle sits over its state or territory and its <strong>area</strong> represents the combined number of Woolworths and Coles outlets. The underlying map keeps real geographic shapes; ACT, NT and Tasmania use outside labels for clarity.</p>
+ <div aria-label="Chart 02: Proportional-symbol map of Woolworths and Coles outlet counts across Australia's six states and two mainland territories" class="vis mapvis" id="vis02" role="group"></div>
+ <div class="card-bottom"><b>READ THE CIRCLES</b><span>Bigger circles mean more recorded stores, not higher density. Labels point to smaller territories so their symbols remain visible. Hover for both retailers' counts.</span></div>
  <div aria-label="Explanation of chart 2" class="evidence-note">
- <span class="evidence-kicker">THE FINDING · THE RANKINGS FLIP</span>
- <p class="evidence-findings">NSW falls from 1st in total outlets to 6th per resident. Tasmania rises from 6th in total outlets to 1st per resident. The two measures tell different stories.</p>
- <p class="evidence-why"><strong>Why it matters:</strong> A slopegraph reveals changes in relative position directly, without placing a second set of overlapping circles on a map.</p>
- <div class="evidence-source"><span><strong>DATA:</strong> ScrapeHero 2026 location snapshots; ABS March 2026 population estimates.</span></div>
+  <span class="evidence-kicker">THE FINDING · BIG TOTALS FOLLOW BIG POPULATIONS</span>
+  <p class="evidence-findings">NSW has 606 recorded Woolworths and Coles stores, Victoria 515 and Queensland 454, compared with 20 in the Northern Territory and 33 in the ACT. These are <em>total outlets</em>, not outlets per resident.</p>
+  <p class="evidence-why"><strong>Why this map?</strong> Proportional symbols retain recognisable geography while using circle <em>area</em> to show totals. Chart 01 instead uses colour to show population-adjusted rates; Chart 03 deliberately removes land-area shapes to compare the same totals as a cartogram.</p>
+  <div class="evidence-source"><span><strong>DATA:</strong> ScrapeHero 2026 location snapshots; jurisdiction-level Woolworths and Coles counts.</span></div>
  </div>
- <details class="method-dropdown"><summary>Methods and limitations</summary><p>Both rankings use the same eight jurisdictions. The left column ranks combined outlet counts; the right ranks outlets per 100,000 residents. The lines show rank changes, not changes over time. All eight jurisdictions use the same teal colour and are labelled at both ends.</p></details>
+ <details class="method-dropdown"><summary>Methods and limitations</summary><p>Circles are placed at approximate geographic centres, not at individual store addresses. Their areas, rather than their diameters, represent combined outlet counts. Overlap and the tiny land area of ACT are addressed using outside callout labels. This is a proportional-symbol map on geographic polygons, distinct from Chart 03's schematic circle cartogram. The snapshot covers only Woolworths and Coles.</p></details>
  </article>
       <article class="vis-card two-thirds">
  <div class="card-top"><span class="number">03 / MAP</span><span class="idiom">CIRCLE CARTOGRAM</span></div>
