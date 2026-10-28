@@ -34,8 +34,8 @@
     "font": "DM Sans",
     "background": null
   },
-  "width": 320,
-  "height": 260,
+  "width": 420,
+  "height": 290,
   "data": {
     "url": "data/tiles.csv"
   },
@@ -74,12 +74,19 @@
               "#176a70"
             ],
             "clamp": true
+          },
+          "legend": {
+            "title": "Woolworths / two-chain stores (%)",
+            "orient": "bottom",
+            "gradientLength": 175,
+            "format": ".0f"
           }
         },
         "tooltip": [
           {
             "field": "state",
-            "type": "nominal"
+            "type": "nominal",
+            "title": "State or territory"
           },
           {
             "field": "woolworths",
@@ -157,9 +164,8 @@
           "value": 15
         },
         "text": {
-          "field": "wool_share",
-          "type": "quantitative",
-          "format": ".1f"
+          "field": "shareLabel",
+          "type": "nominal"
         },
         "color": {
           "condition": {
@@ -171,5 +177,11 @@
       }
     }
   ],
-  "description": "Schematic tile-grid map. The numeric figures in tiles are percentages of Woolworths among the two selected chains; the legend is also in percent."
+  "description": "Schematic tile-grid map: exactly one equal-sized labelled tile for each of Australia's six states and two mainland territories. Tile colour is Woolworths percentage of the combined two-chain outlet total; layout is approximate and not to scale.",
+  "transform": [
+    {
+      "calculate": "format(datum.wool_share, '.1f') + '%'",
+      "as": "shareLabel"
+    }
+  ]
 }
