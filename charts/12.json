@@ -1,0 +1,103 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "labelColor": "#45615c",
+      "titleColor": "#183d3c",
+      "gridColor": "#e3eae5",
+      "tickColor": "#cedbd2",
+      "domain": false,
+      "labelPadding": 6,
+      "titlePadding": 10
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 10,
+      "titleFontSize": 11,
+      "labelColor": "#45615c",
+      "orient": "bottom"
+    },
+    "title": {
+      "font": "Fraunces",
+      "fontSize": 16,
+      "color": "#163f42"
+    },
+    "font": "DM Sans",
+    "background": null
+  },
+  "width": "container",
+  "height": 260,
+  "data": {
+    "url": "data/market_change.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "stroke": "#9caeaa",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "datum": 0,
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 4
+      },
+      "encoding": {
+        "y": {
+          "field": "brand",
+          "type": "nominal",
+          "sort": {
+            "field": "change_pp",
+            "order": "descending"
+          },
+          "title": null
+        },
+        "x": {
+          "field": "change_pp",
+          "type": "quantitative",
+          "title": "Change in percentage points (2002–03 to 2022–23)"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.change_pp >= 0",
+            "value": "#12756c"
+          },
+          "value": "#d45039"
+        },
+        "tooltip": [
+          {
+            "field": "brand"
+          },
+          {
+            "field": "start",
+            "title": "2002–03 (%)"
+          },
+          {
+            "field": "end",
+            "title": "2022–23 (%)"
+          },
+          {
+            "field": "change_pp",
+            "title": "Change (pp)"
+          }
+        ]
+      }
+    }
+  ]
+}

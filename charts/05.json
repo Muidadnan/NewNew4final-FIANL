@@ -1,0 +1,120 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "labelColor": "#45615c",
+      "titleColor": "#183d3c",
+      "gridColor": "#e3eae5",
+      "tickColor": "#cedbd2",
+      "domain": false,
+      "labelPadding": 6,
+      "titlePadding": 10
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 10,
+      "titleFontSize": 11,
+      "labelColor": "#45615c",
+      "orient": "bottom"
+    },
+    "title": {
+      "font": "Fraunces",
+      "fontSize": 16,
+      "color": "#163f42"
+    },
+    "font": "DM Sans",
+    "background": null
+  },
+  "width": "container",
+  "height": 260,
+  "data": {
+    "url": "data/brands_by_state.csv"
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 3
+  },
+  "encoding": {
+    "y": {
+      "field": "code",
+      "type": "nominal",
+      "sort": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "WA",
+        "SA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "title": null
+    },
+    "yOffset": {
+      "field": "brand"
+    },
+    "x": {
+      "field": "stores",
+      "type": "quantitative",
+      "title": "Number of stores",
+      "scale": {
+        "zero": true
+      }
+    },
+    "color": {
+      "field": "brand",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Woolworths",
+          "Coles"
+        ],
+        "range": [
+          "#12756c",
+          "#d45039"
+        ]
+      },
+      "title": null
+    },
+    "tooltip": [
+      {
+        "field": "state"
+      },
+      {
+        "field": "brand"
+      },
+      {
+        "field": "stores",
+        "type": "quantitative"
+      }
+    ],
+    "opacity": {
+      "condition": {
+        "param": "brandFilter",
+        "value": 1
+      },
+      "value": 0.18
+    }
+  },
+  "params": [
+    {
+      "name": "brandFilter",
+      "select": {
+        "type": "point",
+        "fields": [
+          "brand"
+        ]
+      },
+      "bind": "legend"
+    }
+  ]
+}

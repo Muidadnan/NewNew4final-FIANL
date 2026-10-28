@@ -1,0 +1,137 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "labelColor": "#45615c",
+      "titleColor": "#183d3c",
+      "gridColor": "#e3eae5",
+      "tickColor": "#cedbd2",
+      "domain": false,
+      "labelPadding": 6,
+      "titlePadding": 10
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 10,
+      "titleFontSize": 11,
+      "labelColor": "#45615c",
+      "orient": "bottom"
+    },
+    "title": {
+      "font": "Fraunces",
+      "fontSize": 16,
+      "color": "#163f42"
+    },
+    "font": "DM Sans",
+    "background": null
+  },
+  "width": "container",
+  "height": 260,
+  "data": {
+    "url": "data/brands_by_state.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "stroke": "#AABCC6",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "y": {
+          "field": "code",
+          "sort": [
+            "NSW",
+            "VIC",
+            "QLD",
+            "WA",
+            "SA",
+            "TAS",
+            "ACT",
+            "NT"
+          ],
+          "title": null,
+          "type": "nominal"
+        },
+        "x": {
+          "field": "per100k",
+          "type": "quantitative",
+          "title": "Stores per 100k residents",
+          "scale": {
+            "zero": true
+          }
+        },
+        "detail": {
+          "field": "code"
+        },
+        "order": {
+          "field": "per100k"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 140
+      },
+      "encoding": {
+        "x": {
+          "field": "per100k",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "code",
+          "sort": [
+            "NSW",
+            "VIC",
+            "QLD",
+            "WA",
+            "SA",
+            "TAS",
+            "ACT",
+            "NT"
+          ],
+          "type": "nominal"
+        },
+        "color": {
+          "field": "brand",
+          "scale": {
+            "domain": [
+              "Woolworths",
+              "Coles"
+            ],
+            "range": [
+              "#12756c",
+              "#d45039"
+            ]
+          },
+          "title": null
+        },
+        "tooltip": [
+          {
+            "field": "state"
+          },
+          {
+            "field": "brand"
+          },
+          {
+            "field": "per100k",
+            "type": "quantitative",
+            "title": "Per 100k",
+            "format": ".2f"
+          }
+        ]
+      }
+    }
+  ]
+}

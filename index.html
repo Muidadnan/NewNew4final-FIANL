@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="The Aisle Effect: an original Australian supermarket data story with fourteen Vega and Vega-Lite charts and four map views." name="description"/>
+  <title>
+   The Aisle Effect &middot; Australian Supermarket Atlas
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet"/>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/vega@5.33.1">
+  </script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/vega-lite@5.23.0">
+  </script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/vega-embed@6.29.0">
+  </script>
+  <script defer="" src="scripts/main.js">
+  </script>
+ </head>
+ <body>
+  <a class="skip" href="#main">
+   Skip to story
+  </a>
+  <header class="nav">
+   <div class="shell nav-inner">
+    <a class="brand" href="#top">
+     <span class="brand-mark">
+      A.
+     </span>
+     THE AISLE EFFECT
+     <span class="brand-mini">
+      / AUSTRALIA
+     </span>
+    </a>
+    <nav aria-label="Page chapters">
+     <a href="#footprint">
+      01 / Footprint
+     </a>
+     <a href="#chains">
+      02 / Two chains
+     </a>
+     <a href="#market">
+      03 / Market
+     </a>
+     <a href="#spending">
+      04 / Spending
+     </a>
+     <a href="#reading-guide">
+      Glossary
+     </a>
+    </nav>
+    <a class="nav-src" href="#sources">
+     Sources &nearrow;
+    </a>
+   </div>
+  </header>
+  <noscript>
+   <div class="shell no-js">
+    This interactive website needs JavaScript to display its Vega and Vega-Lite charts. Source data and chart specifications are available in the repository.
+   </div>
+  </noscript>
+  <main id="main">
+   <section class="hero" id="top">
+    <div class="shell hero-grid">
+     <div class="hero-copy">
+      <div class="eyebrow">
+       <span class="eyebrow-line">
+       </span>
+       FIELD NOTES / SHOPPING &amp; CONSUMER LIFE / OCT 2026
+      </div>
+      <h1>
+       Australia&rsquo;s
+       <br/>
+       <em>
+        supermarket
+       </em>
+       <br/>
+       story
+       <span class="dot">
+        .
+       </span>
+      </h1>
+      <p class="lead">
+       Two chains. Eight states and territories. One grocery market worth looking at more closely.
+      </p>
+      <p class="hero-blurb">
+       We follow the supermarkets on the map, compare their footprint, open up historic grocery market estimates, and track how food-retailing turnover changed.
+      </p>
+      <a class="hero-link" href="#footprint">
+       ENTER AISLE 01
+       <span aria-hidden="true">
+        &searrow;
+       </span>
+      </a>
+     </div>
+     <aside aria-label="Summary of the story" class="receipt">
+      <div class="receipt-top">
+       <span>
+        THE SUPERMARKET RECEIPT
+       </span>
+       <span>
+        &numero; 001 / 2026
+       </span>
+      </div>
+      <div class="receipt-bars">
+       <span class="rbar-a">
+       </span>
+       <span class="rbar-b">
+       </span>
+      </div>
+      <div class="receipt-big">
+       2,020
+       <span>
+        stores
+       </span>
+      </div>
+      <p>
+       Combined Woolworths and Coles outlets in the 2026 state snapshots.
+      </p>
+      <div class="rline">
+      </div>
+      <div class="rrow">
+       <span>
+        <b class="swatch w">
+        </b>
+        Woolworths
+       </span>
+       <strong>
+        1,142
+       </strong>
+      </div>
+      <div class="rrow">
+       <span>
+        <b class="swatch c">
+        </b>
+        Coles
+       </span>
+       <strong>
+        878
+       </strong>
+      </div>
+      <div class="rline">
+      </div>
+      <div class="rrow">
+       <span>
+        States &amp; territories
+       </span>
+       <strong>
+        08
+       </strong>
+      </div>
+      <div class="rrow">
+       <span>
+        Original charts
+       </span>
+       <strong>
+        14
+       </strong>
+      </div>
+      <div class="rline dashed">
+      </div>
+      <div class="receipt-footer">
+       NOT ALL GROCERS. NOT A SHOPPER-ACCESS SCORE.
+       <br/>
+       <span aria-hidden="true" class="barcode">
+        ▍▍ ▏▍▏▍▍ ▏▍▍▍ ▍▏▍▍▏ ▍▍
+       </span>
+      </div>
+     </aside>
+    </div>
+   </section>
+   <aside aria-label="How the supermarket story unfolds" class="story-route">
+    <div class="shell route-inner">
+     <div class="route-title">
+      <span>
+       THE QUESTION
+      </span>
+      <strong>
+       Does having more stores mean having more choice?
+      </strong>
+     </div>
+     <div class="route-steps">
+      <a href="#footprint">
+       <b>
+        01 / WHERE
+       </b>
+       <small>
+        Compare total stores with stores per resident
+       </small>
+      </a>
+      <a href="#chains">
+       <b>
+        02 / WHO
+       </b>
+       <small>
+        Separate the two retailers and their footprints
+       </small>
+      </a>
+      <a href="#market">
+       <b>
+        03 / POWER
+       </b>
+       <small>
+        Switch from locations to historical sales share
+       </small>
+      </a>
+      <a href="#spending">
+       <b>
+        04 / MONEY
+       </b>
+       <small>
+        See how national food-turnover dollars changed
+       </small>
+      </a>
+     </div>
+    </div>
+   </aside>
+   <section class="chapter cream" id="footprint">
+    <div class="shell">
+     <div class="chapter-head">
+      <div class="chapter-index">
+       <span>
+        CHAPTER
+       </span>
+       <strong>
+        01
+       </strong>
+      </div>
+      <div class="chapter-heading">
+       <div class="kicker">
+        A STATE-LEVEL FOOTPRINT
+       </div>
+       <h2>
+        Where are the
+        <em>
+         two chains?
+        </em>
+       </h2>
+       <p>
+        Location totals tell one story; locations per resident tell another. Four distinct geographic views compare the state-level Woolworths and Coles presence&mdash;not every supermarket in Australia.
+       </p>
+      </div>
+      <div class="chapter-badge">
+       MAP ROOM
+       <span>
+        ◉ ◉ ◉
+       </span>
+      </div>
+     </div>
+     <div class="chapter-explanation">
+      <div class="chapter-explanation-label">
+       THE DESIGN QUESTION: ABSOLUTE OR RELATIVE?
+      </div>
+      <p>
+       A population of more than eight million gives NSW far more stores than Tasmania, even when the proportion per resident is lower. The first two maps therefore answer different questions. The cartogram and tile view then deliberately reduce geographic size so the quantitative differences are easier to compare.
+      </p>
+     </div>
+     <div class="grid two">
+      <article class="vis-card">
+       <div class="card-top">
+        <span class="number">
+         01 / MAP
+        </span>
+        <span class="idiom">
+         CHOROPLETH
+        </span>
+       </div>
+       <h3>
+        Count the stores, then count the people
+       </h3>
+       <p class="deck">
+        Colour shows combined Coles and Woolworths stores per 100,000 residents&mdash;not the number of stores.
+       </p>
+       <div aria-label="Chart 01: Count the stores, then count the people" class="vis mapvis" id="vis01" role="group">
+       </div>
+       <div class="card-bottom">
+        <b>
+         READ THE COLOUR
+        </b>
+        <span>
+         Deeper teal = more stores per resident. Hover a state for its total and density.
+        </span>
+       </div>
+       <div aria-label="Explanation of chart 1" class="evidence-note">
+        <span class="evidence-kicker">
+         THE POINT &middot; A RATE, NOT A TOTAL
+        </span>
+        <p class="evidence-findings">
+         Tasmania records 8.44 combined Woolworths and Coles locations for every 100,000 residents, compared with 6.99 in NSW. A state can have fewer stores overall yet a higher number relative to its population.
+        </p>
+        <p class="evidence-why">
+         <strong>
+          Why this chart?
+         </strong>
+         Choose the choropleth because the task is to find
+         <em>
+          regional patterns in a normalised quantity
+         </em>
+         ; interpreting raw store totals as access would be misleading.
+        </p>
+        <div class="evidence-source">
+         <span>
+          <strong>
+           DATA:
+          </strong>
+          ScrapeHero 2026 location snapshots + ABS March 2026 populations.
+         </span>
+         <a href="charts/01.json" rel="noopener" target="_blank">
+          View chart JSON &nearrow;
+         </a>
+        </div>
+       </div>
+       <details class="method-dropdown">
+        <summary>
+         How is this chart built? &middot; method &amp; limitations
+        </summary>
+        <p>
+         The
+         <strong>
+          geoshape
+         </strong>
+         mark draws real state boundaries; a
+         <strong>
+          sequential teal colour channel
+         </strong>
+         maps each state&rsquo;s per-person rate. A lookup joins the geographic state name to its row of values in the CSV.
+        </p>
+        <p>
+         <strong>
+          Limit:
+         </strong>
+         This state-level rate does not measure distance, local accessibility, retail floor area, or the stores operated by ALDI and independents.
+        </p>
+       </details>
+      </article>
+      <article class="vis-card">
+       <div class="card-top">
+        <span class="number">
+         02 / MAP
+        </span>
+        <span class="idiom">
+         PROPORTIONAL SYMBOLS
+        </span>
+       </div>
+       <h3>
+        Same country. A different picture.
+       </h3>
+       <p class="deck">
+        Circle
+        <b>
+         area
+        </b>
+        encodes store totals. NSW leads with 606 sites; the Northern Territory has 20.
+       </p>
+       <div aria-label="Chart 02: Same country. A different picture." class="vis mapvis" id="vis02" role="group">
+       </div>
+       <div class="card-bottom">
+        <b>
+         READ THE CIRCLES
+        </b>
+        <span>
+         Symbols represent whole states, not actual shop addresses.
+        </span>
+       </div>
+       <div aria-label="Explanation of chart 2" class="evidence-note">
+        <span class="evidence-kicker">
+         THE POINT &middot; TOTALS TELL ANOTHER STORY
+        </span>
+        <p class="evidence-findings">
+         NSW has 606 stores, Victoria 515, and Queensland 454. Together these three states account for 1,575 of the 2,020 recorded outlets, largely reflecting where the population is concentrated.
+        </p>
+        <p class="evidence-why">
+         <strong>
+          Why this chart?
+         </strong>
+         Choose proportional symbols to compare
+         <em>
+          absolute totals on a familiar map
+         </em>
+         while keeping geographic context. Its meaning is deliberately different from Chart 01.
+        </p>
+        <div class="evidence-source">
+         <span>
+          <strong>
+           DATA:
+          </strong>
+          ScrapeHero 2026 location snapshots; Australian state boundaries.
+         </span>
+         <a href="charts/02.json" rel="noopener" target="_blank">
+          View chart JSON &nearrow;
+         </a>
+        </div>
+       </div>
+       <details class="method-dropdown">
+        <summary>
+         How is this chart built? &middot; method &amp; limitations
+        </summary>
+        <p>
+         The Australian basemap provides context; a
+         <strong>
+          circle mark
+         </strong>
+         is placed at an approximate state anchor. Vega-Lite&rsquo;s
+         <strong>
+          size
+         </strong>
+         encoding scales the
+         <em>
+          circle area
+         </em>
+         to absolute outlets. Hovering returns the exact count.
+        </p>
+        <p>
+         <strong>
+          Limit:
+         </strong>
+         Circles are not individual store coordinates. The symbols may overlap nearby small jurisdictions, so the tooltip gives the exact value.
+        </p>
+       </details>
+      </article>
+      <article class="vis-card two-thirds">
+       <div class="card-top">
+        <span class="number">
+         03 / MAP
+        </span>
+        <span class="idiom">
+         CIRCLE CARTOGRAM
+        </span>
+       </div>
+       <h3>
+        What if states were sized by stores instead of land?
+       </h3>
+       <p class="deck">
+        Land areas disappear. Every circle is a state, with area proportional to stores; NT and ACT are labelled outside their symbols.
+       </p>
+       <div aria-label="Chart 03: What if states were sized by stores instead of land?" class="vis cartovis" id="vis03" role="group">
+       </div>
+       <div class="card-bottom">
+        <b>
+         NOTICE
+        </b>
+        <span>
+         Circle area shows outlets; colour shows Woolworths&rsquo; fraction. NT and ACT use external labels because their circles are too small.
+        </span>
+       </div>
+       <div aria-label="Explanation of chart 3" class="evidence-note">
+        <span class="evidence-kicker">
+         THE POINT &middot; GEOGRAPHIC AREA DISAPPEARS
+        </span>
+        <p class="evidence-findings">
+         Western Australia occupies a huge land area but has 221 recorded stores; Victoria has 515. Replacing state shapes with scaled circles puts the outlet comparison&mdash;not the kilometres of land&mdash;at the centre of attention.
+        </p>
+        <p class="evidence-why">
+         <strong>
+          Why this chart?
+         </strong>
+         Choose a cartogram to show the tension between
+         <em>
+          land area and magnitude
+         </em>
+         . It is not a normal map with symbols layered over polygons, which distinguishes it from Chart 02.
+        </p>
+        <div class="evidence-source">
+         <span>
+          <strong>
+           DATA:
+          </strong>
+          ScrapeHero 2026 location snapshots; state-level cartogram layout derived for this project.
+         </span>
+         <a href="charts/03.json" rel="noopener" target="_blank">
+          View chart JSON &nearrow;
+         </a>
+        </div>
+       </div>
+       <details class="method-dropdown">
+        <summary>
+         How is this chart built? &middot; method &amp; limitations
+        </summary>
+        <p>
+         A manually arranged circle cartogram uses one schematic centre per jurisdiction. Circle area encodes combined stores; sequential teal colour encodes Woolworths&rsquo; percentage of the two-chain total. The dots do not indicate geographic distances or actual shop addresses.
+        </p>
+        <p>
+         A manually arranged circle cartogram uses one schematic centre per jurisdiction. Circle area encodes combined stores; sequential teal colour encodes Woolworths&rsquo; percentage of the two-chain total. The dots do not indicate geographic distances or actual shop addresses.
+        </p>
+       </details>
+      </article>
+      <article class="vis-card one-third">
+       <div class="card-top">
+        <span class="number">
+         04 / MAP
+        </span>
+        <span class="idiom">
+         EQUAL-SIZE TILES
+        </span>
+       </div>
+       <h3>
+        Who leads in each state?
+       </h3>
+       <p class="deck">
+        Every state gets one tile. Colour shows what percentage of the two chains&rsquo; stores belong to Woolworths.
+       </p>
+       <div aria-label="Chart 04: Who leads in each state?" class="vis tilesvis" id="vis04" role="group">
+       </div>
+       <div class="card-bottom">
+        <b>
+         COMPARE FAIRLY
+        </b>
+        <span>
+         Land area is deliberately removed. This map is schematic.
+        </span>
+       </div>
+       <div aria-label="Explanation of chart 4" class="evidence-note">
+        <span class="evidence-kicker">
+         THE POINT &middot; EVERY STATE COUNTS EQUALLY
+        </span>
+        <p class="evidence-findings">
+         Woolworths has more outlets than Coles in every state and territory in this two-chain snapshot. Its share ranges from 52.9% in WA to 65.3% in Tasmania.
+        </p>
+        <p class="evidence-why">
+         <strong>
+          Why this chart?
+         </strong>
+         Choose a tile-grid map because the task is to
+         <em>
+          compare eight jurisdictions without privileging large land areas
+         </em>
+         . It is a supporting schematic idiom.
+        </p>
+        <div class="evidence-source">
+         <span>
+          <strong>
+           DATA:
+          </strong>
+          ScrapeHero 2026 location snapshots; counts combined by state.
+         </span>
+         <a href="charts/04.json" rel="noopener" target="_blank">
+          View chart JSON &nearrow;
+         </a>
+        </div>
+       </div>
+       <details class="method-dropdown">
+        <summary>
+         How is this chart built? &middot; method &amp; limitations
+        </summary>
+        <p>
+         The tiles are
+         <strong>
+          equal-sized rectangles
+         </strong>
+         arranged roughly like the states. Their
+         <strong>
+          position identifies the jurisdiction
+         </strong>
+         , while a single sequential colour scale represents Woolworths&rsquo; share. Labels show abbreviations and percentages.
+        </p>
+        <p>
+         <strong>
+          Limit:
+         </strong>
+         The equal tiles do not preserve state area, distance, or population. These percentages describe only the Woolworths&ndash;Coles split&mdash;not overall market share.
+        </p>
+       </details>
+      </article>
+     </div>
+     <div class="insight-band">
+      <div class="insight-stamp">
+       THE TAKEAWAY
+       <span>
+        &nearrow;
+       </span>
+      </div>
+      <strong>
+       Tasmania: 8.44 stores per 100,000.
+      </strong>
+      <p>
+       NSW has the most stores in total, but Tasmania has the highest two-chain density. A state-level rate still cannot tell us how far anyone must travel to shop.
+      </p>
+     </div>
+    </div>
+    <div class="story-bridge">
+     <div class="shell">
+      <span class="bridge-label">
+       NEXT / WHICH CHAIN?
+      </span>
+      <p>
+       Tasmania leads on stores per resident; NSW leads on store totals. But these are combined counts. The next chapter separates Woolworths from Coles and shows how the same numbers can tell different stories.
+      </p>
+     </div>
+    </div>
+   </section>
+   <section class="chapter blue" id="chains">
+    <div class="shell">
+     <div class="chapter-head">
+      <div class="chapter-index">
+       <span>
+        CHAPTER
+       </span>
+       <strong>
+        02
+       </strong>
+      </div>
+      <div class="chapter-heading">
+       <div class="kicker">
+        THE TWO-CHAIN TEST
+       </div>
+       <h2>
+        Who has the
+        <em>
+         bigger footprint?
+        </em>
+       </h2>
+       <p>
+        The two leaders cover Australia differently. Let's compare actual outlets, outlets per resident, and how those stores split across regions.
+       </p>
+      </div>
+      <div class="chapter-badge">
+       SIDE BY SIDE
+       <span>
+        &lrarr;
+       </span>
+      </div>
+     </div>
+     <div class="chapter-explanation">
+      <div class="chapter-explanation-label">
+       THE DESIGN QUESTION: LOCATIONS OR SALES?
+      </div>
+      <p>
+       A location is one supermarket site, not a standardised unit of floor area or sales. Side-by-side bars and per-capita dots explain the two-chain footprint, while the treemap shows its genuine hierarchy by brand and state. Parallel coordinates expose how the ranking of a state changes when the measure changes.
+      </p>
+     </div>
+     <div class="split-stat">
+      <div class="stat-left">
+       <span>
+        WOOLWORTHS
+       </span>
+       <strong>
+        1,142
+       </strong>
+       <small>
+        location snapshot &middot; 5 Oct 2026
+       </small>
+      </div>
+      <div class="stat-symbol">
+       VS
+      </div>
+      <div class="stat-right">
+       <span>
+        COLES
+       </span>
+       <strong>
+        878
+       </strong>
+       <small>
+        location snapshot &middot; 28 Sep 2026
+       </small>
+      </div>
+     </div>
+     <div class="grid two">
+      <article class="vis-card">
+       <div class="card-top">
+        <span class="number">
+         05 / COMPARISON
+        </span>
+        <span class="idiom">
+         GROUPED BAR
+        </span>
+       </div>
+       <h3>
+        The raw numbers
+       </h3>
+       <p class="deck">
+        Compare the two chains in each state. Click the legend to isolate a chain.
+       </p>
+       <div aria-label="Chart 05: The raw numbers" class="vis" id="vis05" role="group">
+       </div>
+       <div class="card-bottom">
+        <b>
+         WHAT STANDS OUT
+        </b>
+        <span>
+         NSW, VIC and QLD account for much of both chains&rsquo; footprint.
+        </span>
+       </div>
+       <div aria-label="Explanation of chart 5" class="evidence-note">
+        <span class="evidence-kicker">
+         THE POINT &middot; SIZE IS NOT EVENLY DISTRIBUTED
+        </span>
+        <p class="evidence-findings">
+         Woolworths leads Coles in the recorded location counts in all eight jurisdictions. NSW&rsquo;s 348 Woolworths sites and 258 Coles sites make it the largest state-level market for both in this snapshot.
+        </p>
+        <p class="evidence-why">
+         <strong>
+          Why this chart?
+         </strong>
+         Choose grouped bars because a common aligned baseline makes exact comparisons between two quantities straightforward.
+        </p>
+        <div class="evidence-source">
+         <span>
+          <strong>
+           DATA:
+          </strong>
+          ScrapeHero 2026 location snapshots.
+         </span>
+         <a href="charts/05.json" rel="noopener" target="_blank">
+          View chart JSON &nearrow;
+         </a>
+        </div>
+       </div>
+       <details class="method-dropdown">
+        <summary>
+         How is this chart built? &middot; method &amp; limitations
+        </summary>
+        <p>
+         The
+         <strong>
+          bar
+         </strong>
+         mark encodes the count along a common horizontal axis; a
+         <strong>
+          yOffset
+         </strong>
+         groups the chains together for each state. Colours distinguish brands, and the legend highlights selections.
+        </p>
+        <p>
+         <strong>
+          Limit:
+         </strong>
+         These are locations, not chain revenue, store size, stock range or shopper visits.
+        </p>
+       </details>
+      </article>
+      <article class="vis-card">
+       <div class="card-top">
+        <span class="number">
+         06 / GAP
+        </span>
+        <span class="idiom">
+         CONNECTED DOT
+        </span>
+       </div>
+       <h3>
+        Distance between the two
+       </h3>
+       <p class="deck">
+        Pairs of dots show each brand's outlets per 100,000 residents. The gap tells us how different their presence is.
+       </p>
+       <div aria-label="Chart 06: Distance between the two" class="vis" id="vis06" role="group">
+       </div>
+       <div class="card-bottom">
+        <b>
+         READ THE GAP
+        </b>
+        <span>
+         A line connects the two chain values within each state; not a time trend.
+        </span>
+       </div>
+       <div aria-label="Explanation of chart 6" class="evidence-note">
+        <span class="evidence-kicker">
+         THE POINT &middot; COMPARE THE GAP
+        </span>
+        <p class="evidence-findings">
+         Tasmania has 5.51 Woolworths stores versus 2.93 Coles stores per 100,000 residents, a gap of 2.58. In Victoria, the corresponding rates are 3.91 and 3.28.
+        </p>
+        <p class="evidence-why">
+         <strong>
+          Why this chart?
+         </strong>
+         Choose a connected-dot comparison to make
+         <em>
+          within-state differences
+         </em>
+         immediately visible.
+        </p>
+        <div class="evidence-source">
+         <span>
+          <strong>
+           DATA:
+          </strong>
+          ScrapeHero 2026 location snapshots + ABS March 2026 state populations.
+         </span>
+         <a href="charts/06.json" rel="noopener" target="_blank">
+          View chart JSON &nearrow;
+         </a>
+        </div>
+       </div>
+       <details class="method-dropdown">
+        <summary>
+         How is this chart built? &middot; method &amp; limitations
+        </summary>
+        <p>
+         Two
+         <strong>
+          point marks
+         </strong>
+         share the same quantitative axis for each jurisdiction. A
+         <strong>
+          line segment
+         </strong>
+         connects the two chain values; its length communicates the gap, not a time trend.
+        </p>
+        <p>
+         <strong>
+          Limit:
+         </strong>
+         A larger rate does not necessarily mean easier access to groceries: locations vary in size and geographic placement.
+        </p>
+       </details>
+      </article>
+      <article class="vis-card">
+       <div class="card-top">
+        <span class="number">
+         07 / CONTEXT
+        </span>
+        <span class="idiom">
+         POPULATION SCATTER
+        </span>
+       </div>
+       <h3>
+        Why the biggest states have the most stores
+       </h3>
+       <p class="deck">
+        Eight states and territories. The dashed diagonal is the expected store count at the pooled national rate of 7.24 stores per 100,000 residents&mdash;not a fitted trend line.
+       </p>
+       <div aria-label="Chart 07: Why the biggest states have the most stores" class="vis" id="vis07" role="group">
+       </div>
+       <div class="card-bottom">
+        <b>
+         ABOVE THE LINE?
+        </b>
+        <span>
+         A dot above the dashed line has more two-chain stores per resident than the pooled Australian benchmark. The labels are moved slightly to avoid collisions.
+        </span>
+       </div>
+       <div aria-label="Explanation of chart 7" class="evidence-note">
+        <span class="evidence-kicker">
+         THE POINT &middot; POPULATION EXPLAINS MUCH OF THE TOTAL
+        </span>
+        <p class="evidence-findings">
+         NSW has the highest absolute store count, but Tasmania has the highest stores-per-person rate. Queensland, Tasmania and the Northern Territory sit above the 7.24 national benchmark; the other five sit below it.
+        </p>
+        <p class="evidence-why">
+         <strong>
+          Why this chart?
+         </strong>
+         A scatterplot is a direct way to compare
+         <em>
+          population with store counts
+         </em>
+         . The dashed benchmark shows whether a state is above or below the national two-chain average; it is not a regression line.
+        </p>
+        <div class="evidence-source">
+         <span>
+          <strong>
+           DATA:
+          </strong>
+          ScrapeHero 2026 location snapshots + ABS March 2026 population estimates.
+         </span>
+         <a href="charts/07.json" rel="noopener" target="_blank">
+          View chart JSON &nearrow;
+         </a>
+        </div>
+       </div>
+       <details class="method-dropdown">
+        <summary>
+         How is this chart built? &middot; method &amp; limitations
+        </summary>
+        <p>
+         Each
+         <strong>
+          point
+         </strong>
+         is a jurisdiction; horizontal position is population, vertical position is total stores. The dashed line is a calculated
+         <strong>
+          constant-density reference
+         </strong>
+         , not a regression or prediction.
+        </p>
+        <p>
+         <strong>
+          Limit:
+         </strong>
+         Only eight state and territory observations are shown. A point above the line means a higher store-per-person rate&mdash;not better individual access.
+        </p>
+       </details>
+      </article>
+      <article class="vis-card">
+       <div class="card-top">
+        <span class="number">
+         08 / STRUCTURE
+        </span>
+        <span class="idiom">
+         HIERARCHICAL TREEMAP
+        </span>
+       </div>
+       <h3>
+        Break the chains into states
+       </h3>
+       <p class="deck">
+        First split stores by retailer, then by state. Every rectangle's
+        <b>
+         area represents a store count
+        </b>
+        .
+       </p>
+       <div aria-label="Chart 08: Break the chains into states" class="vis treemapvis" id="vis08" role="group">
+       </div>
+       <div class="card-bottom">
+        <b>
+         HOW THIS IS BUILT
+        </b>
+        <span>
+         Real parent&ndash;child hierarchy: All stores &rarr; Brand &rarr; State. Hover for exact values.
+        </span>
+       </div>
+       <div aria-label="Explanation of chart 8" class="evidence-note">
+        <span class="evidence-kicker">
+         THE POINT &middot; TWO GROUPS, EIGHT STATES EACH
+        </span>
+        <p class="evidence-findings">
+         Woolworths makes up 1,142 of the 2,020 recorded stores and Coles 878. Within both chains, NSW and Victoria occupy large rectangles because they have the greatest location totals.
+        </p>
+        <p class="evidence-why">
+         <strong>
+          Why this chart?
+         </strong>
+         Choose a hierarchical treemap because the data genuinely have
+         <em>
+          nested part-to-whole structure
+         </em>
+         . It is not a generic collection of unrelated rectangles.
+        </p>
+        <div class="evidence-source">
+         <span>
+          <strong>
+           DATA:
+          </strong>
+          ScrapeHero 2026 location snapshots; hierarchical totals checked against state CSV.
+         </span>
+         <a href="charts/08.json" rel="noopener" target="_blank">
+          View chart JSON &nearrow;
+         </a>
+        </div>
+       </div>
+       <details class="method-dropdown">
+        <summary>
+         How is this chart built? &middot; method &amp; limitations
+        </summary>
+        <p>
+         Vega&rsquo;s
+         <strong>
+          stratify
+         </strong>
+         transform creates a real hierarchy:
+         <strong>
+          All stores &rarr; retailer &rarr; state
+         </strong>
+         . Its
+         <strong>
+          treemap
+         </strong>
+         layout computes rectangles; leaf
+         <strong>
+          area is proportional to the outlet count
+         </strong>
+         . The coloured parent bands identify the two chains.
+        </p>
+        <p>
+         <strong>
+          Limit:
+         </strong>
+         Treemap area supports approximate part-to-whole comparison; for precise values use hover or the grouped bars in Chart 05.
+        </p>
+       </details>
+      </article>
+      <article class="vis-card feature-parallel">
+       <div class="card-top">
+        <span class="number">
+         09 / PROFILES
+        </span>
+        <span class="idiom">
+         PARALLEL COORDINATES
+        </span>
+       </div>
+       <h3>
+        One state, four measures&mdash;focus one line
+       </h3>
+       <p class="deck">
+        Select a state using the chart dropdown. The red line is the chosen state; the seven grey lines stay as context. Each axis independently runs from the lowest to highest state value.
+       </p>
+       <div aria-label="Chart 09: One state, four measures&mdash;focus one line" class="vis parallelvis" id="vis09" role="group">
+       </div>
+       <div aria-label="Actual ranges represented by the four normalised axes" class="parallel-ranges">
+        <span>
+         <b>
+          Population
+         </b>
+         0.27&ndash;8.67 million people
+        </span>
+        <span>
+         <b>
+          Woolworths
+         </b>
+         12&ndash;348 stores
+        </span>
+        <span>
+         <b>
+          Coles
+         </b>
+         8&ndash;258 stores
+        </span>
+        <span>
+         <b>
+          Combined density
+         </b>
+         6.36&ndash;8.44 per 100k
+        </span>
+       </div>
+       <div class="card-bottom">
+        <b>
+         HOW TO READ
+        </b>
+        <span>
+         Each column has different real-world units. Line heights compare relative positions only&mdash;hover any point to see the actual number.
+        </span>
+       </div>
+       <div aria-label="Explanation of chart 9" class="evidence-note">
+        <span class="evidence-kicker">
+         THE POINT &middot; THE SAME STATE LOOKS DIFFERENT BY METRIC
+        </span>
+        <p class="evidence-findings">
+         NSW leads in population and both chains&rsquo; absolute counts; Tasmania leads in stores per resident. Focusing one state reveals how a strong rank in one measure does not automatically carry over to another.
+        </p>
+        <p class="evidence-why">
+         <strong>
+          Why this chart?
+         </strong>
+         Parallel coordinates allow the reader to follow
+         <em>
+          four numerical measurements
+         </em>
+         for each state, while a selected red line and muted context lines avoid an eight-colour tangle.
+        </p>
+        <div class="evidence-source">
+         <span>
+          <strong>
+           DATA:
+          </strong>
+          ScrapeHero 2026 location snapshots + ABS March 2026 population estimates.
+         </span>
+         <a href="charts/09.json" rel="noopener" target="_blank">
+          View chart JSON &nearrow;
+         </a>
+        </div>
+       </div>
+       <details class="method-dropdown">
+        <summary>
+         How is this chart built? &middot; method &amp; limitations
+        </summary>
+        <p>
+         Population, Woolworths stores, Coles stores and total stores per 100,000 people are four independently min&ndash;max normalised axes. A dropdown chooses the orange-red focus line; the grey context lines remain for comparison. This normalisation is for display only and does not imply a common unit across the axes.
+        </p>
+        <p>
+         Population, Woolworths stores, Coles stores and total stores per 100,000 people are four independently min&ndash;max normalised axes. A dropdown chooses the orange-red focus line; the grey context lines remain for comparison. This normalisation is for display only and does not imply a common unit across the axes.
+        </p>
+       </details>
+      </article>
+     </div>
+     <div class="micro-note">
+      <strong>
+       DATA LIMITATION
+      </strong>
+      These are ScrapeHero snapshots of Woolworths and Coles only. Aldi, IGA, independents, store size and travel time are outside this count.
+     </div>
+    </div>
+    <div class="story-bridge">
+     <div class="shell">
+      <span class="bridge-label">
+       NEXT / STORES ARE NOT SALES
+      </span>
+      <p>
+       More sites do not automatically imply a larger share of grocery spending. To answer the question of market concentration, the next chapter changes the measure&mdash;and the reporting period&mdash;to the ACCC&rsquo;s sales-share estimates.
+      </p>
+     </div>
+    </div>
+   </section>
+   <section class="chapter apricot" id="market">
+    <div class="shell">
+     <div class="chapter-head">
+      <div class="chapter-index">
+       <span>
+        CHAPTER
+       </span>
+       <strong>
+        03
+       </strong>
+      </div>
+      <div class="chapter-heading">
+       <div class="kicker">
+        WHO OWNS THE GROCERY DOLLAR?
+       </div>
+       <h2>
+        Two chains.
+        <em>
+         More than half the market.
+        </em>
+       </h2>
+       <p>
+        Store counts are not sales. So now we switch datasets&mdash;and step back to the ACCC's historical national estimates of take-home food and grocery sales.
+       </p>
+      </div>
+      <div class="chapter-badge">
+       MARKET SHARE
+       <span>
+        %
+       </span>
+      </div>
+     </div>
+     <div class="chapter-explanation">
+      <div class="chapter-explanation-label">
+       THE DESIGN QUESTION: WHO EARNS THE GROCERY DOLLAR?
+      </div>
+      <p>
+       The ACCC&rsquo;s estimates measure national take-home grocery sales, not the 2026 location counts. The waffle shows a majority, the bump chart shows shifts in rank, and the diverging bars show the direction and magnitude of historical percentage-point changes. These views complement each other without treating stores and sales as equivalent.
+      </p>
+     </div>
+     <div class="market-callout">
+      <strong>
+       57.3%
+      </strong>
+      <div>
+       <span>
+        THE BIG NUMBER / FY2022&ndash;23 &middot; TAKE-HOME GROCERY SALES
+       </span>
+       <p>
+        Combined estimated grocery sales share of Woolworths (32.5%) and Coles (24.8%). That is not a 2026 measure.
+       </p>
+      </div>
+      <span class="market-bubble">
+       57 OUT OF 100
+       <br/>
+       ROUNDED CELLS
+      </span>
+     </div>
+     <aside aria-label="What the ACCC percentages mean" class="market-scope-note">
+      <strong>
+       BE PRECISE ABOUT THE DENOMINATOR.
+      </strong>
+      The 57.3% is the combined estimated share of
+      <em>
+       national take-home food and grocery sales
+      </em>
+      in FY2022&ndash;23. Using the narrower definition of
+      <em>
+       supermarket retail sales
+      </em>
+      , the ACCC estimated approximately
+      <strong>
+       67%
+      </strong>
+      for the two chains in FY2023. They are different measures, not contradictory results.
+      <a href="https://www.accc.gov.au/system/files/supermarkets-inquiry-2024-2025-interim-report.pdf" rel="noopener noreferrer" target="_blank">
+       ACCC interim report, Figure 1.1 and p. 9 &nearrow;
+      </a>
+     </aside>
+     <div class="grid market-grid">
+      <article class="vis-card">
+       <div class="card-top">
+        <span class="number">
+         10 / THE WHOLE
+        </span>
+        <span class="idiom">
+         100-CELL WAFFLE
+        </span>
+       </div>
+       <h3>
+        What does 57.3% look like?
+       </h3>
+       <p class="deck">
+        Every square is one percent of estimated sales. We round 57.3% to 57 filled squares.
+       </p>
+       <div aria-label="Chart 10: What does 57.3% look like?" class="vis wafflevis" id="vis10" role="group">
+       </div>
+       <div class="card-bottom">
+        <b>
+         ONE SQUARE = 1%
+        </b>
+        <span>
+         Woolworths + Coles compared with everyone else, based on sales estimates.
+        </span>
+       </div>
+       <div aria-label="Explanation of chart 10" class="evidence-note">
+        <span class="evidence-kicker">
+         THE POINT &middot; A MAJORITY OF THE SALES PIE
+        </span>
+        <p class="evidence-findings">
+         The ACCC&rsquo;s historical estimate gives Woolworths 32.5% and Coles 24.8% of national take-home food and grocery sales in FY2022&ndash;23. Together that is 57.3%, just over half.
+        </p>
+        <p class="evidence-why">
+         <strong>
+          Why this chart?
+         </strong>
+         Choose a waffle to communicate an intuitive
+         <em>
+          part-to-whole majority
+         </em>
+         to a general audience.
+        </p>
+        <div class="evidence-source">
+         <span>
+          <strong>
+           DATA:
+          </strong>
+          ACCC Supermarkets Inquiry historical national take-home food and grocery sales estimates.
+         </span>
+         <a href="charts/10.json" rel="noopener" target="_blank">
+          View chart JSON &nearrow;
+         </a>
+        </div>
+       </div>
+       <details class="method-dropdown">
+        <summary>
+         How is this chart built? &middot; method &amp; limitations
+        </summary>
+        <p>
+         A
+         <strong>
+          10 &times; 10 waffle
+         </strong>
+         represents 100 percentage points. The two-chain estimate is rounded to
+         <strong>
+          57 filled cells
+         </strong>
+         ; remaining cells represent other participants. The exact 57.3% is displayed in the headline.
+        </p>
+        <p>
+         <strong>
+          Limit:
+         </strong>
+         This measures estimated grocery
+         <strong>
+          sales
+         </strong>
+         in FY2022&ndash;23, not number of stores in 2026. Whole-square rounding loses 0.3 percentage points of precision.
+        </p>
+       </details>
+      </article>
+      <article class="vis-card">
+       <div class="card-top">
+        <span class="number">
+         11 / THE ORDER
+        </span>
+        <span class="idiom">
+         BUMP CHART
+        </span>
+       </div>
+       <h3>
+        What moved up the ranking?
+       </h3>
+       <p class="deck">
+        Follow four participants from 2002&ndash;03 to 2022&ndash;23. First place is at the top.
+       </p>
+       <div aria-label="Chart 11: What moved up the ranking?" class="vis" id="vis11" role="group">
+       </div>
+       <div class="card-bottom">
+        <b>
+         FOLLOW THE LINES
+        </b>
+        <span>
+         ALDI passes the Metcash wholesale-supply category in the displayed ranking.
+        </span>
+       </div>
+       <div aria-label="Explanation of chart 11" class="evidence-note">
+        <span class="evidence-kicker">
+         THE POINT &middot; RANKINGS SHIFT EVEN IF THE TOP STAYS
+        </span>
+        <p class="evidence-findings">
+         Woolworths and Coles remain first and second among the four displayed participants. ALDI moves ahead of the Metcash wholesale-supply category by FY2022&ndash;23.
+        </p>
+        <p class="evidence-why">
+         <strong>
+          Why this chart?
+         </strong>
+         Choose a bump chart because the user&rsquo;s task is to understand
+         <em>
+          changes in relative order
+         </em>
+         , not only raw percentage magnitudes.
+        </p>
+        <div class="evidence-source">
+         <span>
+          <strong>
+           DATA:
+          </strong>
+          ACCC historical market-share estimates for 2002&ndash;03, 2006&ndash;07 and 2022&ndash;23.
+         </span>
+         <a href="charts/11.json" rel="noopener" target="_blank">
+          View chart JSON &nearrow;
+         </a>
+        </div>
+       </div>
+       <details class="method-dropdown">
+        <summary>
+         How is this chart built? &middot; method &amp; limitations
+        </summary>
+        <p>
+         A
+         <strong>
+          line with point marks
+         </strong>
+         traces each participant&rsquo;s rank across three historical financial years. The y-axis is deliberately reversed so
+         <strong>
+          rank 1 is at the top
+         </strong>
+         ; the legend can isolate one participant.
+        </p>
+        <p>
+         <strong>
+          Limit:
+         </strong>
+         Only three reporting periods and four selected participants are shown. Connecting the endpoints does not establish what happened in the intervening years. Metcash is a wholesaler, not a conventional single retail chain.
+        </p>
+       </details>
+      </article>
+      <article class="vis-card full">
+       <div class="card-top">
+        <span class="number">
+         12 / THE CHANGE
+        </span>
+        <span class="idiom">
+         DIVERGING BARS
+        </span>
+       </div>
+       <div class="flex-head">
+        <div>
+         <h3>
+          Who gained ground across two decades?
+         </h3>
+         <p class="deck">
+          Percentage-point change, 2002&ndash;03 to 2022&ndash;23. The zero line separates rises from falls.
+         </p>
+        </div>
+        <div class="fact-pill">
+         <b>
+          +7.1 pp
+         </b>
+         <small>
+          ALDI sales-share change
+         </small>
+        </div>
+       </div>
+       <div aria-label="Chart 12: Who gained ground across two decades?" class="vis slimvis" id="vis12" role="group">
+       </div>
+       <div class="card-bottom">
+        <b>
+         AN IMPORTANT CAVEAT
+        </b>
+        <span>
+         Metcash represents wholesale supply to independents, not one retail supermarket chain. Historical categories are not directly equivalent to store numbers.
+        </span>
+       </div>
+       <div aria-label="Explanation of chart 12" class="evidence-note">
+        <span class="evidence-kicker">
+         THE POINT &middot; GAINS AND LOSSES ARE ASYMMETRIC
+        </span>
+        <p class="evidence-findings">
+         ALDI gains 7.1 percentage points of estimated sales share from 2002&ndash;03 to 2022&ndash;23. Woolworths gains 1.9 points and Coles 1.7; the Metcash wholesale-supply category falls 14.0 points.
+        </p>
+        <p class="evidence-why">
+         <strong>
+          Why this chart?
+         </strong>
+         Choose a diverging bar chart to emphasise
+         <em>
+          direction and size of a change
+         </em>
+         in one view.
+        </p>
+        <div class="evidence-source">
+         <span>
+          <strong>
+           DATA:
+          </strong>
+          ACCC historical market-share estimates.
+         </span>
+         <a href="charts/12.json" rel="noopener" target="_blank">
+          View chart JSON &nearrow;
+         </a>
+        </div>
+       </div>
+       <details class="method-dropdown">
+        <summary>
+         How is this chart built? &middot; method &amp; limitations
+        </summary>
+        <p>
+         Bars extend from a
+         <strong>
+          true zero reference
+         </strong>
+         , moving right for positive percentage-point differences and left for negative ones. The tooltip lists starting and ending shares.
+        </p>
+        <p>
+         <strong>
+          Limit:
+         </strong>
+         Percentage-point changes are not percent growth. Different companies and wholesale arrangements complicate direct business-to-business comparisons.
+        </p>
+       </details>
+      </article>
+     </div>
+    </div>
+    <div class="story-bridge">
+     <div class="shell">
+      <span class="bridge-label">
+       NEXT / THE CHECKOUT
+      </span>
+      <p>
+       Historical sales shares show where grocery dollars went, not whether households bought more food. The final chapter follows nominal retail turnover, with a clear warning about inflation and other food retailers.
+      </p>
+     </div>
+    </div>
+   </section>
+   <section class="chapter cream" id="spending">
+    <div class="shell">
+     <div class="chapter-head">
+      <div class="chapter-index">
+       <span>
+        CHAPTER
+       </span>
+       <strong>
+        04
+       </strong>
+      </div>
+      <div class="chapter-heading">
+       <div class="kicker">
+        NOMINAL TURNOVER, NOT A HOUSEHOLD BILL
+       </div>
+       <h2>
+        Food retailing
+        <em>
+         in dollars.
+        </em>
+       </h2>
+       <p>
+        From the ABS, we follow national monthly food retailing from June 2020 to June 2025. It includes specialist food and liquor stores&mdash;not just supermarkets.
+       </p>
+      </div>
+      <div class="chapter-badge">
+       THE MONEY TRAIL
+       <span>
+        &nearrow;
+       </span>
+      </div>
+     </div>
+     <div class="chapter-explanation">
+      <div class="chapter-explanation-label">
+       THE DESIGN QUESTION: A BIGGER BILL OR MORE FOOD?
+      </div>
+      <p>
+       A higher dollar value does not, by itself, prove that more goods were bought. This series is recorded in current dollars, and its year-on-year comparisons are calculated against the same month twelve months earlier. The line reveals the overall trajectory; the heatmap highlights when growth was unusually high or low.
+      </p>
+     </div>
+     <div class="spend-strip">
+      <div>
+       <small>
+        FIRST MONTH / JUN 2020
+       </small>
+       <b>
+        $12.69B
+       </b>
+      </div>
+      <span>
+       &nearrow;
+      </span>
+      <div>
+       <small>
+        LAST MONTH / JUN 2025
+       </small>
+       <b>
+        $15.00B
+       </b>
+      </div>
+      <p>
+       Seasonally adjusted nominal monthly turnover. Values are not inflation-adjusted.
+      </p>
+     </div>
+     <div class="grid two">
+      <article class="vis-card">
+       <div class="card-top">
+        <span class="number">
+         13 / TREND
+        </span>
+        <span class="idiom">
+         TIME SERIES
+        </span>
+       </div>
+       <h3>
+        How did food turnover change?
+       </h3>
+       <p class="deck">
+        A line shows monthly turnover in millions of Australian dollars, with the latest observation marked.
+       </p>
+       <div aria-label="Chart 13: How did food turnover change?" class="vis" id="vis13" role="group">
+       </div>
+       <div class="card-bottom">
+        <b>
+         DON'T CONFUSE
+        </b>
+        <span>
+         Money spent is not the same as how much food was purchased, or prices after inflation.
+        </span>
+       </div>
+       <div aria-label="Explanation of chart 13" class="evidence-note">
+        <span class="evidence-kicker">
+         THE POINT &middot; DOLLARS ROSE, QUANTITIES MAY NOT HAVE
+        </span>
+        <p class="evidence-findings">
+         Australian monthly food retailing rose from about $12.69 billion in June 2020 to $15.00 billion in June 2025 in the ABS series. The line also reveals month-to-month fluctuations rather than implying smooth growth.
+        </p>
+        <p class="evidence-why">
+         <strong>
+          Why this chart?
+         </strong>
+         Choose a line chart because the primary task is to
+         <em>
+          follow change across a continuous monthly time series
+         </em>
+         .
+        </p>
+        <div class="evidence-source">
+         <span>
+          <strong>
+           DATA:
+          </strong>
+          ABS Retail Trade, Australia &mdash; monthly food retailing, June 2020 to June 2025.
+         </span>
+         <a href="charts/13.json" rel="noopener" target="_blank">
+          View chart JSON &nearrow;
+         </a>
+        </div>
+       </div>
+       <details class="method-dropdown">
+        <summary>
+         How is this chart built? &middot; method &amp; limitations
+        </summary>
+        <p>
+         Time is encoded left to right on a
+         <strong>
+          temporal axis
+         </strong>
+         ; monthly turnover is shown on a quantitative vertical axis. A highlighted point marks the final June 2025 observation.
+        </p>
+        <p>
+         <strong>
+          Limit:
+         </strong>
+         The series is
+         <strong>
+          seasonally adjusted nominal turnover
+         </strong>
+         for national food retailers, including specialist food and liquor businesses. It does not isolate supermarkets or remove inflation.
+        </p>
+       </details>
+      </article>
+      <article class="vis-card">
+       <div class="card-top">
+        <span class="number">
+         14 / THE PATTERN
+        </span>
+        <span class="idiom">
+         MONTH &times; YEAR HEATMAP
+        </span>
+       </div>
+       <h3>
+        Which months grew the fastest?
+       </h3>
+       <p class="deck">
+        One colour family, from pale to deep blue. A darker cell means stronger year-on-year growth compared with the same month one year earlier.
+       </p>
+       <div aria-label="Chart 14: Which months grew the fastest?" class="vis" id="vis14" role="group">
+       </div>
+       <div class="card-bottom">
+        <b>
+         READ ONE CELL
+        </b>
+        <span>
+         Each square compares a month with the same month a year before. Blank earlier months lack a full-year comparison.
+        </span>
+       </div>
+       <div aria-label="Explanation of chart 14" class="evidence-note">
+        <span class="evidence-kicker">
+         THE POINT &middot; READ YEAR-ON-YEAR, NOT YEAR TO YEAR
+        </span>
+        <p class="evidence-findings">
+         The strongest recorded annual increase in this extract is November 2022, at about 10.2% above November 2021. Two months in 2021 show small negative year-on-year changes.
+        </p>
+        <p class="evidence-why">
+         <strong>
+          Why this chart?
+         </strong>
+         Choose a heatmap because it makes
+         <em>
+          repeated month-by-year patterns and unusual periods
+         </em>
+         easier to spot than a long table.
+        </p>
+        <div class="evidence-source">
+         <span>
+          <strong>
+           DATA:
+          </strong>
+          ABS Retail Trade, Australia, with derived same-month annual changes from the seasonally adjusted series.
+         </span>
+         <a href="charts/14.json" rel="noopener" target="_blank">
+          View chart JSON &nearrow;
+         </a>
+        </div>
+       </div>
+       <details class="method-dropdown">
+        <summary>
+         How is this chart built? &middot; method &amp; limitations
+        </summary>
+        <p>
+         Each
+         <strong>
+          rectangle
+         </strong>
+         represents a month and year. Month is positioned horizontally, year vertically, and a
+         <strong>
+          single pale-to-dark blue scale
+         </strong>
+         encodes annual percentage change. Each cell compares with the
+         <em>
+          same month in the previous year
+         </em>
+         .
+        </p>
+        <p>
+         <strong>
+          Limit:
+         </strong>
+         A light cell can mean a small positive or slightly negative change; use the printed figures or tooltip to see the sign. Early months without a comparable prior year are omitted.
+        </p>
+       </details>
+      </article>
+     </div>
+    </div>
+    <div class="story-bridge">
+     <div class="shell">
+      <span class="bridge-label">
+       THE CONCLUSION / WHAT WE CAN SAY
+      </span>
+      <p>
+       Australia has concentrated supermarket sales and a changing food-retailing total, but these charts cannot establish prices, local access or market power on their own. Compare like with like: geographic presence, sales share and turnover answer different questions.
+      </p>
+     </div>
+    </div>
+   </section>
+   <section aria-labelledby="reading-title" class="reading-guide" id="reading-guide">
+    <div class="shell">
+     <div class="guide-head">
+      <p class="guide-overline">
+       HOW TO READ THE EVIDENCE
+      </p>
+      <h2 id="reading-title">
+       A small glossary for a big grocery story.
+      </h2>
+      <p>
+       These definitions explain the decisions behind the charts. The point is to understand the data, not memorise technical vocabulary.
+      </p>
+     </div>
+     <div class="guide-grid">
+      <div class="guide-term">
+       <h3>
+        Absolute vs relative
+       </h3>
+       <p>
+        A total counts locations. A per-capita rate divides the total by population: stores &divide; residents &times; 100,000. Both are useful, but answer different questions.
+       </p>
+      </div>
+      <div class="guide-term">
+       <h3>
+        Area, colour &amp; position
+       </h3>
+       <p>
+        The larger a proportional circle or treemap rectangle, the more stores it represents. A sequential light-to-dark colour scale encodes smaller to larger numeric values.
+       </p>
+      </div>
+      <div class="guide-term">
+       <h3>
+        Store share vs sales share
+       </h3>
+       <p>
+        Store share counts a retailer&rsquo;s locations out of the two sampled chains. Sales share estimates the portion of all take-home grocery dollars associated with a participant.
+       </p>
+      </div>
+      <div class="guide-term">
+       <h3>
+        Percentage vs percentage points
+       </h3>
+       <p>
+        A rise from 5% to 8% is +3 percentage points, not +3% growth. The diverging bars use percentage points.
+       </p>
+      </div>
+      <div class="guide-term">
+       <h3>
+        A map is not a travel-time model
+       </h3>
+       <p>
+        State rates and approximate symbols do not tell us how far a shopper lives from a store, whether it has accessible transport, or what the food costs there.
+       </p>
+      </div>
+      <div class="guide-term">
+       <h3>
+        Read the exact value
+       </h3>
+       <p>
+        Hover on a chart to see figures. On the charts with clickable legends, select a retailer or state to highlight it; click again or reset the legend to return to the broader view.
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="outro">
+    <div class="shell outro-grid">
+     <div>
+      <div class="kicker">
+       THE RECEIPT / WHAT WE LEARNED
+      </div>
+      <h2>
+       Big footprint.
+       <br/>
+       <em>
+        Different stories.
+       </em>
+      </h2>
+      <p>
+       There is no single statistic that explains supermarket shopping. Store counts map presence, sales shares describe market concentration, and food turnover captures broader spending in current dollars.
+      </p>
+     </div>
+     <div class="takeaways">
+      <div>
+       <span>
+        01
+       </span>
+       <p>
+        <b>
+         Geography:
+        </b>
+        more stores overall does not always mean more stores per resident.
+       </p>
+      </div>
+      <div>
+       <span>
+        02
+       </span>
+       <p>
+        <b>
+         Competition:
+        </b>
+        Woolworths and Coles account for 57.3% of estimated national take-home grocery sales in FY2022&ndash;23.
+       </p>
+      </div>
+      <div>
+       <span>
+        03
+       </span>
+       <p>
+        <b>
+         Spending:
+        </b>
+        ABS national food turnover grew in nominal dollars, but that doesn't prove Australians bought more food.
+       </p>
+      </div>
+      <div>
+       <span>
+        04
+       </span>
+       <p>
+        <b>
+         Next question:
+        </b>
+        where are local access gaps&mdash;and what do shoppers actually pay for the same basket?
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer id="sources">
+   <div class="shell">
+    <div class="footer-top">
+     <div class="footer-logo">
+      A.
+      <span>
+       THE AISLE EFFECT
+      </span>
+     </div>
+     <span>
+      FIT3179 / DATA VISUALISATION 2 / 2026
+     </span>
+    </div>
+    <p class="foot-qualifier">
+     These datasets were created for different purposes and periods. Store counts, sales shares and retail turnover are three distinct metrics; none by itself proves price, consumer access or market power.
+    </p>
+    <div class="footer-columns">
+     <div>
+      <h3>
+       DATA &amp; METHODOLOGY
+      </h3>
+      <p>
+       Source dates are not interchangeable. The maps describe two retail chains in 2026; the ACCC figures refer to FY2022&ndash;23 and earlier; the ABS food-turnover series ends in June 2025.
+      </p>
+      <ol>
+       <li>
+        <a href="https://www.scrapehero.com/location-reports/Woolworths%20Supermarkets-Australia/">
+         ScrapeHero &mdash; Woolworths locations (5 Oct 2026)
+        </a>
+       </li>
+       <li>
+        <a href="https://www.scrapehero.com/location-reports/Coles%20Supermarkets-Australia/">
+         ScrapeHero &mdash; Coles locations (28 Sep 2026)
+        </a>
+       </li>
+       <li>
+        <a href="https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/mar-2026">
+         ABS &mdash; State populations (Mar 2026)
+        </a>
+       </li>
+       <li>
+        <a href="https://www.accc.gov.au/system/files/supermarkets-inquiry-2024-2025-interim-report.pdf">
+         ACCC &mdash; Supermarkets inquiry, historical sales shares
+        </a>
+       </li>
+       <li>
+        <a href="https://www.abs.gov.au/statistics/industry/retail-and-wholesale-trade/retail-trade-australia/jun-2025">
+         ABS &mdash; Retail Trade, food turnover to June 2025
+        </a>
+       </li>
+       <li>
+        <a href="https://github.com/tonywr71/GeoJson-Data">
+         Australian state boundaries (GeoJSON)
+        </a>
+       </li>
+      </ol>
+     </div>
+     <div>
+      <h3>
+       BEHIND THE CHARTS
+      </h3>
+      <p>
+       Fourteen human-readable chart specifications are available in
+       <code>
+        charts/01.json
+       </code>
+       &ndash;
+       <code>
+        charts/14.json
+       </code>
+       . Chart 08 uses Vega for the genuine hierarchical treemap; the remaining charts use Vega-Lite. Each panel includes sources, interpretation and an explanation of its visual encoding.
+      </p>
+      <p>
+       <b>
+        Authorship:
+       </b>
+       Syed Abdul Muid Adnan &middot; prepared 28 October 2026. Confirm name and add your student ID in the Moodle template.
+      </p>
+      <p>
+       <b>
+        AI acknowledgement:
+       </b>
+       OpenAI ChatGPT assisted with design concepts, HTML/CSS/JavaScript, chart specifications, checks and explanatory writing. Final review, verified sources and submission are the student's responsibility.
+      </p>
+     </div>
+    </div>
+    <div class="footer-end">
+     <span>
+      INSPIRED BY GROCERY RECEIPTS, EDITORIAL INFOGRAPHICS &amp; THE USER'S PROVIDED DESIGN REFERENCES. NO THIRD-PARTY CHARTS REUSED.
+     </span>
+     <a href="#top">
+      BACK TO THE TOP &uarr;
+     </a>
+    </div>
+   </div>
+  </footer>
+ </body>
+</html>
+

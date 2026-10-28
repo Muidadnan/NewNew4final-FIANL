@@ -1,0 +1,20 @@
+id,parent,brand,state,code,stores
+All stores,,,,,0
+Woolworths,All stores,Woolworths,,,0
+Woolworths · WA,Woolworths,Woolworths,Western Australia,WA,117
+Woolworths · NT,Woolworths,Woolworths,Northern Territory,NT,12
+Woolworths · SA,Woolworths,Woolworths,South Australia,SA,69
+Woolworths · QLD,Woolworths,Woolworths,Queensland,QLD,264
+Woolworths · NSW,Woolworths,Woolworths,New South Wales,NSW,348
+Woolworths · ACT,Woolworths,Woolworths,Australian Capital Territory,ACT,20
+Woolworths · VIC,Woolworths,Woolworths,Victoria,VIC,280
+Woolworths · TAS,Woolworths,Woolworths,Tasmania,TAS,32
+Coles,All stores,Coles,,,0
+Coles · WA,Coles,Coles,Western Australia,WA,104
+Coles · NT,Coles,Coles,Northern Territory,NT,8
+Coles · SA,Coles,Coles,South Australia,SA,53
+Coles · QLD,Coles,Coles,Queensland,QLD,190
+Coles · NSW,Coles,Coles,New South Wales,NSW,258
+Coles · ACT,Coles,Coles,Australian Capital Territory,ACT,13
+Coles · VIC,Coles,Coles,Victoria,VIC,235
+Coles · TAS,Coles,Coles,Tasmania,TAS,17

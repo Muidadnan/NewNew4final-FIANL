@@ -1,0 +1,132 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "labelColor": "#45615c",
+      "titleColor": "#183d3c",
+      "gridColor": "#e3eae5",
+      "tickColor": "#cedbd2",
+      "domain": false,
+      "labelPadding": 6,
+      "titlePadding": 10
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 10,
+      "titleFontSize": 11,
+      "labelColor": "#45615c",
+      "orient": "bottom"
+    },
+    "title": {
+      "font": "Fraunces",
+      "fontSize": 16,
+      "color": "#163f42"
+    },
+    "font": "DM Sans",
+    "background": null
+  },
+  "width": 470,
+  "height": 340,
+  "projection": {
+    "type": "equalEarth"
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/tonywr71/GeoJson-Data/master/australian-states.json",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e8efeb",
+        "stroke": "#ffffff",
+        "strokeWidth": 1.2
+      }
+    },
+    {
+      "data": {
+        "url": "data/states.csv",
+        "format": {
+          "type": "csv"
+        }
+      },
+      "mark": {
+        "type": "circle",
+        "opacity": 0.82,
+        "stroke": "#ffffff",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "total",
+          "type": "quantitative",
+          "title": "Number of stores",
+          "scale": {
+            "type": "linear",
+            "domain": [
+              0,
+              650
+            ],
+            "range": [
+              35,
+              3200
+            ]
+          },
+          "legend": {
+            "title": "Recorded stores · circle area",
+            "values": [
+              20,
+              150,
+              350,
+              600
+            ],
+            "symbolFillColor": "#12756c",
+            "symbolStrokeColor": "#ffffff",
+            "symbolStrokeWidth": 1,
+            "symbolOpacity": 0.9
+          }
+        },
+        "color": {
+          "value": "#12756c"
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal"
+          },
+          {
+            "field": "total",
+            "type": "quantitative",
+            "title": "Coles + Woolworths"
+          },
+          {
+            "field": "code",
+            "type": "nominal",
+            "title": "State code"
+          }
+        ]
+      }
+    }
+  ],
+  "description": "Valid proportional-symbol map: area represents combined Woolworths and Coles count; one anchored circle per state, not exact store locations."
+}

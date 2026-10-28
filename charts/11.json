@@ -1,0 +1,138 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "labelColor": "#45615c",
+      "titleColor": "#183d3c",
+      "gridColor": "#e3eae5",
+      "tickColor": "#cedbd2",
+      "domain": false,
+      "labelPadding": 6,
+      "titlePadding": 10
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 10,
+      "titleFontSize": 11,
+      "labelColor": "#45615c",
+      "orient": "bottom"
+    },
+    "title": {
+      "font": "Fraunces",
+      "fontSize": 16,
+      "color": "#163f42"
+    },
+    "font": "DM Sans",
+    "background": null
+  },
+  "width": "container",
+  "height": 265,
+  "data": {
+    "url": "data/market_ranks.csv"
+  },
+  "mark": {
+    "type": "line",
+    "point": {
+      "filled": true,
+      "size": 130
+    },
+    "strokeWidth": 3
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "sort": [
+        "2002–03",
+        "2006–07",
+        "2022–23"
+      ],
+      "title": "Financial year"
+    },
+    "y": {
+      "field": "rank",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          4.3,
+          0.7
+        ]
+      },
+      "axis": {
+        "values": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "title": "Rank among four participants"
+      }
+    },
+    "color": {
+      "field": "brand",
+      "scale": {
+        "domain": [
+          "Woolworths",
+          "Coles",
+          "ALDI",
+          "Metcash wholesale supply"
+        ],
+        "range": [
+          "#12756c",
+          "#d45039",
+          "#f2b84c",
+          "#397bb1"
+        ]
+      },
+      "title": null
+    },
+    "detail": {
+      "field": "brand"
+    },
+    "tooltip": [
+      {
+        "field": "brand"
+      },
+      {
+        "field": "year"
+      },
+      {
+        "field": "rank",
+        "type": "quantitative"
+      },
+      {
+        "field": "share",
+        "type": "quantitative",
+        "title": "Reported share (%)"
+      }
+    ],
+    "opacity": {
+      "condition": {
+        "param": "rankBrand",
+        "value": 1
+      },
+      "value": 0.14
+    }
+  },
+  "params": [
+    {
+      "name": "rankBrand",
+      "select": {
+        "type": "point",
+        "fields": [
+          "brand"
+        ]
+      },
+      "bind": "legend"
+    }
+  ]
+}

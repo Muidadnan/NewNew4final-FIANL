@@ -1,0 +1,250 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "The dashed reference is an independent straight two-point benchmark at 7.235968 stores per 100,000 residents (2020 locations / 27916100 residents); NOT a fitted regression or connected observed states. Direct state labels use presentation-only coordinates.",
+  "background": null,
+  "width": "container",
+  "height": 340,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "DM Sans",
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#45615c",
+      "titleColor": "#183d3c",
+      "gridColor": "#e3eae5",
+      "domain": false
+    },
+    "legend": {
+      "orient": "bottom",
+      "labelFont": "DM Sans"
+    }
+  },
+  "data": {
+    "url": "data/states.csv"
+  },
+  "transform": [
+    {
+      "calculate": "datum.population/1000000",
+      "as": "popM"
+    },
+    {
+      "calculate": "datum.per100k >= 7.2359677749 ? \"Above national rate\" : \"Below national rate\"",
+      "as": "benchmark"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeDash": [
+          5,
+          5
+        ],
+        "strokeWidth": 2,
+        "color": "#b2c4b9"
+      },
+      "encoding": {
+        "x": {
+          "field": "population_m",
+          "type": "quantitative",
+          "title": "Population (millions)",
+          "scale": {
+            "domain": [
+              0,
+              9.6
+            ],
+            "zero": true
+          }
+        },
+        "y": {
+          "field": "expected_outlets",
+          "type": "quantitative",
+          "title": "Coles + Woolworths stores",
+          "scale": {
+            "domain": [
+              0,
+              720
+            ],
+            "zero": true
+          }
+        }
+      },
+      "data": {
+        "values": [
+          {
+            "population_m": 0,
+            "expected_outlets": 0
+          },
+          {
+            "population_m": 9.6,
+            "expected_outlets": 694.652906
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "stroke": "#fffdfa",
+        "strokeWidth": 2,
+        "opacity": 0.92,
+        "size": 165
+      },
+      "encoding": {
+        "x": {
+          "field": "popM",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              9.6
+            ],
+            "zero": true
+          }
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              720
+            ],
+            "zero": true
+          }
+        },
+        "color": {
+          "field": "benchmark",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Above national rate",
+              "Below national rate"
+            ],
+            "range": [
+              "#12756c",
+              "#d45039"
+            ]
+          },
+          "legend": {
+            "title": null
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal"
+          },
+          {
+            "field": "population",
+            "type": "quantitative",
+            "format": ","
+          },
+          {
+            "field": "total",
+            "type": "quantitative",
+            "title": "Stores"
+          },
+          {
+            "field": "per100k",
+            "type": "quantitative",
+            "format": ".2f",
+            "title": "Stores / 100k"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "stroke": "#8aa8a1",
+        "strokeWidth": 1,
+        "opacity": 0.8
+      },
+      "encoding": {
+        "x": {
+          "field": "popM",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              9.6
+            ]
+          }
+        },
+        "x2": {
+          "field": "labelPopM"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              720
+            ]
+          }
+        },
+        "y2": {
+          "field": "labelStores"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#173b41",
+        "baseline": "middle"
+      },
+      "encoding": {
+        "x": {
+          "field": "labelPopM",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              9.6
+            ]
+          }
+        },
+        "y": {
+          "field": "labelStores",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              720
+            ]
+          }
+        },
+        "text": {
+          "field": "code",
+          "type": "nominal"
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal"
+          },
+          {
+            "field": "total",
+            "type": "quantitative",
+            "title": "Both chains"
+          },
+          {
+            "field": "per100k",
+            "type": "quantitative",
+            "format": ".2f",
+            "title": "Per 100,000 residents"
+          }
+        ]
+      }
+    }
+  ]
+}

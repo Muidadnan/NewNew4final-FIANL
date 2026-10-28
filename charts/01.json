@@ -1,0 +1,120 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "labelColor": "#45615c",
+      "titleColor": "#183d3c",
+      "gridColor": "#e3eae5",
+      "tickColor": "#cedbd2",
+      "domain": false,
+      "labelPadding": 6,
+      "titlePadding": 10
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 10,
+      "titleFontSize": 11,
+      "labelColor": "#45615c",
+      "orient": "bottom"
+    },
+    "title": {
+      "font": "Fraunces",
+      "fontSize": 16,
+      "color": "#163f42"
+    },
+    "font": "DM Sans",
+    "background": null
+  },
+  "width": 470,
+  "height": 340,
+  "projection": {
+    "type": "equalEarth"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/tonywr71/GeoJson-Data/master/australian-states.json",
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
+  },
+  "transform": [
+    {
+      "calculate": "datum.properties.STATE_NAME",
+      "as": "state"
+    },
+    {
+      "lookup": "state",
+      "from": {
+        "data": {
+          "url": "data/states.csv",
+          "format": {
+            "type": "csv"
+          }
+        },
+        "key": "state",
+        "fields": [
+          "total",
+          "per100k",
+          "wool_share",
+          "woolworths",
+          "coles"
+        ]
+      }
+    }
+  ],
+  "mark": {
+    "type": "geoshape",
+    "stroke": "#ffffff",
+    "strokeWidth": 1.4
+  },
+  "encoding": {
+    "color": {
+      "field": "per100k",
+      "type": "quantitative",
+      "title": "Stores per 100k people",
+      "scale": {
+        "domain": [
+          6,
+          8.5
+        ],
+        "range": [
+          "#e6f5ea",
+          "#12646b"
+        ],
+        "clamp": true
+      },
+      "legend": {
+        "format": ".1f",
+        "title": "Two-chain stores / 100,000"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "state",
+        "type": "nominal",
+        "title": "State"
+      },
+      {
+        "field": "total",
+        "type": "quantitative",
+        "title": "Combined stores"
+      },
+      {
+        "field": "per100k",
+        "type": "quantitative",
+        "title": "Stores / 100k",
+        "format": ".2f"
+      }
+    ]
+  },
+  "description": "Valid choropleth: state polygons coloured by ScrapeHero outlets per 100,000 residents. Population-normalised, not local accessibility."
+}

@@ -1,0 +1,111 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "labelColor": "#45615c",
+      "titleColor": "#183d3c",
+      "gridColor": "#e3eae5",
+      "tickColor": "#cedbd2",
+      "domain": false,
+      "labelPadding": 6,
+      "titlePadding": 10
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 10,
+      "titleFontSize": 11,
+      "labelColor": "#45615c",
+      "orient": "bottom"
+    },
+    "title": {
+      "font": "Fraunces",
+      "fontSize": 16,
+      "color": "#163f42"
+    },
+    "font": "DM Sans",
+    "background": null
+  },
+  "width": "container",
+  "height": 280,
+  "data": {
+    "url": "data/abs_monthly_food_retail.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "color": "#12756c",
+        "strokeWidth": 3,
+        "point": {
+          "filled": true,
+          "size": 16,
+          "color": "#12756c"
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal",
+          "title": null
+        },
+        "y": {
+          "field": "turnover_m",
+          "type": "quantitative",
+          "title": "Monthly turnover ($m)",
+          "scale": {
+            "zero": false
+          }
+        },
+        "tooltip": [
+          {
+            "field": "date",
+            "type": "temporal",
+            "timeUnit": "yearmonth",
+            "title": "Month"
+          },
+          {
+            "field": "turnover_m",
+            "type": "quantitative",
+            "title": "$m",
+            "format": ",.1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 140,
+        "color": "#d45039"
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "turnover_m",
+          "type": "quantitative"
+        }
+      },
+      "data": {
+        "values": [
+          {
+            "date": "2025-06-01",
+            "turnover_m": 14995.5
+          }
+        ]
+      }
+    }
+  ]
+}

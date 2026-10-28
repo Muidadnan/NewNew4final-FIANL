@@ -1,0 +1,322 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "labelColor": "#45615c",
+      "titleColor": "#183d3c",
+      "gridColor": "#e3eae5",
+      "tickColor": "#cedbd2",
+      "domain": false,
+      "labelPadding": 6,
+      "titlePadding": 10
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 10,
+      "titleFontSize": 11,
+      "labelColor": "#45615c",
+      "orient": "bottom"
+    },
+    "title": {
+      "font": "Fraunces",
+      "fontSize": 16,
+      "color": "#163f42"
+    },
+    "font": "DM Sans",
+    "background": null
+  },
+  "width": 520,
+  "height": 310,
+  "data": {
+    "url": "data/dorling_cartogram.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "circle",
+        "stroke": "#ffffff",
+        "strokeWidth": 2,
+        "opacity": 0.93
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              500
+            ]
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              52,
+              425
+            ],
+            "reverse": true
+          },
+          "axis": null
+        },
+        "size": {
+          "field": "stores",
+          "type": "quantitative",
+          "title": "Coles + Woolworths stores",
+          "scale": {
+            "type": "linear",
+            "domain": [
+              0,
+              606
+            ],
+            "range": [
+              0,
+              8500
+            ]
+          },
+          "legend": {
+            "title": "Two-chain outlets (area)",
+            "values": [
+              20,
+              125,
+              350,
+              600
+            ],
+            "symbolFillColor": "#12756c",
+            "symbolStrokeColor": "#ffffff",
+            "symbolStrokeWidth": 1,
+            "symbolOpacity": 0.9
+          }
+        },
+        "color": {
+          "field": "wool_share",
+          "type": "quantitative",
+          "title": "Woolworths share of the two (%)",
+          "scale": {
+            "domain": [
+              50,
+              66
+            ],
+            "range": [
+              "#d1ece1",
+              "#0d5867"
+            ],
+            "clamp": true
+          },
+          "legend": {
+            "title": "Woolworths share (%)"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "stores",
+            "type": "quantitative",
+            "title": "Two-chain stores"
+          },
+          {
+            "field": "woolworths",
+            "type": "quantitative",
+            "title": "Woolworths"
+          },
+          {
+            "field": "coles",
+            "type": "quantitative",
+            "title": "Coles"
+          },
+          {
+            "field": "wool_share",
+            "type": "quantitative",
+            "title": "Woolworths proportion (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "baseline": "middle"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              500
+            ]
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              52,
+              425
+            ],
+            "reverse": true
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "code",
+          "type": "nominal"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.wool_share>=58",
+            "value": "#ffffff"
+          },
+          "value": "#123B41"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.stores >= 49"
+        }
+      ]
+    },
+    {
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "dy": 15
+      },
+      "transform": [
+        {
+          "filter": "datum.stores >= 100"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              500
+            ]
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              52,
+              425
+            ],
+            "reverse": true
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "stores",
+          "type": "quantitative",
+          "format": ",.0f"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.wool_share>=58",
+            "value": "#ffffff"
+          },
+          "value": "#133B41"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "align": "center",
+        "color": "#173e42"
+      },
+      "transform": [
+        {
+          "filter": "datum.stores < 49"
+        },
+        {
+          "calculate": "datum.code == 'NT' ? datum.x + 28 : datum.x - 33",
+          "as": "tagX"
+        },
+        {
+          "calculate": "datum.y - 6",
+          "as": "tagY"
+        },
+        {
+          "calculate": "datum.code + ' · ' + datum.stores",
+          "as": "smallLabel"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "tagX",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              500
+            ]
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "tagY",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              52,
+              425
+            ],
+            "reverse": true
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "smallLabel",
+          "type": "nominal"
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal"
+          },
+          {
+            "field": "stores",
+            "type": "quantitative",
+            "title": "Stores"
+          }
+        ]
+      }
+    }
+  ],
+  "description": "Schematic circle cartogram, not automatic Dorling optimisation. Circle area proportional to store totals; ACT and NT are labelled outside their small circles."
+}

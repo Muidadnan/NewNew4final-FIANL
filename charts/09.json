@@ -1,0 +1,276 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Four within-variable min-max normalised axes, with one selected state and seven grey context lines. Select a state from the dropdown. Values from different columns cannot be read as common units.",
+  "background": null,
+  "width": "container",
+  "height": 270,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "DM Sans",
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#45615c",
+      "titleColor": "#173d40",
+      "gridColor": "#e3eae5",
+      "domain": false
+    },
+    "legend": {
+      "orient": "bottom",
+      "labelFont": "DM Sans",
+      "labelFontSize": 10
+    }
+  },
+  "data": {
+    "url": "data/state_parallel.csv"
+  },
+  "params": [
+    {
+      "name": "focusState",
+      "value": "TAS",
+      "bind": {
+        "input": "select",
+        "name": "Highlight one state: ",
+        "options": [
+          "TAS",
+          "NSW",
+          "VIC",
+          "QLD",
+          "WA",
+          "SA",
+          "ACT",
+          "NT"
+        ]
+      }
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {
+            "dimension": "Population"
+          },
+          {
+            "dimension": "Woolworths"
+          },
+          {
+            "dimension": "Coles"
+          },
+          {
+            "dimension": "Outlets per 100k"
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "color": "#c6d8d0",
+        "strokeWidth": 1.3
+      },
+      "encoding": {
+        "x": {
+          "field": "dimension",
+          "type": "ordinal",
+          "sort": [
+            "Population",
+            "Woolworths",
+            "Coles",
+            "Outlets per 100k"
+          ]
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "point": {
+          "filled": true,
+          "size": 22
+        },
+        "strokeWidth": 1.45,
+        "color": "#acbdb4",
+        "opacity": 0.4
+      },
+      "encoding": {
+        "x": {
+          "field": "dimension",
+          "type": "ordinal",
+          "sort": [
+            "Population",
+            "Woolworths",
+            "Coles",
+            "Outlets per 100k"
+          ],
+          "title": null,
+          "axis": {
+            "labelAngle": 0,
+            "labelFontSize": 12,
+            "labelLimit": 160,
+            "labelPadding": 9
+          }
+        },
+        "y": {
+          "field": "normalised",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              1
+            ]
+          },
+          "axis": {
+            "values": [
+              0,
+              0.5,
+              1
+            ],
+            "title": "Relative position within each measure",
+            "labelExpr": "datum.value==0 ? 'LOW' : datum.value==1 ? 'HIGH' : 'MID'",
+            "labelFontSize": 11
+          }
+        },
+        "detail": {
+          "field": "code",
+          "type": "nominal"
+        },
+        "order": {
+          "field": "order",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "dimension",
+            "type": "nominal",
+            "title": "Measure"
+          },
+          {
+            "field": "value",
+            "type": "quantitative",
+            "format": ".2f",
+            "title": "Actual value"
+          },
+          {
+            "field": "unit",
+            "type": "nominal",
+            "title": "Units"
+          },
+          {
+            "field": "min",
+            "type": "quantitative",
+            "title": "Minimum"
+          },
+          {
+            "field": "max",
+            "type": "quantitative",
+            "title": "Maximum"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.code === focusState"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "point": {
+          "filled": true,
+          "size": 155,
+          "stroke": "#ffffff",
+          "strokeWidth": 2
+        },
+        "strokeWidth": 4.2,
+        "color": "#d45039"
+      },
+      "encoding": {
+        "x": {
+          "field": "dimension",
+          "type": "ordinal",
+          "sort": [
+            "Population",
+            "Woolworths",
+            "Coles",
+            "Outlets per 100k"
+          ],
+          "title": null,
+          "axis": {
+            "labelAngle": 0,
+            "labelFontSize": 12,
+            "labelLimit": 160,
+            "labelPadding": 9
+          }
+        },
+        "y": {
+          "field": "normalised",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              1
+            ]
+          },
+          "axis": {
+            "values": [
+              0,
+              0.5,
+              1
+            ],
+            "title": "Relative position within each measure",
+            "labelExpr": "datum.value==0 ? 'LOW' : datum.value==1 ? 'HIGH' : 'MID'",
+            "labelFontSize": 11
+          }
+        },
+        "detail": {
+          "field": "code",
+          "type": "nominal"
+        },
+        "order": {
+          "field": "order",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "dimension",
+            "type": "nominal",
+            "title": "Measure"
+          },
+          {
+            "field": "value",
+            "type": "quantitative",
+            "format": ".2f",
+            "title": "Actual value"
+          },
+          {
+            "field": "unit",
+            "type": "nominal",
+            "title": "Units"
+          },
+          {
+            "field": "min",
+            "type": "quantitative",
+            "title": "Minimum"
+          },
+          {
+            "field": "max",
+            "type": "quantitative",
+            "title": "Maximum"
+          }
+        ]
+      }
+    }
+  ]
+}

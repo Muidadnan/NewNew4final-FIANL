@@ -1,0 +1,175 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "labelColor": "#45615c",
+      "titleColor": "#183d3c",
+      "gridColor": "#e3eae5",
+      "tickColor": "#cedbd2",
+      "domain": false,
+      "labelPadding": 6,
+      "titlePadding": 10
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 10,
+      "titleFontSize": 11,
+      "labelColor": "#45615c",
+      "orient": "bottom"
+    },
+    "title": {
+      "font": "Fraunces",
+      "fontSize": 16,
+      "color": "#163f42"
+    },
+    "font": "DM Sans",
+    "background": null
+  },
+  "width": 320,
+  "height": 260,
+  "data": {
+    "url": "data/tiles.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "cornerRadius": 7,
+        "stroke": "#ffffff",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "col",
+          "type": "ordinal",
+          "axis": null,
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "row",
+          "type": "ordinal",
+          "axis": null,
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "wool_share",
+          "type": "quantitative",
+          "title": "Woolworths share (%)",
+          "scale": {
+            "domain": [
+              50,
+              66
+            ],
+            "range": [
+              "#d3e7df",
+              "#176a70"
+            ],
+            "clamp": true
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal"
+          },
+          {
+            "field": "woolworths",
+            "type": "quantitative"
+          },
+          {
+            "field": "coles",
+            "type": "quantitative"
+          },
+          {
+            "field": "wool_share",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Woolworths % of two"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 17,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {
+          "field": "col",
+          "type": "ordinal",
+          "axis": null,
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "row",
+          "type": "ordinal",
+          "axis": null,
+          "sort": "ascending"
+        },
+        "text": {
+          "field": "code",
+          "type": "nominal"
+        },
+        "yOffset": {
+          "value": -13
+        },
+        "color": {
+          "condition": {
+            "test": "datum.wool_share >= 58",
+            "value": "#ffffff"
+          },
+          "value": "#153d3c"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontSize": 11,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {
+          "field": "col",
+          "type": "ordinal",
+          "sort": "ascending",
+          "axis": null
+        },
+        "y": {
+          "field": "row",
+          "type": "ordinal",
+          "sort": "ascending",
+          "axis": null
+        },
+        "yOffset": {
+          "value": 15
+        },
+        "text": {
+          "field": "wool_share",
+          "type": "quantitative",
+          "format": ".1f"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.wool_share >= 58",
+            "value": "#ffffff"
+          },
+          "value": "#163c3d"
+        }
+      }
+    }
+  ],
+  "description": "Schematic tile-grid map. The numeric figures in tiles are percentages of Woolworths among the two selected chains; the legend is also in percent."
+}
