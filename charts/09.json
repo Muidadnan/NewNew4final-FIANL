@@ -32,7 +32,7 @@
       "value": "TAS",
       "bind": {
         "input": "select",
-        "name": "Highlight one state: ",
+        "name": "Highlight a jurisdiction: ",
         "options": [
           "TAS",
           "NSW",
@@ -143,7 +143,7 @@
           {
             "field": "state",
             "type": "nominal",
-            "title": "State"
+            "title": "State or territory"
           },
           {
             "field": "dimension",
@@ -241,7 +241,7 @@
           {
             "field": "state",
             "type": "nominal",
-            "title": "State"
+            "title": "State or territory"
           },
           {
             "field": "dimension",
