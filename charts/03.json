@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Self-contained schematic circle cartogram of Coles and Woolworths store counts. All eight state/territory abbreviations and their counts are printed inside proportional circles. Circle area is proportional to store count; positions are illustrative, not a dynamically calculated Dorling cartogram.",
+  "description": "Schematic circle cartogram of Woolworths and Coles store counts in eight states and territories. Each circle has a centred two-line abbreviation and store-count label; circle area encodes stores and colour encodes Woolworths share. Positions are illustrative.",
   "background": null,
   "config": {
     "view": {
@@ -191,8 +191,8 @@
               606
             ],
             "range": [
-              0,
-              11500
+              100,
+              13000
             ]
           },
           "legend": {
@@ -266,57 +266,9 @@
     {
       "transform": [
         {
-          "filter": "datum.stores >= 75"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "font": "DM Sans",
-        "fontWeight": "bold",
-        "fontSize": 13,
-        "baseline": "middle",
-        "align": "center"
-      },
-      "encoding": {
-        "x": {
-          "field": "x",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              500
-            ],
-            "nice": false,
-            "zero": false
-          },
-          "axis": null
+          "calculate": "datum.code + '\\n' + format(datum.stores, ',.0f')",
+          "as": "label"
         },
-        "y": {
-          "field": "textY",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              440
-            ],
-            "nice": false,
-            "zero": false
-          },
-          "axis": null
-        },
-        "text": {
-          "field": "code"
-        },
-        "color": {
-          "field": "labelColor",
-          "type": "nominal",
-          "scale": null,
-          "legend": null
-        }
-      }
-    },
-    {
-      "transform": [
         {
           "filter": "datum.stores >= 75"
         }
@@ -326,6 +278,7 @@
         "font": "DM Sans",
         "fontWeight": "bold",
         "fontSize": 12,
+        "lineHeight": 14,
         "baseline": "middle",
         "align": "center"
       },
@@ -344,7 +297,7 @@
           "axis": null
         },
         "y": {
-          "field": "countY",
+          "field": "plotY",
           "type": "quantitative",
           "scale": {
             "domain": [
@@ -357,86 +310,36 @@
           "axis": null
         },
         "text": {
-          "field": "stores",
-          "type": "quantitative",
-          "format": ",.0f"
-        },
-        "color": {
-          "field": "labelColor",
-          "type": "nominal",
-          "scale": null,
-          "legend": null
-        }
-      }
-    },
-    {
-      "transform": [
-        {
-          "filter": "datum.code === 'NT'"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "font": "DM Sans",
-        "fontWeight": "bold",
-        "fontSize": 9,
-        "baseline": "middle",
-        "align": "center",
-        "limit": 40
-      },
-      "encoding": {
-        "x": {
-          "field": "x",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              500
-            ],
-            "nice": false,
-            "zero": false
-          },
-          "axis": null
-        },
-        "y": {
-          "field": "textY",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              440
-            ],
-            "nice": false,
-            "zero": false
-          },
-          "axis": null
-        },
-        "text": {
-          "field": "code",
+          "field": "label",
           "type": "nominal"
         },
         "color": {
-          "field": "labelColor",
-          "type": "nominal",
-          "scale": null,
-          "legend": null
+          "condition": {
+            "test": "datum.wool_share >= 57.8",
+            "value": "#FFFFFF"
+          },
+          "value": "#153B3C"
         }
       }
     },
     {
       "transform": [
         {
-          "filter": "datum.code === 'NT'"
+          "calculate": "datum.code + '\\n' + format(datum.stores, ',.0f')",
+          "as": "label"
+        },
+        {
+          "filter": "datum.stores < 75"
         }
       ],
       "mark": {
         "type": "text",
         "font": "DM Sans",
         "fontWeight": "bold",
-        "fontSize": 8,
+        "fontSize": 8.5,
+        "lineHeight": 9,
         "baseline": "middle",
-        "align": "center",
-        "limit": 40
+        "align": "center"
       },
       "encoding": {
         "x": {
@@ -453,7 +356,7 @@
           "axis": null
         },
         "y": {
-          "field": "countY",
+          "field": "plotY",
           "type": "quantitative",
           "scale": {
             "domain": [
@@ -466,233 +369,15 @@
           "axis": null
         },
         "text": {
-          "field": "stores",
-          "type": "quantitative",
-          "format": ",.0f"
-        },
-        "color": {
-          "field": "labelColor",
-          "type": "nominal",
-          "scale": null,
-          "legend": null
-        }
-      }
-    },
-    {
-      "transform": [
-        {
-          "filter": "datum.code === 'ACT'"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "font": "DM Sans",
-        "fontWeight": "bold",
-        "fontSize": 9,
-        "baseline": "middle",
-        "align": "center",
-        "limit": 40
-      },
-      "encoding": {
-        "x": {
-          "field": "x",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              500
-            ],
-            "nice": false,
-            "zero": false
-          },
-          "axis": null
-        },
-        "y": {
-          "field": "textY",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              440
-            ],
-            "nice": false,
-            "zero": false
-          },
-          "axis": null
-        },
-        "text": {
-          "field": "code",
+          "field": "label",
           "type": "nominal"
         },
         "color": {
-          "field": "labelColor",
-          "type": "nominal",
-          "scale": null,
-          "legend": null
-        }
-      }
-    },
-    {
-      "transform": [
-        {
-          "filter": "datum.code === 'ACT'"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "font": "DM Sans",
-        "fontWeight": "bold",
-        "fontSize": 8,
-        "baseline": "middle",
-        "align": "center",
-        "limit": 40
-      },
-      "encoding": {
-        "x": {
-          "field": "x",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              500
-            ],
-            "nice": false,
-            "zero": false
+          "condition": {
+            "test": "datum.wool_share >= 57.8",
+            "value": "#FFFFFF"
           },
-          "axis": null
-        },
-        "y": {
-          "field": "countY",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              440
-            ],
-            "nice": false,
-            "zero": false
-          },
-          "axis": null
-        },
-        "text": {
-          "field": "stores",
-          "type": "quantitative",
-          "format": ",.0f"
-        },
-        "color": {
-          "field": "labelColor",
-          "type": "nominal",
-          "scale": null,
-          "legend": null
-        }
-      }
-    },
-    {
-      "transform": [
-        {
-          "filter": "datum.code === 'TAS'"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "font": "DM Sans",
-        "fontWeight": "bold",
-        "fontSize": 10,
-        "baseline": "middle",
-        "align": "center",
-        "limit": 40
-      },
-      "encoding": {
-        "x": {
-          "field": "x",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              500
-            ],
-            "nice": false,
-            "zero": false
-          },
-          "axis": null
-        },
-        "y": {
-          "field": "textY",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              440
-            ],
-            "nice": false,
-            "zero": false
-          },
-          "axis": null
-        },
-        "text": {
-          "field": "code",
-          "type": "nominal"
-        },
-        "color": {
-          "field": "labelColor",
-          "type": "nominal",
-          "scale": null,
-          "legend": null
-        }
-      }
-    },
-    {
-      "transform": [
-        {
-          "filter": "datum.code === 'TAS'"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "font": "DM Sans",
-        "fontWeight": "bold",
-        "fontSize": 9,
-        "baseline": "middle",
-        "align": "center",
-        "limit": 40
-      },
-      "encoding": {
-        "x": {
-          "field": "x",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              500
-            ],
-            "nice": false,
-            "zero": false
-          },
-          "axis": null
-        },
-        "y": {
-          "field": "countY",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              440
-            ],
-            "nice": false,
-            "zero": false
-          },
-          "axis": null
-        },
-        "text": {
-          "field": "stores",
-          "type": "quantitative",
-          "format": ",.0f"
-        },
-        "color": {
-          "field": "labelColor",
-          "type": "nominal",
-          "scale": null,
-          "legend": null
+          "value": "#153B3C"
         }
       }
     }
