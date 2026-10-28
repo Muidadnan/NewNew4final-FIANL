@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Slopegraph: rank changes between combined store totals and population-normalised store counts across Australia's six states and two mainland territories. NSW and Tasmania are highlighted; all eight jurisdictions are labelled.",
+  "description": "Slopegraph comparing rankings of combined supermarket outlet totals and outlets per 100,000 residents across Australia's six states and two mainland territories. Every line and dot uses the same teal colour, with state or territory codes labelled at both ends.",
   "background": null,
   "config": {
     "view": {
@@ -95,7 +95,7 @@
       "mark": {
         "type": "line",
         "strokeWidth": 2.3,
-        "opacity": 0.78
+        "opacity": 1
       },
       "encoding": {
         "x": {
@@ -142,17 +142,7 @@
           "type": "nominal"
         },
         "color": {
-          "condition": [
-            {
-              "test": "datum.code === 'TAS'",
-              "value": "#d45039"
-            },
-            {
-              "test": "datum.code === 'NSW'",
-              "value": "#12756c"
-            }
-          ],
-          "value": "#7d9993"
+          "value": "#367d78"
         },
         "tooltip": [
           {
@@ -190,7 +180,8 @@
         "filled": true,
         "size": 90,
         "stroke": "#fffefa",
-        "strokeWidth": 1
+        "strokeWidth": 1,
+        "opacity": 1
       },
       "encoding": {
         "x": {
@@ -233,17 +224,7 @@
           }
         },
         "color": {
-          "condition": [
-            {
-              "test": "datum.code === 'TAS'",
-              "value": "#d45039"
-            },
-            {
-              "test": "datum.code === 'NSW'",
-              "value": "#12756c"
-            }
-          ],
-          "value": "#7d9993"
+          "value": "#367d78"
         },
         "tooltip": [
           {
