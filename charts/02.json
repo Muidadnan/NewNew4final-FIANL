@@ -11,8 +11,8 @@
       "titleFont": "DM Sans",
       "labelFontSize": 11,
       "titleFontSize": 11,
-      "labelColor": "#45615c",
-      "titleColor": "#183d3c",
+      "labelColor": "#000000",
+      "titleColor": "#000000",
       "gridColor": "#e3eae5",
       "tickColor": "#cedbd2",
       "domain": false,
@@ -24,8 +24,9 @@
       "titleFont": "DM Sans",
       "labelFontSize": 10,
       "titleFontSize": 11,
-      "labelColor": "#45615c",
-      "orient": "bottom"
+      "labelColor": "#000000",
+      "orient": "bottom",
+      "titleColor": "#000000"
     },
     "title": {
       "font": "Fraunces",
@@ -135,9 +136,9 @@
       },
       "mark": {
         "type": "circle",
-        "opacity": 0.88,
-        "stroke": "#ffffff",
-        "strokeWidth": 1.6
+        "opacity": 1,
+        "stroke": "#3b7771",
+        "strokeWidth": 1.5
       },
       "encoding": {
         "longitude": {
@@ -170,12 +171,12 @@
               400,
               600
             ],
-            "symbolFillColor": "#177c78",
-            "symbolStrokeColor": "#ffffff"
+            "symbolFillColor": "#9ccac1",
+            "symbolStrokeColor": "#3b7771"
           }
         },
         "color": {
-          "value": "#177c78"
+          "value": "#9ccac1"
         },
         "tooltip": [
           {
@@ -254,10 +255,10 @@
       "mark": {
         "type": "text",
         "font": "DM Sans",
-        "fontSize": 11,
+        "fontSize": 13,
         "fontWeight": "bold",
-        "fill": "#ffffff",
-        "stroke": "#185e5a",
+        "fill": "#000000",
+        "stroke": null,
         "strokeWidth": 0.6,
         "align": "center",
         "baseline": "middle"
@@ -382,10 +383,10 @@
       "mark": {
         "type": "text",
         "font": "DM Sans",
-        "fontSize": 12,
+        "fontSize": 14,
         "fontWeight": "bold",
-        "fill": "#173d3b",
-        "stroke": "#ffffff",
+        "fill": "#000000",
+        "stroke": null,
         "strokeWidth": 2.5,
         "align": "center",
         "baseline": "middle"
