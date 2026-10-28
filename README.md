@@ -6,7 +6,7 @@ A single-page data story about the physical footprints of Woolworths and Coles, 
 
 ## The story
 
-1. **Where are the stores?** Compare outlet counts with outlets per 100,000 residents across Australia's six states and two mainland territories. A choropleth, a ranking slopegraph, a circle cartogram and equal-area tiles explain why absolute totals and population-adjusted comparisons differ.
+1. **Where are the stores?** Compare outlet counts with outlets per 100,000 residents across Australia's six states and two mainland territories. A choropleth, a geographic proportional-symbol map, a schematic circle cartogram and equal-area tiles explain why absolute totals and population-adjusted comparisons differ.
 2. **How do the two chains compare?** Compare Woolworths and Coles by jurisdiction using grouped bars, connected dots, a population scatterplot, a brand-first treemap and parallel coordinates.
 3. **What do grocery sales shares show?** Explore historical ACCC national take-home food and grocery sales estimates with a waffle chart, ranking changes and percentage-point differences.
 4. **How has food-retailing turnover changed?** Read the ABS monthly nominal food-retailing turnover line chart and year-by-month heatmap.
@@ -24,7 +24,7 @@ A single-page data story about the physical footprints of Woolworths and Coles, 
 
 ## Technical design
 
-All visualisations use Vega or Vega-Lite. The three distinct map idioms are a geographic choropleth, a schematic circle cartogram and an equal-area tile-grid map. The ranking slopegraph is a non-map chart. The charts use tooltips and focused highlighting where appropriate. The entire story is visible on one scrolling page, with responsive layout for narrower screens.
+All visualisations use Vega or Vega-Lite. The four map views use a geographic choropleth, a proportional-symbol map on actual state outlines, a schematic circle cartogram and an equal-area tile-grid map. The proportional-symbol map preserves geography; the cartogram replaces state shapes with circles. The charts use tooltips and focused highlighting where appropriate. The entire story is visible on one scrolling page, with responsive layout for narrower screens.
 
 ## Data scope and interpretation
 
