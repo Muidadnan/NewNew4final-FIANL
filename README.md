@@ -1,6 +1,6 @@
 # The Aisle Effect — Australian supermarket data story
 
-**Live visualisation:** https://muidadnan.github.io/NewNew4final-FIANL/
+**Live visualisation:** https://muidadnan.github.io/The_Aisle_Effect_Australian_Supermarket_Shopping_DV2/
 
 A single-page data story about the physical footprints of Woolworths and Coles, historical grocery-sales concentration, and Australian food-retailing turnover. The site contains **14 Vega/Vega-Lite visualisations** arranged into four chapters.
 
