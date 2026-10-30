@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Schematic circle cartogram of combined Woolworths and Coles outlets in Australia's six states and two mainland territories. One circle per jurisdiction; area, not diameter, is proportional to the store total. Every circle is labelled with its abbreviation and count. The explanatory proportional-area key is provided directly beneath the visualisation using proportional CSS circles of 20, 200 and 600 stores; no oversized Vega legend is rendered.",
+  "description": "Schematic circle cartogram of combined Woolworths and Coles outlets in Australia's six states and two mainland territories. One circle per jurisdiction; area, not diameter, is proportional to the store total. Every circle is sized so that its abbreviation and count fit inside it, and is labelled with its abbreviation and count. A row key of 20, 100 and 300 stores is drawn beneath the circles using the same area scale, so it stays accurate at any display size. A row key of 20, 100 and 300 stores is drawn beneath the circles using the same area scale, so it stays accurate at any display size.",
   "background": null,
   "config": {
     "view": {
@@ -20,96 +20,96 @@
     }
   },
   "width": 530,
-  "height": 345,
+  "height": 590,
   "data": {
     "values": [
       {
         "state": "Western Australia",
         "code": "WA",
-        "x": 76,
+        "x": 66,
         "stores": 221,
         "woolworths": 117,
         "coles": 104,
         "wool_share": 52.9,
         "per100k": 7.14,
-        "plotY": 259
+        "plotY": 175
       },
       {
         "state": "Northern Territory",
         "code": "NT",
-        "x": 170,
+        "x": 172,
         "stores": 20,
         "woolworths": 12,
         "coles": 8,
         "wool_share": 60,
         "per100k": 7.44,
-        "plotY": 349
+        "plotY": 52
       },
       {
         "state": "South Australia",
         "code": "SA",
-        "x": 199.3,
+        "x": 178,
         "stores": 122,
         "woolworths": 69,
         "coles": 53,
         "wool_share": 56.6,
         "per100k": 6.36,
-        "plotY": 235.7
+        "plotY": 186
       },
       {
         "state": "Queensland",
         "code": "QLD",
-        "x": 296.3,
+        "x": 318,
         "stores": 454,
         "woolworths": 264,
         "coles": 190,
         "wool_share": 58.1,
         "per100k": 7.91,
-        "plotY": 346.8
+        "plotY": 95
       },
       {
         "state": "New South Wales",
         "code": "NSW",
-        "x": 405.6,
+        "x": 430,
         "stores": 605,
         "woolworths": 348,
         "coles": 257,
         "wool_share": 57.5,
         "per100k": 6.98,
-        "plotY": 201.3
+        "plotY": 236
       },
       {
         "state": "Australian Capital Territory",
         "code": "ACT",
-        "x": 472.6,
+        "x": 503,
         "stores": 33,
         "woolworths": 20,
         "coles": 13,
         "wool_share": 60.6,
         "per100k": 6.74,
-        "plotY": 97.5
+        "plotY": 368
       },
       {
         "state": "Victoria",
         "code": "VIC",
-        "x": 252.8,
+        "x": 252,
         "stores": 511,
         "woolworths": 279,
         "coles": 232,
         "wool_share": 54.6,
         "per100k": 7.14,
-        "plotY": 107.3
+        "plotY": 300
       },
       {
         "state": "Tasmania",
         "code": "TAS",
-        "x": 351.1,
+        "x": 372,
         "stores": 49,
         "woolworths": 32,
         "coles": 17,
         "wool_share": 65.3,
         "per100k": 8.44,
-        "plotY": 48
+        "plotY": 385
       }
     ]
   },
@@ -128,7 +128,11 @@
           "scale": {
             "domain": [
               0,
-              500
+              530
+            ],
+            "range": [
+              0,
+              530
             ],
             "nice": false,
             "zero": false
@@ -141,7 +145,11 @@
           "scale": {
             "domain": [
               0,
-              440
+              590
+            ],
+            "range": [
+              0,
+              590
             ],
             "nice": false,
             "zero": false
@@ -160,8 +168,9 @@
             ],
             "range": [
               0,
-              9500
-            ]
+              27467.0
+            ],
+            "zero": true
           },
           "legend": null
         },
@@ -211,10 +220,10 @@
         "type": "text",
         "font": "DM Sans",
         "fontWeight": "bold",
-        "fontSize": 14,
+        "fontSize": 15,
         "baseline": "middle",
         "align": "center",
-        "dy": -8
+        "dy": -9
       },
       "encoding": {
         "x": {
@@ -223,7 +232,11 @@
           "scale": {
             "domain": [
               0,
-              500
+              530
+            ],
+            "range": [
+              0,
+              530
             ],
             "nice": false,
             "zero": false
@@ -236,7 +249,11 @@
           "scale": {
             "domain": [
               0,
-              440
+              590
+            ],
+            "range": [
+              0,
+              590
             ],
             "nice": false,
             "zero": false
@@ -293,10 +310,10 @@
         "type": "text",
         "font": "DM Sans",
         "fontWeight": "bold",
-        "fontSize": 12,
+        "fontSize": 13,
         "baseline": "middle",
         "align": "center",
-        "dy": 8
+        "dy": 9
       },
       "encoding": {
         "x": {
@@ -305,7 +322,11 @@
           "scale": {
             "domain": [
               0,
-              500
+              530
+            ],
+            "range": [
+              0,
+              530
             ],
             "nice": false,
             "zero": false
@@ -318,7 +339,11 @@
           "scale": {
             "domain": [
               0,
-              440
+              590
+            ],
+            "range": [
+              0,
+              590
             ],
             "nice": false,
             "zero": false
@@ -376,10 +401,10 @@
         "type": "text",
         "font": "DM Sans",
         "fontWeight": "bold",
-        "fontSize": 11.5,
+        "fontSize": 10,
         "baseline": "middle",
         "align": "center",
-        "dy": -6
+        "dy": -5.5
       },
       "encoding": {
         "x": {
@@ -388,7 +413,11 @@
           "scale": {
             "domain": [
               0,
-              500
+              530
+            ],
+            "range": [
+              0,
+              530
             ],
             "nice": false,
             "zero": false
@@ -401,7 +430,11 @@
           "scale": {
             "domain": [
               0,
-              440
+              590
+            ],
+            "range": [
+              0,
+              590
             ],
             "nice": false,
             "zero": false
@@ -458,10 +491,10 @@
         "type": "text",
         "font": "DM Sans",
         "fontWeight": "bold",
-        "fontSize": 10.5,
+        "fontSize": 9.5,
         "baseline": "middle",
         "align": "center",
-        "dy": 6
+        "dy": 5.5
       },
       "encoding": {
         "x": {
@@ -470,7 +503,11 @@
           "scale": {
             "domain": [
               0,
-              500
+              530
+            ],
+            "range": [
+              0,
+              530
             ],
             "nice": false,
             "zero": false
@@ -483,7 +520,11 @@
           "scale": {
             "domain": [
               0,
-              440
+              590
+            ],
+            "range": [
+              0,
+              590
             ],
             "nice": false,
             "zero": false
@@ -529,6 +570,289 @@
             "format": ".1f"
           }
         ]
+      }
+    },
+    {
+      "name": "key_rule",
+      "data": {
+        "values": [
+          {
+            "x": 0,
+            "x2": 530,
+            "y": 436.31278498163573
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "stroke": "#c9d6cf",
+        "strokeDash": [
+          3,
+          3
+        ]
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              530
+            ],
+            "range": [
+              0,
+              530
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
+        },
+        "x2": {
+          "field": "x2"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              590
+            ],
+            "range": [
+              0,
+              590
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
+        }
+      }
+    },
+    {
+      "name": "key_circles",
+      "data": {
+        "values": [
+          {
+            "stores": 20,
+            "x": 167.00074635581868,
+            "plotY": 516.1563924908179,
+            "lx": 191.00149271163735,
+            "label": "20"
+          },
+          {
+            "stores": 100,
+            "x": 263.0163172314797,
+            "plotY": 516.1563924908179,
+            "lx": 308.0311417513221,
+            "label": "100"
+          },
+          {
+            "stores": 300,
+            "x": 407.8747492605043,
+            "plotY": 516.1563924908179,
+            "lx": 480.71835676968647,
+            "label": "300"
+          }
+        ]
+      },
+      "mark": {
+        "type": "circle",
+        "fill": "#9bc6bc",
+        "opacity": 1,
+        "stroke": "#ffffff",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              530
+            ],
+            "range": [
+              0,
+              530
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "plotY",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              590
+            ],
+            "range": [
+              0,
+              590
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
+        },
+        "size": {
+          "field": "stores",
+          "type": "quantitative",
+          "scale": {
+            "type": "linear",
+            "domain": [
+              0,
+              605
+            ],
+            "range": [
+              0,
+              27467.0
+            ],
+            "zero": true
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "name": "key_labels",
+      "data": {
+        "values": [
+          {
+            "stores": 20,
+            "x": 167.00074635581868,
+            "plotY": 516.1563924908179,
+            "lx": 191.00149271163735,
+            "label": "20"
+          },
+          {
+            "stores": 100,
+            "x": 263.0163172314797,
+            "plotY": 516.1563924908179,
+            "lx": 308.0311417513221,
+            "label": "100"
+          },
+          {
+            "stores": 300,
+            "x": 407.8747492605043,
+            "plotY": 516.1563924908179,
+            "lx": 480.71835676968647,
+            "label": "300"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "fill": "#163c38",
+        "align": "left",
+        "baseline": "middle"
+      },
+      "encoding": {
+        "x": {
+          "field": "lx",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              530
+            ],
+            "range": [
+              0,
+              530
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "plotY",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              590
+            ],
+            "range": [
+              0,
+              590
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "name": "key_title",
+      "data": {
+        "values": [
+          {
+            "x": 6,
+            "y": 516.1563924908179,
+            "t": "Stores (circle area)"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "fill": "#163c38",
+        "align": "left",
+        "baseline": "middle"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              530
+            ],
+            "range": [
+              0,
+              530
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              590
+            ],
+            "range": [
+              0,
+              590
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "t"
+        }
       }
     }
   ]
