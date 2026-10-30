@@ -6,7 +6,7 @@
 | Public single-page website | GitHub Pages: https://muidadnan.github.io/NewNew4final-FIANL/ ; one scrolling `index.html`. |
 | Vega/Vega-Lite | Fourteen human-readable specifications in `charts/01.json`–`charts/14.json`, embedded by `scripts/main.js`. |
 | Minimum ten charts | Fourteen numbered visualisations across the story; the rubric determines whether related charts are counted as distinct. |
-| At least three map idioms | Geographic choropleth (01), proportional-symbol map (02), schematic circle cartogram (03), and equal-area tile-grid map (04). |
+| At least three map idioms | Geographic choropleth (01), proportional-symbol map (02), schematic circle cartogram (03), and dot-density map (04). |
 | Advanced idioms | Maps, retailer-first nested treemap, parallel coordinates, waffle chart, bump chart and year-month heatmap complement the simpler comparisons. |
 | Real data from multiple sources | ScrapeHero, ABS, ACCC and Australian boundary geometry; exact citations and periods in `data/SOURCES.md`. |
 | Visual encoding and readability | Quantitative colour scales, circle area for counts, direct labels, consistent typography, legends, source notes and responsive card layout. |
