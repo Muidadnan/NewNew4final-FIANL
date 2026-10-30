@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "The dashed reference is an independent straight two-point benchmark at 7.235968 stores per 100,000 residents (2020 locations / 27916100 residents); NOT a fitted regression or connected observed states. Direct state labels use presentation-only coordinates.",
+  "description": "Benchmark is 7.218057 stores per 100,000 residents (2,015 locations / 27,916,100 residents), computed from two verifiable 2026 ScrapeHero snapshots and ABS March 2026 population; this is not a fitted regression.",
   "background": null,
   "width": "container",
   "height": 340,
@@ -31,7 +31,7 @@
       "as": "popM"
     },
     {
-      "calculate": "datum.per100k >= 7.2359677749 ? \"Above national rate\" : \"Below national rate\"",
+      "calculate": "datum.per100k >= 7.218056964 ? \"Above national rate\" : \"Below national rate\"",
       "as": "benchmark"
     }
   ],
@@ -80,7 +80,7 @@
           },
           {
             "population_m": 9.6,
-            "expected_outlets": 694.652906
+            "expected_outlets": 692.933469
           }
         ]
       }
