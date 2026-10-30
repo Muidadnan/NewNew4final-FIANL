@@ -809,11 +809,10 @@
         "font": "DM Sans",
         "fontSize": 13,
         "fontWeight": "bold",
-        "fill": "#142c29",
-        "stroke": "#fffefa",
-        "strokeWidth": 1.6,
+        "fill": "#111111",
         "align": "center",
-        "baseline": "middle"
+        "baseline": "middle",
+        "color": "#111111"
       },
       "encoding": {
         "longitude": {
