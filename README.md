@@ -24,11 +24,11 @@ A single-page data story about the physical footprints of Woolworths and Coles, 
 
 ## Technical design
 
-All visualisations use Vega or Vega-Lite. The four map views use a geographic choropleth, a proportional-symbol map on actual state outlines, a schematic circle cartogram and an dot-density map. The proportional-symbol map preserves geography; the cartogram replaces state shapes with circles. The charts use tooltips and focused highlighting where appropriate. The entire story is visible on one scrolling page, with responsive layout for narrower screens.
+All visualisations use Vega or Vega-Lite. The four map views use a geographic choropleth, a proportional-symbol map on actual state outlines, a schematic circle cartogram and a dot-density map. The proportional-symbol map preserves geography; the cartogram replaces state shapes with circles. The charts use tooltips and focused highlighting where appropriate. The entire story is visible on one scrolling page, with responsive layout for narrower screens.
 
 ## Data scope and interpretation
 
-Store counts are September–October 2026 ScrapeHero snapshots for **Woolworths and Coles only**; other chains are excluded. Population denominators are ABS March 2026 estimates. ACCC national take-home food and grocery sales estimates are historical (including FY2022–23), and the ABS food-retailing turnover series runs to June 2025. These are different measures from different periods: store counts do not directly establish access, sales share or prices; nominal turnover does not measure quantities purchased. Sources and further methodological detail appear in `data/SOURCES.md`.
+Store counts are July–August 2026 ScrapeHero snapshots for **Woolworths and Coles only**; other chains are excluded. Population denominators are ABS March 2026 estimates. ACCC national take-home food and grocery sales estimates are historical (including FY2022–23), and the ABS food-retailing turnover series runs to June 2025. These are different measures from different periods: store counts do not directly establish access, sales share or prices; nominal turnover does not measure quantities purchased. Sources and further methodological detail appear in `data/SOURCES.md`.
 
 ## Attribution and AI use
 
