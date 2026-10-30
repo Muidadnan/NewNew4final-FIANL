@@ -108,7 +108,7 @@
 #footprint .vis-card .vis{height:440px;min-height:440px;max-height:none;align-items:center;justify-content:center;margin:5px 0 6px}
 #footprint .vis-card .card-bottom{margin-top:0;min-height:64px}
 #footprint .vis-card .method-dropdown{margin-top:auto}
-#vis04{height:440px!important;min-height:440px!important;align-items:center;justify-content:center;overflow:visible}
+#vis04{height:540px!important;min-height:540px!important;align-items:center;justify-content:center;overflow:visible}
 #vis04 .vega-embed{max-width:100%;width:100%;justify-content:center}
 #vis04 .vega-embed svg{display:block;max-width:100%;height:auto}
 @media(max-width:760px){
@@ -119,7 +119,7 @@
 }
 
 /* Map 03: readable cartogram without legend collision; Map 04: dark labels. */
-#footprint #vis03{height:355px!important;min-height:355px!important;max-height:none!important;overflow:visible}
+#footprint #vis03{height:610px!important;min-height:610px!important;max-height:none!important;overflow:visible}
 #footprint #vis03 .vega-embed{width:100%;display:flex;justify-content:center}
 #footprint #vis03 svg{max-width:100%;height:auto;display:block}
 #footprint .carto-area-key{display:flex;align-items:center;gap:17px;min-height:73px;padding:0 16px 9px;flex-wrap:wrap;color:#163c38;font-size:12px;font-weight:650}
