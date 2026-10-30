@@ -3,7 +3,7 @@
 | Criterion | Implementation |
 | --- | --- |
 | Domain, audience, why, what, how | The four-chapter Australian supermarket story defines the audience, analytical questions, datasets, visual encodings and limitations. The corresponding prose is in `SUBMISSION_NOTES.md`. |
-| Public single-page website | GitHub Pages: https://muidadnan.github.io/NewNew4final-FIANL/ ; one scrolling `index.html`. |
+| Public single-page website | GitHub Pages: https://muidadnan.github.io/The_Aisle_Effect_Australian_Supermarket_Shopping_DV2/ ; one scrolling `index.html`. |
 | Vega/Vega-Lite | Fourteen human-readable specifications in `charts/01.json`–`charts/14.json`, embedded by `scripts/main.js`. |
 | Minimum ten charts | Fourteen numbered visualisations across the story; the rubric determines whether related charts are counted as distinct. |
 | At least three map idioms | Geographic choropleth (01), proportional-symbol map (02), schematic circle cartogram (03), and dot-density map (04). |
@@ -17,8 +17,8 @@
 
 ## Interpretation boundaries
 
-The 2026 location data cover Woolworths and Coles, not all Australian grocery outlets. State/territory density is not a measure of travel distance or local food access. The ACCC's 57.3% refers to combined FY2022–23 national take-home food and grocery sales, not 2026 store share; a different ACCC market definition yields a different estimate. ABS food-retailing turnover includes a wider retail category and is reported in nominal dollars. Geographic positions in the cartogram and tile map are schematic.
+The 2026 location data cover Woolworths and Coles, not all Australian grocery outlets. State/territory density is not a measure of travel distance or local food access. The ACCC's 57.3% refers to combined FY2022–23 national take-home food and grocery sales, not 2026 store share; a different ACCC market definition yields a different estimate. ABS food-retailing turnover includes a wider retail category and is reported in nominal dollars. Geographic positions in the cartogram and dot-density map use schematic positions.
 
 ## Dataset and implementation notes
 
-The store-count tables total 1,142 Woolworths and 878 Coles locations, or 2,020 combined. The treemap has two retailer groups, each with six states and two mainland territories. The 100-cell waffle rounds the historical 57.3% share to 57 coloured cells. All chart specifications remain in the public repository as readable JSON.
+The store-count tables total 1,141 Woolworths and 874 Coles locations, or 2,015 combined. The treemap has two retailer groups, each with six states and two mainland territories. The 100-cell waffle rounds the historical 57.3% share to 57 coloured cells. All chart specifications remain in the public repository as readable JSON.
