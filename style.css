@@ -117,3 +117,16 @@
  #footprint .vis-card .vis{height:auto;min-height:365px}
  #vis04{height:auto!important;min-height:365px!important}
 }
+
+/* Map 03: readable cartogram without legend collision; Map 04: dark labels. */
+#footprint #vis03{height:355px!important;min-height:355px!important;max-height:none!important;overflow:visible}
+#footprint #vis03 .vega-embed{width:100%;display:flex;justify-content:center}
+#footprint #vis03 svg{max-width:100%;height:auto;display:block}
+#footprint .carto-area-key{display:flex;align-items:center;gap:17px;min-height:73px;padding:0 16px 9px;flex-wrap:wrap;color:#163c38;font-size:12px;font-weight:650}
+#footprint .carto-area-key .key-title{font-weight:800;margin-right:5px;white-space:nowrap}
+#footprint .carto-area-key .key-item{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+#footprint .carto-area-key .key-dot{flex-shrink:0;background:#9bc6bc;border:1px solid #ffffff;border-radius:50%;display:inline-block}
+#footprint .carto-area-key .key-dot.small{width:13px;height:13px}
+#footprint .carto-area-key .key-dot.medium{width:39px;height:39px}
+#footprint .carto-area-key .key-dot.large{width:67px;height:67px}
+@media(max-width:760px){#footprint #vis03{height:auto!important;min-height:345px!important}#footprint .carto-area-key{gap:12px;min-height:65px;padding:0 5px 7px}#footprint .carto-area-key .key-dot.large{width:52px;height:52px}#footprint .carto-area-key .key-dot.medium{width:31px;height:31px}}
