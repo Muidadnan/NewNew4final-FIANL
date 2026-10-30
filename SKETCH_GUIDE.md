@@ -4,8 +4,8 @@ The FIT3179 DV2 rubric explicitly awards **zero for a digitally created sketch**
 
 Use a portrait A4 sheet with at least **four clear sections**, arrows showing reading order, hand-drawn chart shapes, labels and explanatory notes:
 
-1. **Hero and navigation**: title, introductory question, three numbers (2,020 / 57.3% / 8.44) and four chapter anchors.
-2. **Footprint**: choropleth and proportional-symbol maps side by side, a circle cartogram and a small tile map. Annotate "counts vs per person".
+1. **Hero and navigation**: title, introductory question, three numbers (2,015 / 57.3% / 8.44) and four chapter anchors.
+2. **Footprint**: choropleth and proportional-symbol maps side by side, a circle cartogram and a dot-distribution map. Annotate "counts vs per person".
 3. **Two-chain comparison and market**: grouped bars, connected dots, a scatterplot, a nested brand→state treemap, square 100-cell waffle, bump chart and diverging percentage-point bars. Annotate "stores ≠ sales".
 4. **Spending and conclusion**: a monthly line chart, month-by-year heatmap, three takeaway cards and a sources footer. Annotate "nominal dollars ≠ quantities".
 
