@@ -83,7 +83,7 @@
           "brand": "Woolworths",
           "state": "Victoria",
           "code": "VIC",
-          "stores": 280
+          "stores": 279
         },
         {
           "id": "Woolworths · TAS",
@@ -139,7 +139,7 @@
           "brand": "Coles",
           "state": "New South Wales",
           "code": "NSW",
-          "stores": 258
+          "stores": 257
         },
         {
           "id": "Coles · ACT",
@@ -155,7 +155,7 @@
           "brand": "Coles",
           "state": "Victoria",
           "code": "VIC",
-          "stores": 235
+          "stores": 232
         },
         {
           "id": "Coles · TAS",
