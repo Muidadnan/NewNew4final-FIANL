@@ -1,6 +1,6 @@
 # The Aisle Effect — project overview
 
-**Website:** https://muidadnan.github.io/NewNew4final-FIANL/
+**Website:** https://muidadnan.github.io/The_Aisle_Effect_Australian_Supermarket_Shopping_DV2/
 
 The project is an Australian supermarket data story with fourteen Vega/Vega-Lite visualisations in four chapters: geographic footprints, two-chain comparisons, historical grocery sales shares and nominal food-retailing turnover.
 
