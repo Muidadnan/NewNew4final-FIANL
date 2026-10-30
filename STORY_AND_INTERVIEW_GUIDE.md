@@ -9,7 +9,7 @@
 1. **Choropleth (01):** Shade each state by stores per 100,000 residents. Tasmania has 8.44 versus NSW's 6.98. This is a relative, state-level measure, **not** journey time or actual supermarket access.
 2. **Proportional-symbol map (02):** Place circles over actual Australian state and territory outlines. Circle **area** represents combined Woolworths and Coles outlet counts: NSW 605, Victoria 511, Queensland 454, ACT 33 and NT 20. Small jurisdictions have external labels. Unlike Chart 01, this is about absolute totals, not rates; unlike Chart 03, real geography remains visible.
 3. **Circle cartogram (03):** Replace state land areas with circles whose **areas** represent store totals. WA looks smaller than its real geographic area would imply, shifting attention from land to locations. The arrangement is manually schematic, not a dynamic Dorling algorithm.
-4. **Dot-density map (04):** Each full dot represents 20 recorded Woolworths or Coles outlets, with a smaller dot representing each remainder. The two chain colours separate the totals across all jurisdictions; dot coordinates are illustrative, not exact shop locations. The map uses repeated units rather than one proportional circle per jurisdiction.
+4. **Dot-density map (04):** Each full dot represents 50 recorded Woolworths or Coles outlets, with a smaller dot representing each remainder. The two chain colours separate the totals across all jurisdictions; dot coordinates are illustrative, not exact shop locations. The map uses repeated units rather than one proportional circle per jurisdiction.
 
 **Transition:** Now that we know totals and relative presence differ, which chain accounts for the sites?
 
