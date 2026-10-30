@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Schematic circle cartogram of combined Woolworths and Coles outlets in Australia's six states and two mainland territories. One circle per jurisdiction; area, not diameter, is proportional to the store total. Every circle is labelled with its abbreviation and count.",
+  "description": "Schematic circle cartogram of combined Woolworths and Coles outlets in Australia's six states and two mainland territories. One circle per jurisdiction; area, not diameter, is proportional to the store total. Every circle is labelled with its abbreviation and count. The explanatory proportional-area key is provided directly beneath the visualisation using proportional CSS circles of 20, 200 and 600 stores; no oversized Vega legend is rendered.",
   "background": null,
   "config": {
     "view": {
@@ -20,7 +20,7 @@
     }
   },
   "width": 530,
-  "height": 415,
+  "height": 345,
   "data": {
     "values": [
       {
@@ -160,21 +160,10 @@
             ],
             "range": [
               0,
-              28500
+              9500
             ]
           },
-          "legend": {
-            "title": "Stores (circle area)",
-            "values": [
-              20,
-              200,
-              600
-            ],
-            "direction": "horizontal",
-            "symbolFillColor": "#567f78",
-            "symbolStrokeColor": "#ffffff",
-            "symbolStrokeWidth": 1
-          }
+          "legend": null
         },
         "color": {
           "value": "#9bc6bc"
