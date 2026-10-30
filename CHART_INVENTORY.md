@@ -5,7 +5,7 @@
 | 01 | Outlets per resident across Australia | Choropleth map | Geographic rates |
 | 02 | Combined outlet totals on actual geography | Proportional-symbol map | Circle area encodes outlet totals; ACT, NT and TAS use outside callouts |
 | 03 | States sized by combined stores | Schematic circle cartogram | Absolute store totals without land-area dominance |
-| 04 | Woolworths and Coles illustrative dots by jurisdiction | Dot-density map | One dot ≈ 20 outlets, split by retailer colour; dots are schematic, not store locations |
+| 04 | Woolworths and Coles illustrative dots by jurisdiction | Dot-density map | Each full dot = 20 outlets; smaller dots = exact remainder, split by retailer colour; dots are schematic, not store locations |
 | 05 | Woolworths and Coles outlet totals | Grouped bar chart | Retailer counts |
 | 06 | Retailer outlets per resident | Connected dot chart | Per-capita brand comparison |
 | 07 | Population versus total outlets | Scatterplot with benchmark | Population and absolute totals |
@@ -17,7 +17,7 @@
 | 13 | Monthly food-retailing turnover | Line chart | Nominal spending trend |
 | 14 | Year-on-year monthly turnover changes | Sequential heatmap | Month-by-year change |
 
-**Four map views:** a geographic choropleth (01), a proportional-symbol map (02), a schematic circle cartogram (03) and an dot-density map (04). Charts 01 and 02 preserve geographic outlines; Charts 03 and 04 are schematic.
+**Four map views:** a geographic choropleth (01), a proportional-symbol map (02), a schematic circle cartogram (03) and a dot-density map (04). Charts 01 and 02 preserve geographic outlines; Charts 03 and 04 are schematic.
 
 **Advanced visual idioms:** the four map views, nested treemap, parallel coordinates, waffle, bump chart and heatmap supplement the basic bars, dots, scatterplot and line chart. The official rubric and marker determine the final classification of each idiom.
 
