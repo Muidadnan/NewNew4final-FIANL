@@ -8,7 +8,7 @@ The root contains `index.html`, `style.css`, `scripts/main.js`, fourteen human-r
 
 ## Visualisation design
 
-The first chapter distinguishes absolute outlet counts from population-adjusted rates with a choropleth, ranking slopegraph, circle cartogram and equal-area tile map. The second chapter compares the retailers with grouped bars, connected dots, a population scatterplot, a genuine retailer-first hierarchical treemap and parallel coordinates. The third chapter explains historical national grocery-sales shares with a waffle chart and two comparison charts. The fourth chapter uses a line chart and heatmap for ABS food-retailing turnover.
+The first chapter distinguishes absolute outlet counts from population-adjusted rates with a choropleth, ranking slopegraph, circle cartogram and dot-density map. The second chapter compares the retailers with grouped bars, connected dots, a population scatterplot, a genuine retailer-first hierarchical treemap and parallel coordinates. The third chapter explains historical national grocery-sales shares with a waffle chart and two comparison charts. The fourth chapter uses a line chart and heatmap for ABS food-retailing turnover.
 
 ## Data definitions
 
