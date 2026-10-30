@@ -100,13 +100,20 @@
 .treemap-key-item span{font-variant-numeric:tabular-nums;color:#3d5951}
 @media(max-width:650px){.treemap-key{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 9px}.treemap-key-item{font-size:11px}.vis.slopevis{min-height:330px}.vis.treemapvis{min-height:330px}}
 
-/* Chapter 1 maps: prevent cards from stretching to the height of the tallest chart. */
-#footprint .grid.two{align-items:start}
-#footprint .grid.two>.vis-card{align-self:start}
-#vis04{min-height:0!important;align-items:flex-start;justify-content:center;margin-top:14px;margin-bottom:4px;overflow:visible}
-#vis04 .vega-embed{width:100%;max-width:100%;justify-content:center}
+/* Chapter 1: match rows and align the plots, notes, and card edges. */
+#footprint .grid.two{align-items:stretch;grid-auto-rows:auto}
+#footprint .grid.two>.vis-card{align-self:stretch;height:100%;display:flex;flex-direction:column}
+#footprint .vis-card h3{min-height:57px}
+#footprint .vis-card .deck{min-height:68px}
+#footprint .vis-card .vis{height:440px;min-height:440px;max-height:none;align-items:center;justify-content:center;margin:5px 0 6px}
+#footprint .vis-card .card-bottom{margin-top:0;min-height:64px}
+#footprint .vis-card .method-dropdown{margin-top:auto}
+#vis04{height:440px!important;min-height:440px!important;align-items:center;justify-content:center;overflow:visible}
+#vis04 .vega-embed{max-width:100%;width:100%;justify-content:center}
 #vis04 .vega-embed svg{display:block;max-width:100%;height:auto}
 @media(max-width:760px){
- #vis04{min-height:0!important}
- #footprint .grid.two>.vis-card{align-self:stretch}
+ #footprint .grid.two>.vis-card{height:auto}
+ #footprint .vis-card h3,#footprint .vis-card .deck,#footprint .vis-card .card-bottom{min-height:0}
+ #footprint .vis-card .vis{height:auto;min-height:365px}
+ #vis04{height:auto!important;min-height:365px!important}
 }
