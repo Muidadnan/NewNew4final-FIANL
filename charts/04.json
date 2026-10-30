@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Schematic dot-distribution map, not actual store coordinates. The 50 non-grid dots represent exactly 1,141 Woolworths and 874 Coles outlets across the six states and two mainland territories; a full dot encodes 50 outlets and a smaller area-scaled dot the remainder. Dot positions are intentionally illustrative within each jurisdiction, with ACT offset and linked to its position.",
+  "description": "Schematic dot-density map, not actual store coordinates. The 50 dots represent exactly 1,141 Woolworths and 874 Coles outlets across the six states and two mainland territories; a full dot encodes 50 outlets and a smaller area-scaled dot the remainder. Every dot except ACT's is placed inside its own state or territory boundary, spaced away from borders and labels; ACT is too small to hold its dots at this scale, so an inset of its real boundary, enlarged seven times, is drawn offshore with ACT's two dots inside and linked to the territory's true location by a leader line. The dot-size key uses a neutral grey because size encodes outlet count independently of retailer colour.",
   "background": null,
   "width": 470,
-  "height": 340,
+  "height": 430,
   "projection": {
     "type": "equalEarth"
   },
@@ -38,9 +38,111 @@
       },
       "mark": {
         "type": "geoshape",
-        "fill": "#f0f4ed",
-        "stroke": "#9eaaa1",
-        "strokeWidth": 1
+        "fill": "#eef2ec",
+        "stroke": "#a7b3ab",
+        "strokeWidth": 0.9
+      }
+    },
+    {
+      "name": "act_inset",
+      "data": {
+        "values": [
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "Australian Capital Territory (enlarged ×7)"
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    158.1894,
+                    -35.1197
+                  ],
+                  [
+                    157.8593,
+                    -35.3447
+                  ],
+                  [
+                    156.8472,
+                    -35.3026
+                  ],
+                  [
+                    156.4205,
+                    -35.7893
+                  ],
+                  [
+                    156.392,
+                    -37.0335
+                  ],
+                  [
+                    155.986,
+                    -36.9496
+                  ],
+                  [
+                    156.049,
+                    -38.655
+                  ],
+                  [
+                    155.7361,
+                    -39.3284
+                  ],
+                  [
+                    154.76,
+                    -38.8569
+                  ],
+                  [
+                    154.6008,
+                    -37.9194
+                  ],
+                  [
+                    154.3839,
+                    -38.2116
+                  ],
+                  [
+                    153.9327,
+                    -37.8096
+                  ],
+                  [
+                    153.7331,
+                    -36.354
+                  ],
+                  [
+                    154.0494,
+                    -35.053
+                  ],
+                  [
+                    156.2407,
+                    -33.7571
+                  ],
+                  [
+                    156.8286,
+                    -34.4923
+                  ],
+                  [
+                    156.8928,
+                    -34.422
+                  ],
+                  [
+                    157.2987,
+                    -34.801
+                  ],
+                  [
+                    158.1894,
+                    -35.1197
+                  ]
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#eef2ec",
+        "stroke": "#6f8a80",
+        "strokeWidth": 1.1
       }
     },
     {
@@ -50,8 +152,8 @@
             "state": "Western Australia",
             "code": "WA",
             "brand": "Woolworths",
-            "longitude": 121.3031,
-            "latitude": -23.509,
+            "longitude": 115.261,
+            "latitude": -22.811,
             "represented": 50,
             "woolworths": 117,
             "coles": 104,
@@ -61,8 +163,8 @@
             "state": "Western Australia",
             "code": "WA",
             "brand": "Woolworths",
-            "longitude": 123.1666,
-            "latitude": -28.2027,
+            "longitude": 123.751,
+            "latitude": -22.851,
             "represented": 50,
             "woolworths": 117,
             "coles": 104,
@@ -72,8 +174,8 @@
             "state": "Western Australia",
             "code": "WA",
             "brand": "Woolworths",
-            "longitude": 118.2426,
-            "latitude": -29.2287,
+            "longitude": 116.637,
+            "latitude": -33.716,
             "represented": 17,
             "woolworths": 117,
             "coles": 104,
@@ -83,8 +185,8 @@
             "state": "Western Australia",
             "code": "WA",
             "brand": "Coles",
-            "longitude": 124.0418,
-            "latitude": -26.0347,
+            "longitude": 124.365,
+            "latitude": -31.132,
             "represented": 50,
             "woolworths": 117,
             "coles": 104,
@@ -94,8 +196,8 @@
             "state": "Western Australia",
             "code": "WA",
             "brand": "Coles",
-            "longitude": 118.1521,
-            "latitude": -26.6237,
+            "longitude": 127.145,
+            "latitude": -15.065,
             "represented": 50,
             "woolworths": 117,
             "coles": 104,
@@ -105,8 +207,8 @@
             "state": "Western Australia",
             "code": "WA",
             "brand": "Coles",
-            "longitude": 118.1852,
-            "latitude": -24.1821,
+            "longitude": 119.414,
+            "latitude": -27.444,
             "represented": 4,
             "woolworths": 117,
             "coles": 104,
@@ -116,8 +218,8 @@
             "state": "Northern Territory",
             "code": "NT",
             "brand": "Woolworths",
-            "longitude": 134.9323,
-            "latitude": -16.7983,
+            "longitude": 135.4,
+            "latitude": -19.89,
             "represented": 12,
             "woolworths": 12,
             "coles": 8,
@@ -127,8 +229,8 @@
             "state": "Northern Territory",
             "code": "NT",
             "brand": "Coles",
-            "longitude": 132.4804,
-            "latitude": -17.7233,
+            "longitude": 131.46,
+            "latitude": -13.088,
             "represented": 8,
             "woolworths": 12,
             "coles": 8,
@@ -138,8 +240,8 @@
             "state": "South Australia",
             "code": "SA",
             "brand": "Woolworths",
-            "longitude": 132.242,
-            "latitude": -33.5417,
+            "longitude": 129.806,
+            "latitude": -26.826,
             "represented": 50,
             "woolworths": 69,
             "coles": 53,
@@ -149,8 +251,8 @@
             "state": "South Australia",
             "code": "SA",
             "brand": "Woolworths",
-            "longitude": 137.8394,
-            "latitude": -29.4688,
+            "longitude": 140.142,
+            "latitude": -26.935,
             "represented": 19,
             "woolworths": 69,
             "coles": 53,
@@ -160,8 +262,8 @@
             "state": "South Australia",
             "code": "SA",
             "brand": "Coles",
-            "longitude": 132.8263,
-            "latitude": -29.8441,
+            "longitude": 135.642,
+            "latitude": -31.766,
             "represented": 50,
             "woolworths": 69,
             "coles": 53,
@@ -171,8 +273,8 @@
             "state": "South Australia",
             "code": "SA",
             "brand": "Coles",
-            "longitude": 138.5442,
-            "latitude": -31.7324,
+            "longitude": 140.138,
+            "latitude": -35.49,
             "represented": 3,
             "woolworths": 69,
             "coles": 53,
@@ -182,8 +284,8 @@
             "state": "Queensland",
             "code": "QLD",
             "brand": "Woolworths",
-            "longitude": 144.8077,
-            "latitude": -24.8639,
+            "longitude": 147.726,
+            "latitude": -21.834,
             "represented": 50,
             "woolworths": 264,
             "coles": 190,
@@ -193,8 +295,8 @@
             "state": "Queensland",
             "code": "QLD",
             "brand": "Woolworths",
-            "longitude": 142.3811,
-            "latitude": -19.7762,
+            "longitude": 143.944,
+            "latitude": -18.435,
             "represented": 50,
             "woolworths": 264,
             "coles": 190,
@@ -204,8 +306,8 @@
             "state": "Queensland",
             "code": "QLD",
             "brand": "Woolworths",
-            "longitude": 148.7729,
-            "latitude": -26.7345,
+            "longitude": 138.92,
+            "latitude": -25.0,
             "represented": 50,
             "woolworths": 264,
             "coles": 190,
@@ -215,8 +317,8 @@
             "state": "Queensland",
             "code": "QLD",
             "brand": "Woolworths",
-            "longitude": 147.385,
-            "latitude": -23.3265,
+            "longitude": 142.553,
+            "latitude": -12.991,
             "represented": 50,
             "woolworths": 264,
             "coles": 190,
@@ -226,8 +328,8 @@
             "state": "Queensland",
             "code": "QLD",
             "brand": "Woolworths",
-            "longitude": 147.8113,
-            "latitude": -24.7274,
+            "longitude": 144.992,
+            "latitude": -27.956,
             "represented": 50,
             "woolworths": 264,
             "coles": 190,
@@ -237,8 +339,8 @@
             "state": "Queensland",
             "code": "QLD",
             "brand": "Woolworths",
-            "longitude": 145.1973,
-            "latitude": -21.4773,
+            "longitude": 141.864,
+            "latitude": -26.659,
             "represented": 14,
             "woolworths": 264,
             "coles": 190,
@@ -248,8 +350,8 @@
             "state": "Queensland",
             "code": "QLD",
             "brand": "Coles",
-            "longitude": 147.5954,
-            "latitude": -20.5916,
+            "longitude": 138.862,
+            "latitude": -18.421,
             "represented": 50,
             "woolworths": 264,
             "coles": 190,
@@ -259,8 +361,8 @@
             "state": "Queensland",
             "code": "QLD",
             "brand": "Coles",
-            "longitude": 148.8512,
-            "latitude": -19.6132,
+            "longitude": 143.169,
+            "latitude": -23.09,
             "represented": 50,
             "woolworths": 264,
             "coles": 190,
@@ -270,8 +372,8 @@
             "state": "Queensland",
             "code": "QLD",
             "brand": "Coles",
-            "longitude": 147.137,
-            "latitude": -26.7311,
+            "longitude": 152.085,
+            "latitude": -27.511,
             "represented": 50,
             "woolworths": 264,
             "coles": 190,
@@ -281,8 +383,8 @@
             "state": "Queensland",
             "code": "QLD",
             "brand": "Coles",
-            "longitude": 143.1559,
-            "latitude": -21.5758,
+            "longitude": 148.348,
+            "latitude": -25.757,
             "represented": 40,
             "woolworths": 264,
             "coles": 190,
@@ -292,8 +394,8 @@
             "state": "New South Wales",
             "code": "NSW",
             "brand": "Woolworths",
-            "longitude": 150.2043,
-            "latitude": -33.2523,
+            "longitude": 143.51,
+            "latitude": -31.526,
             "represented": 50,
             "woolworths": 348,
             "coles": 257,
@@ -303,8 +405,8 @@
             "state": "New South Wales",
             "code": "NSW",
             "brand": "Woolworths",
-            "longitude": 145.4107,
-            "latitude": -29.5817,
+            "longitude": 149.993,
+            "latitude": -29.305,
             "represented": 50,
             "woolworths": 348,
             "coles": 257,
@@ -314,8 +416,8 @@
             "state": "New South Wales",
             "code": "NSW",
             "brand": "Woolworths",
-            "longitude": 147.2998,
-            "latitude": -32.913,
+            "longitude": 144.971,
+            "latitude": -33.46,
             "represented": 50,
             "woolworths": 348,
             "coles": 257,
@@ -325,8 +427,8 @@
             "state": "New South Wales",
             "code": "NSW",
             "brand": "Woolworths",
-            "longitude": 144.624,
-            "latitude": -34.0816,
+            "longitude": 152.926,
+            "latitude": -28.855,
             "represented": 50,
             "woolworths": 348,
             "coles": 257,
@@ -336,8 +438,8 @@
             "state": "New South Wales",
             "code": "NSW",
             "brand": "Woolworths",
-            "longitude": 149.0434,
-            "latitude": -30.6166,
+            "longitude": 149.283,
+            "latitude": -36.689,
             "represented": 50,
             "woolworths": 348,
             "coles": 257,
@@ -347,8 +449,8 @@
             "state": "New South Wales",
             "code": "NSW",
             "brand": "Woolworths",
-            "longitude": 143.7477,
-            "latitude": -30.6178,
+            "longitude": 147.922,
+            "latitude": -31.552,
             "represented": 50,
             "woolworths": 348,
             "coles": 257,
@@ -358,8 +460,8 @@
             "state": "New South Wales",
             "code": "NSW",
             "brand": "Woolworths",
-            "longitude": 145.8224,
-            "latitude": -32.0988,
+            "longitude": 149.955,
+            "latitude": -31.591,
             "represented": 48,
             "woolworths": 348,
             "coles": 257,
@@ -369,8 +471,8 @@
             "state": "New South Wales",
             "code": "NSW",
             "brand": "Coles",
-            "longitude": 148.8055,
-            "latitude": -33.8521,
+            "longitude": 141.503,
+            "latitude": -29.537,
             "represented": 50,
             "woolworths": 348,
             "coles": 257,
@@ -380,8 +482,8 @@
             "state": "New South Wales",
             "code": "NSW",
             "brand": "Coles",
-            "longitude": 150.6313,
-            "latitude": -31.3653,
+            "longitude": 152.005,
+            "latitude": -31.498,
             "represented": 50,
             "woolworths": 348,
             "coles": 257,
@@ -391,8 +493,8 @@
             "state": "New South Wales",
             "code": "NSW",
             "brand": "Coles",
-            "longitude": 150.2619,
-            "latitude": -34.5862,
+            "longitude": 141.626,
+            "latitude": -32.971,
             "represented": 50,
             "woolworths": 348,
             "coles": 257,
@@ -402,8 +504,8 @@
             "state": "New South Wales",
             "code": "NSW",
             "brand": "Coles",
-            "longitude": 147.8864,
-            "latitude": -29.205,
+            "longitude": 147.559,
+            "latitude": -35.402,
             "represented": 50,
             "woolworths": 348,
             "coles": 257,
@@ -413,8 +515,8 @@
             "state": "New South Wales",
             "code": "NSW",
             "brand": "Coles",
-            "longitude": 143.6251,
-            "latitude": -32.6778,
+            "longitude": 150.505,
+            "latitude": -33.905,
             "represented": 50,
             "woolworths": 348,
             "coles": 257,
@@ -424,8 +526,8 @@
             "state": "New South Wales",
             "code": "NSW",
             "brand": "Coles",
-            "longitude": 147.2455,
-            "latitude": -34.4887,
+            "longitude": 145.857,
+            "latitude": -31.628,
             "represented": 7,
             "woolworths": 348,
             "coles": 257,
@@ -435,8 +537,8 @@
             "state": "Victoria",
             "code": "VIC",
             "brand": "Woolworths",
-            "longitude": 146.2691,
-            "latitude": -37.7487,
+            "longitude": 149.484,
+            "latitude": -37.543,
             "represented": 50,
             "woolworths": 279,
             "coles": 232,
@@ -446,8 +548,8 @@
             "state": "Victoria",
             "code": "VIC",
             "brand": "Woolworths",
-            "longitude": 144.346,
-            "latitude": -36.9142,
+            "longitude": 147.299,
+            "latitude": -36.285,
             "represented": 50,
             "woolworths": 279,
             "coles": 232,
@@ -457,8 +559,8 @@
             "state": "Victoria",
             "code": "VIC",
             "brand": "Woolworths",
-            "longitude": 142.4472,
-            "latitude": -36.4066,
+            "longitude": 142.019,
+            "latitude": -36.099,
             "represented": 50,
             "woolworths": 279,
             "coles": 232,
@@ -468,8 +570,8 @@
             "state": "Victoria",
             "code": "VIC",
             "brand": "Woolworths",
-            "longitude": 145.4176,
-            "latitude": -36.2521,
+            "longitude": 141.179,
+            "latitude": -37.851,
             "represented": 50,
             "woolworths": 279,
             "coles": 232,
@@ -479,8 +581,8 @@
             "state": "Victoria",
             "code": "VIC",
             "brand": "Woolworths",
-            "longitude": 147.8786,
-            "latitude": -37.7838,
+            "longitude": 141.212,
+            "latitude": -34.308,
             "represented": 50,
             "woolworths": 279,
             "coles": 232,
@@ -490,8 +592,8 @@
             "state": "Victoria",
             "code": "VIC",
             "brand": "Woolworths",
-            "longitude": 147.5185,
-            "latitude": -36.5056,
+            "longitude": 145.825,
+            "latitude": -36.213,
             "represented": 29,
             "woolworths": 279,
             "coles": 232,
@@ -501,8 +603,8 @@
             "state": "Victoria",
             "code": "VIC",
             "brand": "Coles",
-            "longitude": 143.1824,
-            "latitude": -37.6797,
+            "longitude": 145.518,
+            "latitude": -38.02,
             "represented": 50,
             "woolworths": 279,
             "coles": 232,
@@ -512,8 +614,8 @@
             "state": "Victoria",
             "code": "VIC",
             "brand": "Coles",
-            "longitude": 143.9199,
-            "latitude": -35.894,
+            "longitude": 142.974,
+            "latitude": -38.408,
             "represented": 50,
             "woolworths": 279,
             "coles": 232,
@@ -523,8 +625,8 @@
             "state": "Victoria",
             "code": "VIC",
             "brand": "Coles",
-            "longitude": 146.567,
-            "latitude": -35.7425,
+            "longitude": 147.277,
+            "latitude": -38.036,
             "represented": 50,
             "woolworths": 279,
             "coles": 232,
@@ -534,8 +636,8 @@
             "state": "Victoria",
             "code": "VIC",
             "brand": "Coles",
-            "longitude": 144.8966,
-            "latitude": -37.7947,
+            "longitude": 144.318,
+            "latitude": -36.114,
             "represented": 50,
             "woolworths": 279,
             "coles": 232,
@@ -545,8 +647,8 @@
             "state": "Victoria",
             "code": "VIC",
             "brand": "Coles",
-            "longitude": 146.359,
-            "latitude": -36.7803,
+            "longitude": 143.088,
+            "latitude": -34.915,
             "represented": 32,
             "woolworths": 279,
             "coles": 232,
@@ -556,8 +658,8 @@
             "state": "Tasmania",
             "code": "TAS",
             "brand": "Woolworths",
-            "longitude": 146.3185,
-            "latitude": -42.6308,
+            "longitude": 146.309,
+            "latitude": -43.044,
             "represented": 32,
             "woolworths": 32,
             "coles": 17,
@@ -567,8 +669,8 @@
             "state": "Tasmania",
             "code": "TAS",
             "brand": "Coles",
-            "longitude": 147.2631,
-            "latitude": -42.0417,
+            "longitude": 147.707,
+            "latitude": -41.223,
             "represented": 17,
             "woolworths": 32,
             "coles": 17,
@@ -578,8 +680,8 @@
             "state": "Australian Capital Territory",
             "code": "ACT",
             "brand": "Woolworths",
-            "longitude": 153.129,
-            "latitude": -35.5504,
+            "longitude": 155.15,
+            "latitude": -35.9,
             "represented": 20,
             "woolworths": 20,
             "coles": 13,
@@ -589,8 +691,8 @@
             "state": "Australian Capital Territory",
             "code": "ACT",
             "brand": "Coles",
-            "longitude": 155.0293,
-            "latitude": -34.8609,
+            "longitude": 155.0,
+            "latitude": -37.05,
             "represented": 13,
             "woolworths": 20,
             "coles": 13,
@@ -600,9 +702,9 @@
       },
       "mark": {
         "type": "circle",
-        "opacity": 0.96,
-        "stroke": "#fffefa",
-        "strokeWidth": 0.9
+        "opacity": 1,
+        "stroke": "#ffffff",
+        "strokeWidth": 1.1
       },
       "encoding": {
         "longitude": {
@@ -623,7 +725,7 @@
             ],
             "range": [
               0,
-              135
+              150
             ],
             "zero": true
           },
@@ -635,8 +737,9 @@
               25,
               50
             ],
-            "symbolFillColor": "#08776d",
-            "symbolStrokeColor": "#fffefa"
+            "symbolFillColor": "#8b9692",
+            "symbolStrokeColor": "#ffffff",
+            "symbolOpacity": 1
           }
         },
         "color": {
@@ -654,7 +757,8 @@
           },
           "legend": {
             "title": "Retailer",
-            "orient": "bottom"
+            "orient": "bottom",
+            "symbolSize": 110
           }
         },
         "tooltip": [
@@ -690,17 +794,21 @@
       "data": {
         "values": [
           {
-            "longitude": 149.12,
-            "latitude": -35.3,
-            "longitude2": 152.9,
-            "latitude2": -35.5
+            "longitude": 149.42,
+            "latitude": -35.45,
+            "longitude2": 153.5831,
+            "latitude2": -36.354
           }
         ]
       },
       "mark": {
         "type": "rule",
         "stroke": "#355a51",
-        "strokeWidth": 1.2
+        "strokeWidth": 1,
+        "strokeDash": [
+          3,
+          2
+        ]
       },
       "encoding": {
         "longitude": {
@@ -723,8 +831,8 @@
       "data": {
         "values": [
           {
-            "longitude": 120.5,
-            "latitude": -21.2,
+            "longitude": 121.5,
+            "latitude": -20.6,
             "label": "WA · 221",
             "code": "WA",
             "region": "Western Australia",
@@ -733,8 +841,8 @@
             "coles": 104
           },
           {
-            "longitude": 131.3,
-            "latitude": -14,
+            "longitude": 133.4,
+            "latitude": -15.2,
             "label": "NT · 20",
             "code": "NT",
             "region": "Northern Territory",
@@ -743,8 +851,8 @@
             "coles": 8
           },
           {
-            "longitude": 133.3,
-            "latitude": -27.2,
+            "longitude": 134.8,
+            "latitude": -27.6,
             "label": "SA · 122",
             "code": "SA",
             "region": "South Australia",
@@ -753,8 +861,8 @@
             "coles": 53
           },
           {
-            "longitude": 145.8,
-            "latitude": -17.9,
+            "longitude": 143.6,
+            "latitude": -16.4,
             "label": "QLD · 454",
             "code": "QLD",
             "region": "Queensland",
@@ -763,8 +871,8 @@
             "coles": 190
           },
           {
-            "longitude": 149.9,
-            "latitude": -28.2,
+            "longitude": 146.0,
+            "latitude": -29.75,
             "label": "NSW · 605",
             "code": "NSW",
             "region": "New South Wales",
@@ -773,8 +881,8 @@
             "coles": 257
           },
           {
-            "longitude": 143,
-            "latitude": -34.4,
+            "longitude": 143.3,
+            "latitude": -37.05,
             "label": "VIC · 511",
             "code": "VIC",
             "region": "Victoria",
@@ -783,8 +891,8 @@
             "coles": 232
           },
           {
-            "longitude": 149.6,
-            "latitude": -43.15,
+            "longitude": 151.3,
+            "latitude": -42.4,
             "label": "TAS · 49",
             "code": "TAS",
             "region": "Tasmania",
@@ -793,8 +901,8 @@
             "coles": 17
           },
           {
-            "longitude": 154.4,
-            "latitude": -34.55,
+            "longitude": 155.9,
+            "latitude": -40.15,
             "label": "ACT · 33",
             "code": "ACT",
             "region": "Australian Capital Territory",
@@ -807,7 +915,120 @@
       "mark": {
         "type": "text",
         "font": "DM Sans",
-        "fontSize": 13,
+        "fontSize": 12.5,
+        "fontWeight": "bold",
+        "fill": "#ffffff",
+        "align": "center",
+        "baseline": "middle",
+        "color": "#ffffff",
+        "stroke": "#ffffff",
+        "strokeWidth": 3.5,
+        "strokeJoin": "round"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "longitude": 121.5,
+            "latitude": -20.6,
+            "label": "WA · 221",
+            "code": "WA",
+            "region": "Western Australia",
+            "total": 221,
+            "woolworths": 117,
+            "coles": 104
+          },
+          {
+            "longitude": 133.4,
+            "latitude": -15.2,
+            "label": "NT · 20",
+            "code": "NT",
+            "region": "Northern Territory",
+            "total": 20,
+            "woolworths": 12,
+            "coles": 8
+          },
+          {
+            "longitude": 134.8,
+            "latitude": -27.6,
+            "label": "SA · 122",
+            "code": "SA",
+            "region": "South Australia",
+            "total": 122,
+            "woolworths": 69,
+            "coles": 53
+          },
+          {
+            "longitude": 143.6,
+            "latitude": -16.4,
+            "label": "QLD · 454",
+            "code": "QLD",
+            "region": "Queensland",
+            "total": 454,
+            "woolworths": 264,
+            "coles": 190
+          },
+          {
+            "longitude": 146.0,
+            "latitude": -29.75,
+            "label": "NSW · 605",
+            "code": "NSW",
+            "region": "New South Wales",
+            "total": 605,
+            "woolworths": 348,
+            "coles": 257
+          },
+          {
+            "longitude": 143.3,
+            "latitude": -37.05,
+            "label": "VIC · 511",
+            "code": "VIC",
+            "region": "Victoria",
+            "total": 511,
+            "woolworths": 279,
+            "coles": 232
+          },
+          {
+            "longitude": 151.3,
+            "latitude": -42.4,
+            "label": "TAS · 49",
+            "code": "TAS",
+            "region": "Tasmania",
+            "total": 49,
+            "woolworths": 32,
+            "coles": 17
+          },
+          {
+            "longitude": 155.9,
+            "latitude": -40.15,
+            "label": "ACT · 33",
+            "code": "ACT",
+            "region": "Australian Capital Territory",
+            "total": 33,
+            "woolworths": 20,
+            "coles": 13
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontSize": 12.5,
         "fontWeight": "bold",
         "fill": "#111111",
         "align": "center",
@@ -846,6 +1067,40 @@
             "type": "quantitative"
           }
         ]
+      }
+    },
+    {
+      "name": "act_note",
+      "data": {
+        "values": [
+          {
+            "longitude": 155.9,
+            "latitude": -41.0,
+            "t": "enlarged ×7"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontSize": 10.5,
+        "fontStyle": "italic",
+        "fill": "#5b6f69",
+        "align": "center",
+        "baseline": "middle"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "t"
+        }
       }
     }
   ]
