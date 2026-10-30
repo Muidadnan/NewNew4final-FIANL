@@ -5,7 +5,7 @@
 | 01 | Outlets per resident across Australia | Choropleth map | Geographic rates |
 | 02 | Combined outlet totals on actual geography | Proportional-symbol map | Circle area encodes outlet totals; ACT, NT and TAS use outside callouts |
 | 03 | States sized by combined stores | Schematic circle cartogram | Absolute store totals without land-area dominance |
-| 04 | Woolworths and Coles illustrative dots by jurisdiction | Dot-density map | Each full dot = 20 outlets; smaller dots = exact remainder, split by retailer colour; dots are schematic, not store locations |
+| 04 | Woolworths and Coles illustrative dots by jurisdiction | Dot-density map | Each full dot = 50 outlets; smaller dots = exact remainder, split by retailer colour; dots are schematic, not store locations |
 | 05 | Woolworths and Coles outlet totals | Grouped bar chart | Retailer counts |
 | 06 | Retailer outlets per resident | Connected dot chart | Per-capita brand comparison |
 | 07 | Population versus total outlets | Scatterplot with benchmark | Population and absolute totals |
@@ -23,4 +23,4 @@
 
 **Data periods:** ScrapeHero 2026 retailer outlet snapshots; ABS March 2026 population; ACCC historic national take-home food and grocery sales shares to FY2022–23; ABS food-retailing turnover to June 2025. The measures have different denominators and periods and are never combined into a fictitious same-year dataset.
 
-**Encoding:** choropleth colour means outlets per 100,000; cartogram circle area means combined store count; equal teal and coral dots represent the retailers with approximately 20 outlets per dot; proportional-symbol circle area means combined outlet count. All eight jurisdictions comprise six states plus ACT and NT.
+**Encoding:** choropleth colour means outlets per 100,000; cartogram circle area means combined store count; equal teal and coral dots represent the retailers with up to 50 outlets per dot; proportional-symbol circle area means combined outlet count. All eight jurisdictions comprise six states plus ACT and NT.
