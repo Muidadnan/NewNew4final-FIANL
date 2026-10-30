@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Dot-distribution map of verifiable Woolworths and Coles state/territory counts. A full dot represents 20 outlets; a smaller dot encodes the remaining number. Dots are positioned schematically inside broad state interiors, not at shop locations. ACT's two dot symbols are shown as an inset pointer.",
+  "description": "Labelled jurisdiction dot-distribution map. Each full dot represents 50 recorded Woolworths or Coles shops. Smaller dot area represents the remaining stores. Dot positions are intentionally schematic inside each jurisdiction, not actual store geolocations; ACT's two coloured symbols are offset with a leader line. All eight state/territory totals are labelled.",
   "background": null,
-  "width": 490,
-  "height": 360,
+  "width": 550,
+  "height": 385,
   "projection": {
     "type": "equalEarth"
   },
@@ -14,7 +14,7 @@
     "legend": {
       "titleFont": "DM Sans",
       "labelFont": "DM Sans",
-      "titleFontSize": 12,
+      "titleFontSize": 13,
       "labelFontSize": 12,
       "labelColor": "#111111",
       "titleColor": "#111111",
@@ -22,7 +22,9 @@
     },
     "axis": {
       "labelFont": "DM Sans",
-      "titleFont": "DM Sans"
+      "titleFont": "DM Sans",
+      "labelColor": "#111111",
+      "titleColor": "#111111"
     }
   },
   "layer": [
@@ -45,1082 +47,562 @@
       "data": {
         "values": [
           {
-            "code": "WA",
             "state": "Western Australia",
+            "code": "WA",
             "brand": "Woolworths",
-            "represented": 20,
+            "longitude": 120.7,
+            "latitude": -26,
+            "represented": 50,
             "woolworths": 117,
             "coles": 104,
-            "longitude": 119.95,
-            "latitude": -27.0167
+            "total": 221
           },
           {
-            "code": "WA",
             "state": "Western Australia",
+            "code": "WA",
             "brand": "Woolworths",
-            "represented": 20,
+            "longitude": 122.4,
+            "latitude": -26,
+            "represented": 50,
             "woolworths": 117,
             "coles": 104,
-            "longitude": 121.45,
-            "latitude": -27.0167
+            "total": 221
           },
           {
-            "code": "WA",
             "state": "Western Australia",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 117,
-            "coles": 104,
-            "longitude": 122.95,
-            "latitude": -27.0167
-          },
-          {
             "code": "WA",
-            "state": "Western Australia",
             "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 117,
-            "coles": 104,
-            "longitude": 124.45,
-            "latitude": -27.0167
-          },
-          {
-            "code": "WA",
-            "state": "Western Australia",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 117,
-            "coles": 104,
-            "longitude": 119.95,
-            "latitude": -25.25
-          },
-          {
-            "code": "WA",
-            "state": "Western Australia",
-            "brand": "Woolworths",
+            "longitude": 124.1,
+            "latitude": -26,
             "represented": 17,
             "woolworths": 117,
             "coles": 104,
-            "longitude": 121.45,
-            "latitude": -25.25
+            "total": 221
           },
           {
-            "code": "WA",
             "state": "Western Australia",
+            "code": "WA",
             "brand": "Coles",
-            "represented": 20,
+            "longitude": 120.7,
+            "latitude": -28.25,
+            "represented": 50,
             "woolworths": 117,
             "coles": 104,
-            "longitude": 122.95,
-            "latitude": -25.25
+            "total": 221
           },
           {
-            "code": "WA",
             "state": "Western Australia",
+            "code": "WA",
             "brand": "Coles",
-            "represented": 20,
+            "longitude": 122.4,
+            "latitude": -28.25,
+            "represented": 50,
             "woolworths": 117,
             "coles": 104,
-            "longitude": 124.45,
-            "latitude": -25.25
+            "total": 221
           },
           {
-            "code": "WA",
             "state": "Western Australia",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 117,
-            "coles": 104,
-            "longitude": 119.95,
-            "latitude": -23.4833
-          },
-          {
             "code": "WA",
-            "state": "Western Australia",
             "brand": "Coles",
-            "represented": 20,
-            "woolworths": 117,
-            "coles": 104,
-            "longitude": 121.45,
-            "latitude": -23.4833
-          },
-          {
-            "code": "WA",
-            "state": "Western Australia",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 117,
-            "coles": 104,
-            "longitude": 122.95,
-            "latitude": -23.4833
-          },
-          {
-            "code": "WA",
-            "state": "Western Australia",
-            "brand": "Coles",
+            "longitude": 124.1,
+            "latitude": -28.25,
             "represented": 4,
             "woolworths": 117,
             "coles": 104,
-            "longitude": 124.45,
-            "latitude": -23.4833
+            "total": 221
           },
           {
-            "code": "NT",
             "state": "Northern Territory",
+            "code": "NT",
             "brand": "Woolworths",
+            "longitude": 132.3333,
+            "latitude": -20.5,
             "represented": 12,
             "woolworths": 12,
             "coles": 8,
-            "longitude": 132.75,
-            "latitude": -19.3
+            "total": 20
           },
           {
-            "code": "NT",
             "state": "Northern Territory",
+            "code": "NT",
             "brand": "Coles",
+            "longitude": 132.3333,
+            "latitude": -22.2,
             "represented": 8,
             "woolworths": 12,
             "coles": 8,
-            "longitude": 134.65,
-            "latitude": -19.3
+            "total": 20
           },
           {
-            "code": "SA",
             "state": "South Australia",
+            "code": "SA",
             "brand": "Woolworths",
-            "represented": 20,
+            "longitude": 133.65,
+            "latitude": -29.2,
+            "represented": 50,
             "woolworths": 69,
             "coles": 53,
-            "longitude": 133.75,
-            "latitude": -31.8
+            "total": 122
           },
           {
-            "code": "SA",
             "state": "South Australia",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 69,
-            "coles": 53,
-            "longitude": 135.25,
-            "latitude": -31.8
-          },
-          {
             "code": "SA",
-            "state": "South Australia",
             "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 69,
-            "coles": 53,
-            "longitude": 136.75,
-            "latitude": -31.8
-          },
-          {
-            "code": "SA",
-            "state": "South Australia",
-            "brand": "Woolworths",
-            "represented": 9,
-            "woolworths": 69,
-            "coles": 53,
-            "longitude": 138.25,
-            "latitude": -31.8
-          },
-          {
-            "code": "SA",
-            "state": "South Australia",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 69,
-            "coles": 53,
-            "longitude": 133.75,
-            "latitude": -30
-          },
-          {
-            "code": "SA",
-            "state": "South Australia",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 69,
-            "coles": 53,
-            "longitude": 135.25,
-            "latitude": -30
-          },
-          {
-            "code": "SA",
-            "state": "South Australia",
-            "brand": "Coles",
-            "represented": 13,
-            "woolworths": 69,
-            "coles": 53,
-            "longitude": 136.75,
-            "latitude": -30
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 141.625,
-            "latitude": -24.85
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 142.875,
-            "latitude": -24.85
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 144.125,
-            "latitude": -24.85
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 145.375,
-            "latitude": -24.85
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 146.625,
-            "latitude": -24.85
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 147.875,
-            "latitude": -24.85
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 141.625,
-            "latitude": -23.55
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 142.875,
-            "latitude": -23.55
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 144.125,
-            "latitude": -23.55
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 145.375,
-            "latitude": -23.55
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 146.625,
-            "latitude": -23.55
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 147.875,
-            "latitude": -23.55
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 141.625,
-            "latitude": -22.25
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Woolworths",
-            "represented": 4,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 142.875,
-            "latitude": -22.25
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 144.125,
-            "latitude": -22.25
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 145.375,
-            "latitude": -22.25
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 146.625,
-            "latitude": -22.25
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 147.875,
-            "latitude": -22.25
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 141.625,
-            "latitude": -20.95
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 142.875,
-            "latitude": -20.95
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 144.125,
-            "latitude": -20.95
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 145.375,
-            "latitude": -20.95
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 146.625,
-            "latitude": -20.95
-          },
-          {
-            "code": "QLD",
-            "state": "Queensland",
-            "brand": "Coles",
-            "represented": 10,
-            "woolworths": 264,
-            "coles": 190,
-            "longitude": 147.875,
-            "latitude": -20.95
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 143.7313,
-            "latitude": -33.475
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 144.5938,
-            "latitude": -33.475
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 145.4563,
-            "latitude": -33.475
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 146.3187,
-            "latitude": -33.475
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 147.1813,
-            "latitude": -33.475
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 148.0437,
-            "latitude": -33.475
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 148.9063,
-            "latitude": -33.475
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 149.7687,
-            "latitude": -33.475
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 143.7313,
-            "latitude": -32.625
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 144.5938,
-            "latitude": -32.625
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 145.4563,
-            "latitude": -32.625
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 146.3187,
-            "latitude": -32.625
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 147.1813,
-            "latitude": -32.625
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 148.0437,
-            "latitude": -32.625
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 148.9063,
-            "latitude": -32.625
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 149.7687,
-            "latitude": -32.625
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 143.7313,
-            "latitude": -31.775
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Woolworths",
-            "represented": 8,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 144.5938,
-            "latitude": -31.775
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 145.4563,
-            "latitude": -31.775
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 146.3187,
-            "latitude": -31.775
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 147.1813,
-            "latitude": -31.775
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 148.0437,
-            "latitude": -31.775
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 148.9063,
-            "latitude": -31.775
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 149.7687,
-            "latitude": -31.775
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 143.7313,
-            "latitude": -30.925
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 144.5938,
-            "latitude": -30.925
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 145.4563,
-            "latitude": -30.925
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 146.3187,
-            "latitude": -30.925
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 147.1813,
-            "latitude": -30.925
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 148.0437,
-            "latitude": -30.925
-          },
-          {
-            "code": "NSW",
-            "state": "New South Wales",
-            "brand": "Coles",
-            "represented": 17,
-            "woolworths": 348,
-            "coles": 257,
-            "longitude": 148.9063,
-            "latitude": -30.925
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 142.3,
-            "latitude": -37.4083
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 142.9,
-            "latitude": -37.4083
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 143.5,
-            "latitude": -37.4083
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 144.1,
-            "latitude": -37.4083
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 144.7,
-            "latitude": -37.4083
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 145.3,
-            "latitude": -37.4083
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 145.9,
-            "latitude": -37.4083
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 146.5,
-            "latitude": -37.4083
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 147.1,
-            "latitude": -37.4083
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 142.3,
-            "latitude": -37.125
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 142.9,
-            "latitude": -37.125
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 143.5,
-            "latitude": -37.125
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Woolworths",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 144.1,
-            "latitude": -37.125
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Woolworths",
+            "longitude": 135.1,
+            "latitude": -29.2,
             "represented": 19,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 144.7,
-            "latitude": -37.125
+            "woolworths": 69,
+            "coles": 53,
+            "total": 122
           },
           {
-            "code": "VIC",
-            "state": "Victoria",
+            "state": "South Australia",
+            "code": "SA",
             "brand": "Coles",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 145.3,
-            "latitude": -37.125
+            "longitude": 133.65,
+            "latitude": -31.2,
+            "represented": 50,
+            "woolworths": 69,
+            "coles": 53,
+            "total": 122
           },
           {
-            "code": "VIC",
-            "state": "Victoria",
+            "state": "South Australia",
+            "code": "SA",
             "brand": "Coles",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 145.9,
-            "latitude": -37.125
+            "longitude": 135.1,
+            "latitude": -31.2,
+            "represented": 3,
+            "woolworths": 69,
+            "coles": 53,
+            "total": 122
           },
           {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 146.5,
-            "latitude": -37.125
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 147.1,
-            "latitude": -37.125
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 142.3,
-            "latitude": -36.8417
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 142.9,
-            "latitude": -36.8417
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 143.5,
-            "latitude": -36.8417
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 144.1,
-            "latitude": -36.8417
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 144.7,
-            "latitude": -36.8417
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 145.3,
-            "latitude": -36.8417
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Coles",
-            "represented": 20,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 145.9,
-            "latitude": -36.8417
-          },
-          {
-            "code": "VIC",
-            "state": "Victoria",
-            "brand": "Coles",
-            "represented": 12,
-            "woolworths": 279,
-            "coles": 232,
-            "longitude": 146.5,
-            "latitude": -36.8417
-          },
-          {
-            "code": "TAS",
-            "state": "Tasmania",
+            "state": "Queensland",
+            "code": "QLD",
             "brand": "Woolworths",
-            "represented": 20,
+            "longitude": 143.84,
+            "latitude": -20.5,
+            "represented": 50,
+            "woolworths": 264,
+            "coles": 190,
+            "total": 454
+          },
+          {
+            "state": "Queensland",
+            "code": "QLD",
+            "brand": "Woolworths",
+            "longitude": 145.18,
+            "latitude": -20.5,
+            "represented": 50,
+            "woolworths": 264,
+            "coles": 190,
+            "total": 454
+          },
+          {
+            "state": "Queensland",
+            "code": "QLD",
+            "brand": "Woolworths",
+            "longitude": 146.52,
+            "latitude": -20.5,
+            "represented": 50,
+            "woolworths": 264,
+            "coles": 190,
+            "total": 454
+          },
+          {
+            "state": "Queensland",
+            "code": "QLD",
+            "brand": "Woolworths",
+            "longitude": 147.86,
+            "latitude": -20.5,
+            "represented": 50,
+            "woolworths": 264,
+            "coles": 190,
+            "total": 454
+          },
+          {
+            "state": "Queensland",
+            "code": "QLD",
+            "brand": "Woolworths",
+            "longitude": 143.84,
+            "latitude": -21.95,
+            "represented": 50,
+            "woolworths": 264,
+            "coles": 190,
+            "total": 454
+          },
+          {
+            "state": "Queensland",
+            "code": "QLD",
+            "brand": "Woolworths",
+            "longitude": 145.18,
+            "latitude": -21.95,
+            "represented": 14,
+            "woolworths": 264,
+            "coles": 190,
+            "total": 454
+          },
+          {
+            "state": "Queensland",
+            "code": "QLD",
+            "brand": "Coles",
+            "longitude": 143.84,
+            "latitude": -24,
+            "represented": 50,
+            "woolworths": 264,
+            "coles": 190,
+            "total": 454
+          },
+          {
+            "state": "Queensland",
+            "code": "QLD",
+            "brand": "Coles",
+            "longitude": 145.18,
+            "latitude": -24,
+            "represented": 50,
+            "woolworths": 264,
+            "coles": 190,
+            "total": 454
+          },
+          {
+            "state": "Queensland",
+            "code": "QLD",
+            "brand": "Coles",
+            "longitude": 146.52,
+            "latitude": -24,
+            "represented": 50,
+            "woolworths": 264,
+            "coles": 190,
+            "total": 454
+          },
+          {
+            "state": "Queensland",
+            "code": "QLD",
+            "brand": "Coles",
+            "longitude": 147.86,
+            "latitude": -24,
+            "represented": 40,
+            "woolworths": 264,
+            "coles": 190,
+            "total": 454
+          },
+          {
+            "state": "New South Wales",
+            "code": "NSW",
+            "brand": "Woolworths",
+            "longitude": 144.38,
+            "latitude": -30.5,
+            "represented": 50,
+            "woolworths": 348,
+            "coles": 257,
+            "total": 605
+          },
+          {
+            "state": "New South Wales",
+            "code": "NSW",
+            "brand": "Woolworths",
+            "longitude": 145.76,
+            "latitude": -30.5,
+            "represented": 50,
+            "woolworths": 348,
+            "coles": 257,
+            "total": 605
+          },
+          {
+            "state": "New South Wales",
+            "code": "NSW",
+            "brand": "Woolworths",
+            "longitude": 147.14,
+            "latitude": -30.5,
+            "represented": 50,
+            "woolworths": 348,
+            "coles": 257,
+            "total": 605
+          },
+          {
+            "state": "New South Wales",
+            "code": "NSW",
+            "brand": "Woolworths",
+            "longitude": 148.52,
+            "latitude": -30.5,
+            "represented": 50,
+            "woolworths": 348,
+            "coles": 257,
+            "total": 605
+          },
+          {
+            "state": "New South Wales",
+            "code": "NSW",
+            "brand": "Woolworths",
+            "longitude": 144.38,
+            "latitude": -31.95,
+            "represented": 50,
+            "woolworths": 348,
+            "coles": 257,
+            "total": 605
+          },
+          {
+            "state": "New South Wales",
+            "code": "NSW",
+            "brand": "Woolworths",
+            "longitude": 145.76,
+            "latitude": -31.95,
+            "represented": 50,
+            "woolworths": 348,
+            "coles": 257,
+            "total": 605
+          },
+          {
+            "state": "New South Wales",
+            "code": "NSW",
+            "brand": "Woolworths",
+            "longitude": 147.14,
+            "latitude": -31.95,
+            "represented": 48,
+            "woolworths": 348,
+            "coles": 257,
+            "total": 605
+          },
+          {
+            "state": "New South Wales",
+            "code": "NSW",
+            "brand": "Coles",
+            "longitude": 144.38,
+            "latitude": -33,
+            "represented": 50,
+            "woolworths": 348,
+            "coles": 257,
+            "total": 605
+          },
+          {
+            "state": "New South Wales",
+            "code": "NSW",
+            "brand": "Coles",
+            "longitude": 145.76,
+            "latitude": -33,
+            "represented": 50,
+            "woolworths": 348,
+            "coles": 257,
+            "total": 605
+          },
+          {
+            "state": "New South Wales",
+            "code": "NSW",
+            "brand": "Coles",
+            "longitude": 147.14,
+            "latitude": -33,
+            "represented": 50,
+            "woolworths": 348,
+            "coles": 257,
+            "total": 605
+          },
+          {
+            "state": "New South Wales",
+            "code": "NSW",
+            "brand": "Coles",
+            "longitude": 148.52,
+            "latitude": -33,
+            "represented": 50,
+            "woolworths": 348,
+            "coles": 257,
+            "total": 605
+          },
+          {
+            "state": "New South Wales",
+            "code": "NSW",
+            "brand": "Coles",
+            "longitude": 144.38,
+            "latitude": -34.45,
+            "represented": 50,
+            "woolworths": 348,
+            "coles": 257,
+            "total": 605
+          },
+          {
+            "state": "New South Wales",
+            "code": "NSW",
+            "brand": "Coles",
+            "longitude": 145.76,
+            "latitude": -34.45,
+            "represented": 7,
+            "woolworths": 348,
+            "coles": 257,
+            "total": 605
+          },
+          {
+            "state": "Victoria",
+            "code": "VIC",
+            "brand": "Woolworths",
+            "longitude": 143,
+            "latitude": -36.55,
+            "represented": 50,
+            "woolworths": 279,
+            "coles": 232,
+            "total": 511
+          },
+          {
+            "state": "Victoria",
+            "code": "VIC",
+            "brand": "Woolworths",
+            "longitude": 144,
+            "latitude": -36.55,
+            "represented": 50,
+            "woolworths": 279,
+            "coles": 232,
+            "total": 511
+          },
+          {
+            "state": "Victoria",
+            "code": "VIC",
+            "brand": "Woolworths",
+            "longitude": 145,
+            "latitude": -36.55,
+            "represented": 50,
+            "woolworths": 279,
+            "coles": 232,
+            "total": 511
+          },
+          {
+            "state": "Victoria",
+            "code": "VIC",
+            "brand": "Woolworths",
+            "longitude": 146,
+            "latitude": -36.55,
+            "represented": 50,
+            "woolworths": 279,
+            "coles": 232,
+            "total": 511
+          },
+          {
+            "state": "Victoria",
+            "code": "VIC",
+            "brand": "Woolworths",
+            "longitude": 147,
+            "latitude": -36.55,
+            "represented": 50,
+            "woolworths": 279,
+            "coles": 232,
+            "total": 511
+          },
+          {
+            "state": "Victoria",
+            "code": "VIC",
+            "brand": "Woolworths",
+            "longitude": 148,
+            "latitude": -36.55,
+            "represented": 29,
+            "woolworths": 279,
+            "coles": 232,
+            "total": 511
+          },
+          {
+            "state": "Victoria",
+            "code": "VIC",
+            "brand": "Coles",
+            "longitude": 143,
+            "latitude": -37.9,
+            "represented": 50,
+            "woolworths": 279,
+            "coles": 232,
+            "total": 511
+          },
+          {
+            "state": "Victoria",
+            "code": "VIC",
+            "brand": "Coles",
+            "longitude": 144,
+            "latitude": -37.9,
+            "represented": 50,
+            "woolworths": 279,
+            "coles": 232,
+            "total": 511
+          },
+          {
+            "state": "Victoria",
+            "code": "VIC",
+            "brand": "Coles",
+            "longitude": 145,
+            "latitude": -37.9,
+            "represented": 50,
+            "woolworths": 279,
+            "coles": 232,
+            "total": 511
+          },
+          {
+            "state": "Victoria",
+            "code": "VIC",
+            "brand": "Coles",
+            "longitude": 146,
+            "latitude": -37.9,
+            "represented": 50,
+            "woolworths": 279,
+            "coles": 232,
+            "total": 511
+          },
+          {
+            "state": "Victoria",
+            "code": "VIC",
+            "brand": "Coles",
+            "longitude": 147,
+            "latitude": -37.9,
+            "represented": 32,
+            "woolworths": 279,
+            "coles": 232,
+            "total": 511
+          },
+          {
+            "state": "Tasmania",
+            "code": "TAS",
+            "brand": "Woolworths",
+            "longitude": 146.4667,
+            "latitude": -41.8,
+            "represented": 32,
             "woolworths": 32,
             "coles": 17,
-            "longitude": 146.1833,
-            "latitude": -42.3
+            "total": 49
           },
           {
-            "code": "TAS",
             "state": "Tasmania",
-            "brand": "Woolworths",
-            "represented": 12,
-            "woolworths": 32,
-            "coles": 17,
-            "longitude": 146.75,
-            "latitude": -42.3
-          },
-          {
             "code": "TAS",
-            "state": "Tasmania",
             "brand": "Coles",
+            "longitude": 146.4667,
+            "latitude": -43.2,
             "represented": 17,
             "woolworths": 32,
             "coles": 17,
-            "longitude": 147.3167,
-            "latitude": -42.3
+            "total": 49
           },
           {
-            "code": "ACT",
             "state": "Australian Capital Territory",
+            "code": "ACT",
             "brand": "Woolworths",
+            "longitude": 153.8,
+            "latitude": -35.3,
             "represented": 20,
             "woolworths": 20,
             "coles": 13,
-            "longitude": 151.675,
-            "latitude": -37
+            "total": 33
           },
           {
-            "code": "ACT",
             "state": "Australian Capital Territory",
+            "code": "ACT",
             "brand": "Coles",
+            "longitude": 153.8,
+            "latitude": -37,
             "represented": 13,
             "woolworths": 20,
             "coles": 13,
-            "longitude": 152.025,
-            "latitude": -37
+            "total": 33
           }
         ]
       },
       "mark": {
         "type": "circle",
+        "opacity": 1,
         "stroke": "#ffffff",
-        "strokeWidth": 0.7,
-        "opacity": 0.97
+        "strokeWidth": 1.2
       },
       "encoding": {
         "longitude": {
@@ -1137,21 +619,24 @@
           "scale": {
             "domain": [
               0,
-              20
+              50
             ],
             "range": [
               0,
-              66
+              220
             ]
           },
           "legend": {
-            "title": "Outlets per dot (up to 20)",
+            "title": "Stores per dot (full = 50)",
             "orient": "bottom",
             "values": [
-              5,
               10,
-              20
-            ]
+              25,
+              50
+            ],
+            "symbolFillColor": "#08776d",
+            "symbolStrokeColor": "#ffffff",
+            "symbolStrokeWidth": 1
           }
         },
         "color": {
@@ -1176,7 +661,7 @@
           {
             "field": "state",
             "type": "nominal",
-            "title": "State / territory"
+            "title": "State/territory"
           },
           {
             "field": "brand",
@@ -1186,17 +671,17 @@
           {
             "field": "represented",
             "type": "quantitative",
-            "title": "Stores in symbol"
+            "title": "Outlets in this dot"
           },
           {
             "field": "woolworths",
             "type": "quantitative",
-            "title": "Total Woolworths in jurisdiction"
+            "title": "Woolworths total"
           },
           {
             "field": "coles",
             "type": "quantitative",
-            "title": "Total Coles in jurisdiction"
+            "title": "Coles total"
           }
         ]
       }
@@ -1205,24 +690,26 @@
       "data": {
         "values": [
           {
-            "longitude": 149.1,
-            "latitude": -35.3,
-            "longitude2": 151.75,
-            "latitude2": -36.55
+            "longitude": 149.13,
+            "latitude": -35.28,
+            "longitude2": 152.9,
+            "latitude2": -36.1
           }
         ]
       },
       "mark": {
         "type": "rule",
-        "stroke": "#4c6764",
-        "strokeWidth": 1.4
+        "stroke": "#264943",
+        "strokeWidth": 1.8
       },
       "encoding": {
         "longitude": {
-          "field": "longitude"
+          "field": "longitude",
+          "type": "quantitative"
         },
         "latitude": {
-          "field": "latitude"
+          "field": "latitude",
+          "type": "quantitative"
         },
         "longitude2": {
           "field": "longitude2"
@@ -1236,32 +723,130 @@
       "data": {
         "values": [
           {
-            "longitude": 151.1,
-            "latitude": -36.25,
-            "label": "ACT · inset dots"
+            "longitude": 122,
+            "latitude": -23,
+            "label": "WA · 221",
+            "code": "WA",
+            "region": "Western Australia",
+            "total": 221,
+            "woolworths": 117,
+            "coles": 104
+          },
+          {
+            "longitude": 132.2,
+            "latitude": -16.1,
+            "label": "NT · 20",
+            "code": "NT",
+            "region": "Northern Territory",
+            "total": 20,
+            "woolworths": 12,
+            "coles": 8
+          },
+          {
+            "longitude": 134.8,
+            "latitude": -26.9,
+            "label": "SA · 122",
+            "code": "SA",
+            "region": "South Australia",
+            "total": 122,
+            "woolworths": 69,
+            "coles": 53
+          },
+          {
+            "longitude": 145.6,
+            "latitude": -17.4,
+            "label": "QLD · 454",
+            "code": "QLD",
+            "region": "Queensland",
+            "total": 454,
+            "woolworths": 264,
+            "coles": 190
+          },
+          {
+            "longitude": 145.5,
+            "latitude": -28,
+            "label": "NSW · 605",
+            "code": "NSW",
+            "region": "New South Wales",
+            "total": 605,
+            "woolworths": 348,
+            "coles": 257
+          },
+          {
+            "longitude": 142.2,
+            "latitude": -34.9,
+            "label": "VIC · 511",
+            "code": "VIC",
+            "region": "Victoria",
+            "total": 511,
+            "woolworths": 279,
+            "coles": 232
+          },
+          {
+            "longitude": 150.5,
+            "latitude": -42.6,
+            "label": "TAS · 49",
+            "code": "TAS",
+            "region": "Tasmania",
+            "total": 49,
+            "woolworths": 32,
+            "coles": 17
+          },
+          {
+            "longitude": 153.6,
+            "latitude": -33,
+            "label": "ACT · 33",
+            "code": "ACT",
+            "region": "Australian Capital Territory",
+            "total": 33,
+            "woolworths": 20,
+            "coles": 13
           }
         ]
       },
       "mark": {
         "type": "text",
         "font": "DM Sans",
-        "fontSize": 12,
+        "fontSize": 14,
         "fontWeight": "bold",
         "fill": "#111111",
-        "stroke": "#ffffff",
-        "strokeWidth": 2.5,
-        "align": "left"
+        "stroke": "#fffefa",
+        "strokeWidth": 3,
+        "align": "center",
+        "baseline": "middle"
       },
       "encoding": {
         "longitude": {
-          "field": "longitude"
+          "field": "longitude",
+          "type": "quantitative"
         },
         "latitude": {
-          "field": "latitude"
+          "field": "latitude",
+          "type": "quantitative"
         },
         "text": {
-          "field": "label"
-        }
+          "field": "label",
+          "type": "nominal"
+        },
+        "tooltip": [
+          {
+            "field": "region",
+            "title": "Jurisdiction"
+          },
+          {
+            "field": "total",
+            "title": "Combined stores",
+            "type": "quantitative"
+          },
+          {
+            "field": "woolworths",
+            "type": "quantitative"
+          },
+          {
+            "field": "coles",
+            "type": "quantitative"
+          }
+        ]
       }
     }
   ]
