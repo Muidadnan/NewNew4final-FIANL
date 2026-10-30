@@ -1,6 +1,6 @@
 # The Aisle Effect — technical and source notes
 
-**Published website:** https://muidadnan.github.io/NewNew4final-FIANL/
+**Published website:** https://muidadnan.github.io/The_Aisle_Effect_Australian_Supermarket_Shopping_DV2/
 
 ## Project structure
 
@@ -8,13 +8,13 @@ The root contains `index.html`, `style.css`, `scripts/main.js`, fourteen human-r
 
 ## Visualisation design
 
-The first chapter distinguishes absolute outlet counts from population-adjusted rates with a choropleth, ranking slopegraph, circle cartogram and dot-density map. The second chapter compares the retailers with grouped bars, connected dots, a population scatterplot, a genuine retailer-first hierarchical treemap and parallel coordinates. The third chapter explains historical national grocery-sales shares with a waffle chart and two comparison charts. The fourth chapter uses a line chart and heatmap for ABS food-retailing turnover.
+The first chapter distinguishes absolute outlet counts from population-adjusted rates with a choropleth, geographic proportional-symbol map, schematic circle cartogram and dot-density map. The second chapter compares the retailers with grouped bars, connected dots, a population scatterplot, a genuine retailer-first hierarchical treemap and parallel coordinates. The third chapter explains historical national grocery-sales shares with a waffle chart and two comparison charts. The fourth chapter uses a line chart and heatmap for ABS food-retailing turnover.
 
 ## Data definitions
 
-- Woolworths: 1,142 recorded supermarket locations in the 2026 state snapshots.
-- Coles: 878 recorded supermarket locations in the same eight jurisdictions.
-- Combined: 2,020 recorded two-chain locations.
+- Woolworths: 1,141 recorded supermarket locations in the 2026 state snapshots.
+- Coles: 874 recorded supermarket locations in the same eight jurisdictions.
+- Combined: 2,015 recorded two-chain locations.
 - Population-adjusted rate: two-chain outlets divided by ABS March 2026 population, multiplied by 100,000.
 - ACCC FY2022–23 national take-home food and grocery sales: Woolworths 32.5% plus Coles 24.8% equals 57.3%. This is distinct from the ACCC's approximately 67% estimate using a narrower supermarket-retail-sales denominator.
 - ABS monthly food-retailing turnover is seasonally adjusted and expressed in current-price AUD millions; it includes more than supermarkets and does not measure real quantities purchased.
