@@ -101,9 +101,9 @@
             "code": "NSW",
             "longitude": 147.2,
             "latitude": -32.4,
-            "total": 606,
+            "total": 605,
             "woolworths": 348,
-            "coles": 258
+            "coles": 257
           },
           {
             "state": "Australian Capital Territory",
@@ -119,9 +119,9 @@
             "code": "VIC",
             "longitude": 144.5,
             "latitude": -37.3,
-            "total": 515,
-            "woolworths": 280,
-            "coles": 235
+            "total": 511,
+            "woolworths": 279,
+            "coles": 232
           },
           {
             "state": "Tasmania",
@@ -155,7 +155,7 @@
           "scale": {
             "domain": [
               0,
-              606
+              605
             ],
             "range": [
               100,
@@ -237,18 +237,18 @@
             "code": "NSW",
             "longitude": 147.2,
             "latitude": -32.4,
-            "total": 606,
+            "total": 605,
             "woolworths": 348,
-            "coles": 258
+            "coles": 257
           },
           {
             "state": "Victoria",
             "code": "VIC",
             "longitude": 144.5,
             "latitude": -37.3,
-            "total": 515,
-            "woolworths": 280,
-            "coles": 235
+            "total": 511,
+            "woolworths": 279,
+            "coles": 232
           }
         ]
       },
@@ -309,7 +309,9 @@
             "latitude": -16.5,
             "label": "NT  20",
             "originLon": 133.7,
-            "originLat": -19
+            "originLat": -19,
+            "woolworths": 12,
+            "coles": 8
           },
           {
             "code": "ACT",
@@ -317,7 +319,9 @@
             "latitude": -36.5,
             "label": "ACT  33",
             "originLon": 149.1,
-            "originLat": -35.3
+            "originLat": -35.3,
+            "woolworths": 20,
+            "coles": 13
           },
           {
             "code": "TAS",
@@ -325,7 +329,9 @@
             "latitude": -44,
             "label": "TAS  49",
             "originLon": 146.7,
-            "originLat": -42.2
+            "originLat": -42.2,
+            "woolworths": 32,
+            "coles": 17
           }
         ]
       },
@@ -360,7 +366,9 @@
             "latitude": -16.5,
             "label": "NT  20",
             "originLon": 133.7,
-            "originLat": -19
+            "originLat": -19,
+            "woolworths": 12,
+            "coles": 8
           },
           {
             "code": "ACT",
@@ -368,7 +376,9 @@
             "latitude": -36.5,
             "label": "ACT  33",
             "originLon": 149.1,
-            "originLat": -35.3
+            "originLat": -35.3,
+            "woolworths": 20,
+            "coles": 13
           },
           {
             "code": "TAS",
@@ -376,7 +386,9 @@
             "latitude": -44,
             "label": "TAS  49",
             "originLon": 146.7,
-            "originLat": -42.2
+            "originLat": -42.2,
+            "woolworths": 32,
+            "coles": 17
           }
         ]
       },
