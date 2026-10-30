@@ -71,11 +71,11 @@
         "state": "New South Wales",
         "code": "NSW",
         "x": 405.6,
-        "stores": 606,
+        "stores": 605,
         "woolworths": 348,
-        "coles": 258,
-        "wool_share": 57.4,
-        "per100k": 6.99,
+        "coles": 257,
+        "wool_share": 57.5,
+        "per100k": 6.98,
         "plotY": 201.3
       },
       {
@@ -93,11 +93,11 @@
         "state": "Victoria",
         "code": "VIC",
         "x": 252.8,
-        "stores": 515,
-        "woolworths": 280,
-        "coles": 235,
-        "wool_share": 54.4,
-        "per100k": 7.2,
+        "stores": 511,
+        "woolworths": 279,
+        "coles": 232,
+        "wool_share": 54.6,
+        "per100k": 7.14,
         "plotY": 107.3
       },
       {
