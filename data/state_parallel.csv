@@ -1,33 +1,33 @@
 state,code,dimension,order,value,normalised,unit,min,max
-Western Australia,WA,Population,0,3.096,0.336535,million people,0.269,8.67
-Western Australia,WA,Woolworths,1,117.0,0.3125,stores,12.0,348.0
-Western Australia,WA,Coles,2,104.0,0.384,stores,8.0,258.0
-Western Australia,WA,Outlets per 100k,3,7.14,0.375,stores / 100k,6.36,8.44
-Northern Territory,NT,Population,0,0.269,0.0,million people,0.269,8.67
-Northern Territory,NT,Woolworths,1,12.0,0.0,stores,12.0,348.0
-Northern Territory,NT,Coles,2,8.0,0.0,stores,8.0,258.0
+Western Australia,WA,Population,0,3.096,0.336535,million people,0.269,8.670
+Western Australia,WA,Woolworths,1,117,0.312500,stores,12.0,348.0
+Western Australia,WA,Coles,2,104,0.385542,stores,8.0,257.0
+Western Australia,WA,Outlets per 100k,3,7.14,0.375000,stores / 100k,6.36,8.44
+Northern Territory,NT,Population,0,0.269,0.000000,million people,0.269,8.670
+Northern Territory,NT,Woolworths,1,12,0.000000,stores,12.0,348.0
+Northern Territory,NT,Coles,2,8,0.000000,stores,8.0,257.0
 Northern Territory,NT,Outlets per 100k,3,7.44,0.519231,stores / 100k,6.36,8.44
-South Australia,SA,Population,0,1.917,0.196151,million people,0.269,8.67
-South Australia,SA,Woolworths,1,69.0,0.169643,stores,12.0,348.0
-South Australia,SA,Coles,2,53.0,0.18,stores,8.0,258.0
-South Australia,SA,Outlets per 100k,3,6.36,0.0,stores / 100k,6.36,8.44
-Queensland,QLD,Population,0,5.739,0.651169,million people,0.269,8.67
-Queensland,QLD,Woolworths,1,264.0,0.75,stores,12.0,348.0
-Queensland,QLD,Coles,2,190.0,0.728,stores,8.0,258.0
+South Australia,SA,Population,0,1.917,0.196151,million people,0.269,8.670
+South Australia,SA,Woolworths,1,69,0.169643,stores,12.0,348.0
+South Australia,SA,Coles,2,53,0.180723,stores,8.0,257.0
+South Australia,SA,Outlets per 100k,3,6.36,0.000000,stores / 100k,6.36,8.44
+Queensland,QLD,Population,0,5.739,0.651169,million people,0.269,8.670
+Queensland,QLD,Woolworths,1,264,0.750000,stores,12.0,348.0
+Queensland,QLD,Coles,2,190,0.730924,stores,8.0,257.0
 Queensland,QLD,Outlets per 100k,3,7.91,0.745192,stores / 100k,6.36,8.44
-New South Wales,NSW,Population,0,8.67,1.0,million people,0.269,8.67
-New South Wales,NSW,Woolworths,1,348.0,1.0,stores,12.0,348.0
-New South Wales,NSW,Coles,2,258.0,1.0,stores,8.0,258.0
-New South Wales,NSW,Outlets per 100k,3,6.99,0.302885,stores / 100k,6.36,8.44
-Australian Capital Territory,ACT,Population,0,0.49,0.026282,million people,0.269,8.67
-Australian Capital Territory,ACT,Woolworths,1,20.0,0.02381,stores,12.0,348.0
-Australian Capital Territory,ACT,Coles,2,13.0,0.02,stores,8.0,258.0
+New South Wales,NSW,Population,0,8.670,1.000000,million people,0.269,8.670
+New South Wales,NSW,Woolworths,1,348,1.000000,stores,12.0,348.0
+New South Wales,NSW,Coles,2,257,1.000000,stores,8.0,257.0
+New South Wales,NSW,Outlets per 100k,3,6.98,0.298077,stores / 100k,6.36,8.44
+Australian Capital Territory,ACT,Population,0,0.490,0.026282,million people,0.269,8.670
+Australian Capital Territory,ACT,Woolworths,1,20,0.023810,stores,12.0,348.0
+Australian Capital Territory,ACT,Coles,2,13,0.020080,stores,8.0,257.0
 Australian Capital Territory,ACT,Outlets per 100k,3,6.74,0.182692,stores / 100k,6.36,8.44
-Victoria,VIC,Population,0,7.154,0.819561,million people,0.269,8.67
-Victoria,VIC,Woolworths,1,280.0,0.797619,stores,12.0,348.0
-Victoria,VIC,Coles,2,235.0,0.908,stores,8.0,258.0
-Victoria,VIC,Outlets per 100k,3,7.2,0.403846,stores / 100k,6.36,8.44
-Tasmania,TAS,Population,0,0.581,0.037114,million people,0.269,8.67
-Tasmania,TAS,Woolworths,1,32.0,0.059524,stores,12.0,348.0
-Tasmania,TAS,Coles,2,17.0,0.036,stores,8.0,258.0
-Tasmania,TAS,Outlets per 100k,3,8.44,1.0,stores / 100k,6.36,8.44
+Victoria,VIC,Population,0,7.154,0.819561,million people,0.269,8.670
+Victoria,VIC,Woolworths,1,279,0.794643,stores,12.0,348.0
+Victoria,VIC,Coles,2,232,0.899598,stores,8.0,257.0
+Victoria,VIC,Outlets per 100k,3,7.14,0.375000,stores / 100k,6.36,8.44
+Tasmania,TAS,Population,0,0.581,0.037114,million people,0.269,8.670
+Tasmania,TAS,Woolworths,1,32,0.059524,stores,12.0,348.0
+Tasmania,TAS,Coles,2,17,0.036145,stores,8.0,257.0
+Tasmania,TAS,Outlets per 100k,3,8.44,1.000000,stores / 100k,6.36,8.44
